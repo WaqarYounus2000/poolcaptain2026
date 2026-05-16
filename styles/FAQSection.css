@@ -1,0 +1,209 @@
+/* =========================
+   FAQ SECTION BASE
+========================= */
+.faqSection {
+  padding: 80px 20px;
+  background: linear-gradient(180deg, #f6fbff, #ffffff);
+  font-family: "Poppins", sans-serif;
+}
+
+/* =========================
+   HEADER
+========================= */
+.faqHeader {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+}
+
+.faqHeader h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #0a3d62;
+  margin: 15px 0;
+  line-height: 1.2;
+}
+
+.faqHeader p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* SEO CHIP */
+.seoChip {
+  background: #e6f4ff !important;
+  color: #0077b6 !important;
+  font-weight: 600;
+  padding: 8px 12px;
+}
+
+/* =========================
+   MAIN GRID
+========================= */
+.faqGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+/* =========================
+   INFO CARD (LEFT)
+========================= */
+.faqInfoCard {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  border-left: 6px solid #0077b6;
+  transition: 0.3s ease;
+}
+
+.faqInfoCard:hover {
+  transform: translateY(-5px);
+}
+
+.faqInfoCard h3 {
+  font-size: 22px;
+  color: #0a3d62;
+  margin-bottom: 10px;
+}
+
+.faqInfoCard p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.faqInfoCard ul {
+  margin-top: 15px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.faqInfoCard ul li {
+  font-size: 15px;
+  padding: 6px 0;
+  color: #333;
+}
+
+/* =========================
+   FAQ ACCORDION
+========================= */
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faqAccordion {
+  border-radius: 12px !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06) !important;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.faqAccordion:hover {
+  transform: translateY(-2px);
+}
+
+/* QUESTION */
+.faqQuestion {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #0a3d62 !important;
+}
+
+/* ICON */
+.faqIcon {
+  color: #0077b6;
+  margin-right: 8px;
+}
+
+/* ANSWER */
+.faqAnswer {
+  font-size: 15px !important;
+  color: #555 !important;
+  line-height: 1.7 !important;
+}
+
+/* =========================
+   FOOTER SEO TEXT
+========================= */
+.faqFooterText {
+  margin-top: 60px;
+  text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.faqFooterText h3 {
+  font-size: 26px;
+  color: #0a3d62;
+  margin-bottom: 10px;
+}
+
+.faqFooterText p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 992px) {
+  .faqGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .faqHeader h2 {
+    font-size: 28px;
+  }
+
+  .faqInfoCard {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .faqSection {
+    padding: 50px 15px;
+  }
+
+  .faqHeader h2 {
+    font-size: 24px;
+  }
+
+  .faqFooterText h3 {
+    font-size: 20px;
+  }
+}
+
+.faqIcon {
+  color: #0077b6;
+  margin-right: 8px;
+  transform: rotate(0deg);
+  transition: 0.3s ease;
+}
+
+.faqAccordion:hover .faqIcon {
+  transform: rotate(10deg) scale(1.1);
+  color: #0a3d62;
+}
+
+.Faqs-tag {
+  color: #0a3d62;
+  font-size: 36px !important;
+  font-weight: 700 !important;
+
+
+}
+.Faqs-des{
+  color: rgb(102, 102, 102);
+
+    font-size: 20px !important;
+    font-weight: 500 !important
+}

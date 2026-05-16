@@ -1,0 +1,373 @@
+.servicesPage {
+  background: #f7fbff;
+  color: #0b2b3c;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 80px;
+}
+
+/* ================= HERO ================= */
+
+.servicesHeroSection {
+  position: relative;
+  height: 75vh;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.servicesHeroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.75));
+}
+
+.servicesHeroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.servicesHeroContent h1 {
+  font-size: clamp(28px, 5vw, 58px);
+  font-weight: 900;
+  color: #fff;
+}
+
+.servicesHeroContent p {
+  color: #dbeafe;
+  margin-top: 10px;
+}
+
+/* ================= PREMIUM NAVIGATION ================= */
+
+.categoryNavWrapper {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding: 12px 20px;
+}
+
+.categoryNav {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  justify-content: center;
+}
+
+.categoryNavItem {
+  flex-shrink: 0;
+
+  padding: 10px 18px;
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #eef6ff, #f8fbff);
+
+  color: #0b2b3c;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  border: 1px solid rgba(0,0,0,0.06);
+
+  transition: 0.3s ease;
+}
+
+.categoryNavItem:hover {
+  transform: translateY(-2px);
+  background: #e3f2fd;
+}
+
+/* ================= CATEGORY HEADING (CENTERED) ================= */
+
+.categoryHeader {
+  text-align: center;
+  margin: 60px 0 30px;
+}
+
+.categoryHeader h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0b2b3c;
+}
+
+.categoryLine {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #1e88e5, #4fc3f7);
+  margin: 10px auto 0;
+  border-radius: 10px;
+}
+
+/* ================= GRID ================= */
+
+.servicesGrid {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+/* ================= CARD ================= */
+
+.serviceCard {
+  background: #fff;
+  border-radius: 22px;
+  overflow: hidden;
+
+  border: 1px solid rgba(0,0,0,0.06);
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+
+  transition: 0.3s ease;
+}
+
+.serviceCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+/* ================= IMAGE ================= */
+
+.productImageWrapper {
+  position: relative;
+  height: 220px;
+}
+
+/* ================= CONTENT ================= */
+
+.serviceCardContent {
+  padding: 22px;
+}
+
+.productCategory {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #e8f3ff;
+  color: #0b2b3c;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.serviceCard h3 {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.serviceCard-paragrah {
+  margin-top: 10px;
+  color: #4b5563;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ================= FEATURES ================= */
+
+.productFeatures {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.featureBadge {
+  font-size: 11px;
+  background: #f1f7ff;
+  color: #0b2b3c;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+/* ================= BUTTON ================= */
+
+.serviceBtn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 18px;
+
+  border-radius: 12px;
+
+  background: linear-gradient(135deg, #1e88e5, #4fc3f7);
+
+  color: #fff;
+
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.servicesSEOIntro {
+  max-width: 1100px;
+  margin: 100px auto 0 auto;
+  padding: 60px 30px;
+
+  text-align: center;
+
+  background: linear-gradient(
+    135deg,
+    #f8fbff,
+    #eef6ff
+  );
+
+  border: 1px solid rgba(32, 124, 198, 0.12);
+  border-radius: 26px;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.06);
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle glow effect */
+.servicesSEOIntro::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: radial-gradient(
+    circle at top left,
+    rgba(32, 124, 198, 0.18),
+    transparent 60%
+  );
+  z-index: 0;
+}
+
+/* keep text above glow */
+.servicesSEOIntro h2,
+.servicesSEOIntro p {
+  position: relative;
+  z-index: 1;
+}
+
+/* TITLE */
+.servicesSEOIntro h2 {
+  font-size: clamp(24px, 3vw, 42px);
+  font-weight: 900;
+  color: #0b2b3c;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+
+  margin-bottom: 18px;
+}
+
+/* PARAGRAPH */
+.servicesSEOIntro p {
+  font-size: 16px;
+  color: #4b5563;
+  line-height: 1.9;
+
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* highlight keywords inside text (optional if you add <span>) */
+.servicesSEOIntro strong {
+  color: #207cc6;
+  font-weight: 800;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .servicesSEOIntro {
+    padding: 40px 20px;
+    margin-top: 70px;
+  }
+
+  .servicesSEOIntro p {
+    font-size: 14px;
+  }
+}
+
+/* ================= PREMIUM SEO SECTION ================= */
+
+.seoPremiumSection {
+  padding: 80px 20px;
+  background: radial-gradient(circle at top, #0b1b2b, #050b12);
+  color: #fff;
+}
+
+.seoContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.seoContainer h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.seoContainer p {
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* GRID */
+.seoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* CARD */
+.seoCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 25px;
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease;
+  text-align: left;
+}
+
+.seoCard:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 200, 255, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.seoCard h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #00c8ff;
+}
+
+.seoCard p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .seoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .seoContainer h2 {
+    font-size: 24px;
+  }
+
+  .seoContainer p {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,166 @@
+/* ================= WRAPPER ================= */
+.whyWrapper {
+    padding: 90px 0;
+    background: linear-gradient(to bottom, #f4faff, #ffffff);
+    text-align: center;
+}
+
+/* ================= HEADER ================= */
+.whyHeader {
+    max-width: 850px;
+    margin: 0 auto 50px auto;
+}
+
+.whyTitle {
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    background: linear-gradient(90deg, #0077b6, #00b4d8);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text
+}
+
+.whySubtitle {
+    margin-top: 12px;
+
+    line-height: 1.7;
+    color: rgb(102, 102, 102);
+    font-size: 20px !important;
+    font-weight: 500 !important
+}
+
+/* ================= CARD ================= */
+.whyCard {
+    height: 100%;
+    border-radius: 18px !important;
+    text-align: center;
+    padding: 10px;
+    background: #ffffff !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06) !important;
+    transition: all 0.3s ease;
+}
+
+.whyCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 180, 216, 0.15) !important;
+}
+
+/* ================= ICON ================= */
+.whyIcon {
+    font-size: 40px;
+    color: #0077b6;
+    margin-bottom: 10px;
+}
+
+/* ================= TITLE ================= */
+.whyCardTitle {
+    font-size: 24px !important;
+    font-weight: 700;
+    color: #0a3d62;
+}
+
+/* ================= DESCRIPTION ================= */
+.whyCardDesc {
+    font-size: 13px;
+    color: #666;
+    margin-top: 8px;
+    line-height: 1.6;
+}
+
+/* ================= SEO SECTION ================= */
+.whySeo {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.seoHeading {
+    color: #0a3d62;
+    margin: 15px 0 !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+}
+
+.seoText {
+    color: rgb(102, 102, 102);
+    margin-top: 8px;
+    font-size: 20px !important;
+    font-weight: 500 !important
+}
+
+/* ================= WRAPPER ================= */
+.whyWrapper {
+    padding: 90px 0;
+    background: linear-gradient(to bottom, #f4faff, #ffffff);
+    text-align: center;
+}
+
+/* ================= CARD GRID CENTER FIX ================= */
+.MuiGrid-container {
+    justify-content: center;
+}
+
+/* ================= CARD ================= */
+.whyCard {
+    width: 100%;
+    max-width: 260px;
+    /* FIXED SIZE */
+    height: 300px;
+    /* FIXED HEIGHT */
+    margin: auto;
+
+    border-radius: 18px !important;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06) !important;
+
+    transition: all 0.3s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whyCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(0, 180, 216, 0.2) !important;
+}
+
+/* ================= CONTENT CENTER ================= */
+.whyContent {
+    text-align: center;
+    padding: 15px !important;
+}
+
+/* ================= ICON ================= */
+.whyIcon {
+    font-size: 38px;
+    color: #0077b6;
+    margin-bottom: 10px;
+}
+
+
+/* ================= DESCRIPTION ================= */
+.whyCardDesc {
+    font-size: 12.5px;
+    color: #666;
+    margin-top: 6px;
+    line-height: 1.5;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .whyCard {
+        max-width: 100%;
+        height: 220px;
+    }
+}
+
+
+
+.iconClass {
+    font-size: 65px !important;
+}

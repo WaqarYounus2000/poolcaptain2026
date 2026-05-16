@@ -1,0 +1,105 @@
+.service_coverage_section {
+  width: 100%;
+  padding: 90px 6%;
+  background: linear-gradient(180deg, #f7fbff, #ffffff);
+}
+
+/* HEADER */
+
+.service_coverage_header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+}
+
+.service_coverage_header h2 {
+  font-size: 34px;
+  color: #0a4d68;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.service_coverage_header p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* GRID */
+
+.service_coverage_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* CARD */
+
+.coverage_card {
+  background: white;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  transition: 0.3s ease;
+  border: 1px solid rgba(10, 77, 104, 0.08);
+}
+
+.coverage_card:hover {
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.coverage_icon {
+  font-size: 28px;
+  color: #0a4d68;
+  margin-bottom: 10px;
+}
+
+.coverage_card h3 {
+font-weight: 700 !important;
+  font-size: 20px;
+  color: #0a4d68;
+  margin-bottom: 10px;
+}
+
+.coverage_card p {
+  font-size: 14px;
+  color: #555;
+  
+  line-height: 1.7;
+}
+
+/* FOOT SEO TEXT */
+
+.service_coverage_footer {
+  max-width: 900px;
+  margin: 50px auto 0 auto;
+  text-align: center;
+}
+
+.service_coverage_footer p {
+  font-size: 15px;
+  font-weight: 700 !important;
+  color: #666;
+  line-height: 1.8;
+  background: #f1f8ff;
+  padding: 18px;
+  border-radius: 12px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .service_coverage_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service_coverage_header h2 {
+    font-size: 24px;
+  }
+}

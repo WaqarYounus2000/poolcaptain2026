@@ -1,0 +1,73 @@
+.seoServices_section {
+  padding: 90px 8%;
+  background: linear-gradient(180deg, #f7fbff, #ffffff);
+}
+
+.seoServices_header {
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+.seoServices_header h2 {
+  font-size: clamp(26px, 4vw, 42px);
+  font-weight: 800;
+  color: #0b2b3c;
+  margin-bottom: 15px;
+}
+
+.seoServices_header p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.9;
+}
+
+.seoServices_grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 22px;
+}
+
+.seoServices_card {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  transition: 0.3s ease;
+  border: 1px solid #eef4ff;
+}
+
+.seoServices_card:hover {
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.seoServices_icon {
+  font-size: 28px;
+  color: #207cc6;
+  margin-bottom: 12px;
+}
+
+.seoServices_card h3 {
+  font-size: 18px;
+  color: #0b2b3c;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.seoServices_card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .seoServices_section {
+    padding: 60px 5%;
+  }
+
+  .seoServices_card {
+    padding: 20px;
+  }
+}

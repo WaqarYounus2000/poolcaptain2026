@@ -1,0 +1,870 @@
+/* ================= GLOBAL ================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* ================= SECTION ================= */
+
+.calculatorSection {
+  background:
+    linear-gradient(
+      180deg,
+      #eef7ff,
+      #f8fbff
+    );
+
+  padding: 70px 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ================= HERO ================= */
+
+.calculatorHero {
+  position: relative;
+  overflow: hidden;
+
+  padding:
+    120px 20px 100px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0080ff,
+      #00bfff
+    );
+
+  color: white;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 5;
+  max-width: 950px;
+  margin: auto;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 24px;
+
+  border-radius: 100px;
+
+  background:
+    rgba(255,255,255,0.18);
+
+  backdrop-filter: blur(10px);
+
+  border:
+    1px solid rgba(255,255,255,0.25);
+
+  margin-bottom: 25px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+.calculatorHero h1 {
+  font-size: 62px;
+  font-weight: 900;
+  margin-bottom: 18px;
+  line-height: 1.1;
+}
+
+.calculatorHero p {
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 760px;
+  margin: auto;
+  opacity: 0.95;
+}
+
+/* ================= WAVES ================= */
+
+.heroWaves {
+  position: absolute;
+  inset: 0;
+}
+
+.wave {
+  position: absolute;
+  border-radius: 45%;
+  background: rgba(255,255,255,0.12);
+}
+
+.wave1 {
+  width: 130%;
+  height: 260px;
+  top: -90px;
+  left: -10%;
+}
+
+.wave2 {
+  width: 120%;
+  height: 240px;
+  top: 40px;
+  right: -15%;
+  background: rgba(255,255,255,0.08);
+}
+
+.wave3 {
+  width: 135%;
+  height: 280px;
+  bottom: -160px;
+  left: -15%;
+  background: rgba(255,255,255,0.16);
+}
+
+/* ================= MAIN CONTAINER ================= */
+
+.calculatorContainer {
+  position: relative;
+
+  max-width: 1280px;
+  margin: auto;
+
+  padding: 45px;
+
+  border-radius: 34px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.92),
+      rgba(255,255,255,0.75)
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.6);
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,0.08);
+}
+
+/* ================= SMALL REPEATING WATERMARK ================= */
+
+.bgWatermark {
+  position: absolute;
+  inset: 0;
+
+  background-image: url("/images/logo.png");
+
+  background-repeat: repeat;
+
+  background-size: 105px;
+
+  background-position: center;
+
+  opacity: 0.08;
+
+  transform: rotate(-22deg) scale(1.1);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+/* ================= BIG TEXT WATERMARK ================= */
+
+.bigTextWatermark {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 140px;
+  font-weight: 900;
+
+  color: #000;
+
+  opacity: 0.03;
+
+  transform: rotate(-28deg);
+
+  pointer-events: none;
+
+  z-index: 0;
+
+  letter-spacing: 8px;
+}
+
+/* ================= HEADER ================= */
+
+.reportHeader {
+  position: relative;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 40px;
+}
+
+.reportTitle h2 {
+  font-size: 44px;
+  font-weight: 900;
+  line-height: 1.1;
+  color: #081b33;
+  margin-bottom: 10px;
+}
+
+.reportTitle p {
+  color: #5d718f;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* ================= GRID ================= */
+
+.calculatorGrid {
+  position: relative;
+  z-index: 5;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 30px;
+}
+
+/* ================= GLASS CARD ================= */
+
+.glassCard {
+  position: relative;
+
+  background:
+    rgba(255,255,255,0.68);
+
+  backdrop-filter: blur(18px);
+
+  border-radius: 30px;
+
+  padding: 35px;
+
+  border:
+    1px solid rgba(255,255,255,0.8);
+
+  overflow: hidden;
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.06);
+}
+
+/* ================= CARD WATERMARK ================= */
+
+.glassCard::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image: url("/images/logo.png");
+
+  background-repeat: repeat;
+
+  background-size: 72px;
+
+  opacity: 0.09;
+
+  transform: rotate(-25deg);
+
+  pointer-events: none;
+}
+
+/* ================= CARD GLOW ================= */
+
+.glassCard::after {
+  content: "";
+
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  background:
+    radial-gradient(
+      rgba(0,140,255,0.12),
+      transparent 70%
+    );
+
+  top: -80px;
+  right: -80px;
+
+  border-radius: 50%;
+}
+
+.glassCard h3 {
+  position: relative;
+  z-index: 5;
+
+  font-size: 30px;
+  font-weight: 900;
+
+  margin-bottom: 28px;
+
+  color: #081b33;
+}
+
+/* ================= INPUTS ================= */
+
+.inputGroup {
+  position: relative;
+  z-index: 5;
+
+  margin-bottom: 22px;
+}
+
+.inputGroup label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  color: #17335c;
+}
+
+.inputGroup input,
+.inputGroup select {
+  width: 100%;
+  height: 60px;
+
+  border-radius: 18px;
+
+  border:
+    1px solid rgba(0,123,255,0.12);
+
+  background:
+    rgba(255,255,255,0.88);
+
+  padding: 0 18px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  color: #081b33;
+
+  outline: none;
+
+  transition: 0.3s ease;
+}
+
+.inputGroup input:focus,
+.inputGroup select:focus {
+  border-color: #0080ff;
+
+  box-shadow:
+    0 0 0 5px rgba(0,128,255,0.12);
+
+  background: white;
+}
+
+.inputRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+/* ================= SUMMARY ================= */
+
+.measurementSummary {
+  position: relative;
+  z-index: 5;
+
+  margin-top: 28px;
+
+  padding: 22px;
+
+  border-radius: 22px;
+
+  background:
+    rgba(255,255,255,0.65);
+
+  border:
+    1px solid rgba(0,128,255,0.08);
+
+  backdrop-filter: blur(10px);
+}
+
+.measurementSummary h4 {
+  font-size: 20px;
+  font-weight: 800;
+
+  margin-bottom: 18px;
+
+  color: #081b33;
+}
+
+.summaryRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 12px 0;
+
+  border-bottom:
+    1px dashed rgba(0,0,0,0.08);
+}
+
+.summaryRow:last-child {
+  border-bottom: none;
+}
+
+.summaryRow span {
+  color: #52627a;
+  font-weight: 600;
+}
+
+.summaryRow b {
+  color: #0080ff;
+  font-weight: 800;
+}
+
+/* ================= RESULT CARD ================= */
+
+.resultCard {
+  position: relative;
+}
+
+.resultItem {
+  position: relative;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 22px;
+
+  border-radius: 20px;
+
+  margin-bottom: 16px;
+
+  background:
+    rgba(255,255,255,0.72);
+
+  border:
+    1px solid rgba(0,0,0,0.05);
+
+  transition: 0.3s ease;
+}
+
+.resultItem:hover {
+  transform: translateY(-2px);
+}
+
+.resultItem .left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: #16325c;
+  font-weight: 700;
+}
+
+.resultItem svg {
+  font-size: 18px;
+  color: #0080ff;
+}
+
+.resultItem b {
+  font-size: 18px;
+  font-weight: 900;
+  color: #0080ff;
+}
+
+/* ================= FEATURED ================= */
+
+.resultItem.featured {
+  background:
+    linear-gradient(
+      135deg,
+      #0080ff,
+      #00c8ff
+    );
+
+  border: none;
+
+  box-shadow:
+    0 10px 30px rgba(0,140,255,0.25);
+}
+
+.resultItem.featured .left,
+.resultItem.featured svg,
+.resultItem.featured b {
+  color: white;
+}
+
+/* ================= BUTTONS ================= */
+
+.actionButtons {
+  position: relative;
+  z-index: 5;
+
+  display: flex;
+  gap: 18px;
+
+  margin-top: 35px;
+}
+
+.downloadBtn,
+.whatsappBtn {
+  position: relative;
+
+  flex: 1;
+
+  height: 62px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  font-size: 16px;
+  font-weight: 800;
+
+  transition: 0.35s ease;
+}
+
+/* ================= SHINE ================= */
+
+.downloadBtn::before,
+.whatsappBtn::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 120%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.35),
+      transparent
+    );
+
+  transition: 0.7s;
+}
+
+.downloadBtn:hover::before,
+.whatsappBtn:hover::before {
+  left: 120%;
+}
+
+.downloadBtn {
+  background:
+    linear-gradient(
+      135deg,
+      #006eff,
+      #00c3ff
+    );
+
+  color: white;
+
+  box-shadow:
+    0 14px 30px rgba(0,128,255,0.28);
+}
+
+.whatsappBtn {
+  background:
+    linear-gradient(
+      135deg,
+      #10c95c,
+      #25d366
+    );
+
+  color: white;
+
+  box-shadow:
+    0 14px 30px rgba(37,211,102,0.25);
+}
+
+.downloadBtn:hover,
+.whatsappBtn:hover {
+  transform: translateY(-4px) scale(1.01);
+}
+
+/* ================= FOOTER ================= */
+
+.reportFooter {
+  position: relative;
+  z-index: 5;
+
+  margin-top: 35px;
+
+  text-align: center;
+
+  color: #667894;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ================= PRINT ================= */
+
+@media print {
+
+  .calculatorGrid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .glassCard {
+    width: 100% !important;
+    break-inside: avoid;
+  }
+
+  .actionButtons {
+    display: none !important;
+  }
+
+  .calculatorHero {
+    display: none !important;
+  }
+
+  .calculatorSection {
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  .calculatorContainer {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 992px) {
+
+  .calculatorGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .reportHeader {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .calculatorHero h1 {
+    font-size: 42px;
+  }
+
+  .bigTextWatermark {
+    font-size: 80px;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+  .calculatorSection {
+    padding: 30px 10px;
+  }
+
+  .calculatorHero {
+    padding: 90px 18px 80px;
+  }
+
+  .calculatorHero h1 {
+    font-size: 34px;
+  }
+
+  .calculatorHero p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .heroBadge {
+    font-size: 12px;
+    padding: 8px 18px;
+  }
+
+  .calculatorContainer {
+    width: 100%;
+
+    padding: 18px;
+
+    border-radius: 24px;
+  }
+
+  .glassCard {
+    width: 100%;
+
+    padding: 22px 18px;
+
+    border-radius: 24px;
+  }
+
+  .glassCard h3 {
+    font-size: 24px;
+  }
+
+  .reportTitle h2 {
+    font-size: 28px;
+  }
+
+  .reportTitle p {
+    font-size: 14px;
+  }
+
+  .reportLogo img {
+    width: 70px !important;
+    height: 70px !important;
+  }
+
+  .inputRow {
+    grid-template-columns: 1fr;
+  }
+
+  .inputGroup input,
+  .inputGroup select {
+    height: 56px;
+    border-radius: 16px;
+    font-size: 15px;
+  }
+
+  .measurementSummary {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .measurementSummary h4 {
+    font-size: 18px;
+  }
+
+  .summaryRow {
+    padding: 10px 0;
+  }
+
+  .summaryRow span,
+  .summaryRow b {
+    font-size: 14px;
+  }
+
+  .resultItem {
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .resultItem span {
+    font-size: 14px;
+  }
+
+  .resultItem b {
+    font-size: 15px;
+  }
+
+  /* ================= PREMIUM MOBILE BUTTONS ================= */
+
+  .actionButtons {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .downloadBtn,
+  .whatsappBtn {
+    width: 100%;
+
+    height: 58px;
+
+    border-radius: 18px;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    letter-spacing: 0.3px;
+
+    box-shadow:
+      0 10px 25px rgba(0,0,0,0.12);
+  }
+
+  .downloadBtn:active,
+  .whatsappBtn:active {
+    transform: scale(0.98);
+  }
+
+  .bigTextWatermark {
+    font-size: 48px;
+  }
+
+  .bgWatermark {
+    opacity: 0.11;
+    background-size: 80px;
+  }
+
+  .glassCard::before {
+    opacity: 0.11;
+    background-size: 58px;
+  }
+
+  .reportFooter {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+
+  .calculatorHero h1 {
+    font-size: 30px;
+  }
+
+  .calculatorContainer {
+    padding: 14px;
+  }
+
+  .glassCard {
+    padding: 18px 14px;
+  }
+
+  .resultItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .resultItem b {
+    padding-left: 30px;
+  }
+
+  .bigTextWatermark {
+    font-size: 38px;
+  }
+}

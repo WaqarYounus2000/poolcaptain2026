@@ -1,0 +1,244 @@
+/* ================= HERO SECTION (FULL WIDTH LIKE ABOUT PAGE) ================= */
+
+.servicesHeroSection {
+  position: relative;
+  width: 100vw;       /* FULL WIDTH FIX */
+  height: 75vh;
+  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* IMAGE WRAPPER */
+.servicesHeroImageWrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* IMAGE FIX INSIDE NEXT IMAGE */
+.servicesHeroImageWrapper img {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* DARK OVERLAY */
+.servicesHeroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.75)
+  );
+  z-index: 1;
+}
+
+/* TEXT CONTENT */
+.servicesHeroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 900px;
+  padding: 20px;
+}
+
+/* TITLE */
+.servicesHeroContent h1 {
+  font-size: clamp(28px, 5vw, 55px);
+  font-weight: 800;
+  text-shadow: 0 5px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* SUBTITLE */
+.servicesHeroContent p {
+  margin-top: 12px;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .servicesHeroSection {
+    height: 55vh;
+  }
+
+  .servicesHeroContent h1 {
+    font-size: 26px;
+  }
+
+  .servicesHeroContent p {
+    font-size: 14px;
+  }
+}
+
+/* ================= GRID ================= */
+
+.servicesGrid {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 28px;
+}
+
+/* ================= PREMIUM CARD ================= */
+
+.serviceCard {
+  position: relative;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  border-radius: 22px;
+  padding: 28px;
+  border: 1px solid rgba(32, 124, 198, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition: all 0.35s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* TOP BLUE GLOW EFFECT */
+.serviceCard::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(32, 124, 198, 0.15),
+    transparent 60%
+  );
+  transform: rotate(25deg);
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+/* HOVER EFFECT */
+.serviceCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  border-color: rgba(32, 124, 198, 0.3);
+}
+
+.serviceCard:hover::before {
+  opacity: 1;
+}
+
+/* ICON WRAPPER (CIRCLE STYLE) */
+.serviceIcon {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #207cc6, #4fc3f7);
+  color: white;
+  font-size: 24px;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 20px rgba(32, 124, 198, 0.25);
+}
+
+/* TITLE */
+.serviceCard h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0b2b3c;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+/* DESCRIPTION */
+/* .serviceCard p {
+  font-size: 14px;
+  color: black;
+  line-height: 1.7;
+} */
+
+.serviceCard-paragrah{
+  font-size: 14px;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* BUTTON (MODERN STYLE) */
+.serviceBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 18px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #207cc6, #4fc3f7);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* BUTTON HOVER ANIMATION */
+.serviceBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(32, 124, 198, 0.3);
+}
+
+/* BUTTON SHINE EFFECT */
+.serviceBtn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.serviceBtn:hover::after {
+  left: 100%;
+}
+
+.servicesSEOIntro {
+  max-width: 1100px;
+  margin: 60px auto 20px auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.servicesSEOIntro h2 {
+  font-size: 34px;
+  font-weight: 800;
+  color: #0b2b3c;
+  margin-bottom: 20px;
+}
+
+.servicesSEOIntro p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.9;
+  margin-bottom: 15px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .servicesSEOIntro h2 {
+    font-size: 24px;
+  }
+
+  .servicesSEOIntro p {
+    font-size: 14px;
+  }
+}
