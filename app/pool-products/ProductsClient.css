@@ -289,6 +289,12 @@
   .servicesSEOIntro p {
     font-size: 14px;
   }
+  .categoryNav {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  justify-content: start;
+}
 }
 
 /* ================= PREMIUM SEO SECTION ================= */

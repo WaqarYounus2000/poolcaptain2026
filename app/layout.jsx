@@ -5,8 +5,23 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-
-
+  other: {
+    "application/ld+json": JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      name: "Pool Captain",
+      description:
+        "Swimming pool construction, maintenance and repair services in Karachi",
+      url: "https://poolcaptain.pk",
+      telephone: "+923002538642",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Karachi",
+        addressCountry: "PK",
+      },
+      areaServed: "Karachi",
+    }),
+  },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
@@ -58,6 +73,9 @@ export default function RootLayout({ children }) {
                 "Pool Repair",
                 "Pool Plumbing",
                 "Pool Tiling",
+                "Pool cleaning accessories",
+                "Pool equipment",
+                "sauna steam room construction karachi",
               ],
             }),
           }}

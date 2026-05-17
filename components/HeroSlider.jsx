@@ -2,7 +2,7 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-
+import Link from "next/link";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -14,19 +14,19 @@ const sliderImages = [
     image: "/images/slider/pic1.jpg",
     title: "Professional Pool Construction",
     description:
-      "Modern swimming pool construction services in Karachi.",
+      "swimming pool construction, spa/jacuzzi construction services in Karachi, Pakistan",
   },
   {
     image: "/images/slider/pic2.jpg",
     title: "Pool Maintenance Services",
     description:
-      "Complete cleaning and maintenance for residential pools.",
+      "Complete cleaning and maintenance services for residential pools across Karachi.",
   },
   {
     image: "/images/slider/pic3.jpg",
-    title: "Pool Equipment Installation",
+    title: "Pool Equipment Supply & Installation",
     description:
-      "Premium pool pumps, filters and accessories installation.",
+      "Pool pumps, pool filters & pool cleaning accessories with installation.",
   },
   {
     image: "/images/slider/pic4.jpg",
@@ -38,7 +38,7 @@ const sliderImages = [
     image: "/images/slider/pic5.jpg",
     title: "Pool Repair Solutions",
     description:
-      "Leak detection, motor repair and filtration solutions.",
+      "Pool Leak detection service karachi, motor repair & filtration solutions.",
   },
 ];
 
@@ -62,14 +62,14 @@ export default function HeroSlider() {
           <SwiperSlide key={index}>
             <div className="slide-wrapper">
               <img src={slide.image} alt={slide.title} />
-
               <div className="overlay"></div>
 
               <div className="slide-content">
                 <h1>{slide.title}</h1>
                 <p>{slide.description}</p>
-
-                <button>Explore Services</button>
+                <Link href="/contact">
+  <button>Explore Services</button>
+</Link>
               </div>
             </div>
           </SwiperSlide>

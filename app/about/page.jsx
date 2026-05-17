@@ -15,19 +15,28 @@ export const metadata = {
     "swimming pool company Karachi",
     "pool construction Pakistan",
     "pool maintenance Karachi",
-    "luxury swimming pools Karachi",
-    "pool renovation Pakistan",
-    "jacuzzi installation Pakistan",
+    "best pool cleaning services karachi pakistan",
+    "pool renovation karachi",
+    "jacuzzi installation karachi",
     "sauna installation Karachi",
-    "spa construction Pakistan",
-    "commercial swimming pools",
+    "spa construction karachi",
+    "commercial swimming pools service karachi",
     "pool filtration systems",
-    "Pool Captain Pakistan",
+    "best pool construction in karachi",
+    "Pool construction in phase 8 dha",
+    "Pool maintenance in dha karachi",
+    "Pool cleaning service in karachi",
+    "Pool cleaning in phase 2 ",
+    "Pool vacuuming service in dha karachi",
+    "Pool cleaning accessories karachi",
+    "best pool chemical supply karachi dha",
+    "best pool maintenance company dha karachi",
+    "pool construction in phase 8",
+    "pool constructionn near me",
+    "pool maintenance service near me",
+    "pool cleaning service near me",
   ],
 
-  alternates: {
-    canonical: "https://poolcaptain.pk/about-us",
-  },
 
   openGraph: {
     title:
@@ -36,7 +45,7 @@ export const metadata = {
     description:
       "Trusted swimming pool construction and maintenance company in Karachi Pakistan.",
 
-    url: "https://poolcaptain.pk/about-us",
+    url: "https://poolcaptain.pk/about",
 
     siteName: "Pool Captain",
 
