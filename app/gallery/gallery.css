@@ -57,45 +57,40 @@
   border-radius: 24px;
   height: 320px;
   cursor: pointer;
-  transition: 0.35s;
+  transition: 0.3s;
   box-shadow: 0 20px 50px rgba(0,0,0,0.45);
 }
 
 .galleryCard:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
 }
 
 .imageWrapper {
-  position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0,0,0,0.15);
 }
 
-/* IMAGE */
+/* MEDIA */
 .galleryImg {
   object-fit: contain;
+  width: 100%;
+  height: 100%;
   padding: 10px;
-  transition: 0.5s;
-}
-
-.galleryCard:hover .galleryImg {
-  transform: scale(1.05);
 }
 
 /* OVERLAY */
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding-bottom: 30px;
+  padding-bottom: 25px;
   opacity: 0;
   transition: 0.3s;
 }
@@ -108,53 +103,84 @@
 .lightbox {
   position: fixed;
   inset: 0;
-  z-index: 9999;
   background: rgba(0,0,0,0.92);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  z-index: 9999;
 }
 
 .lightboxBox {
-  position: relative;
   width: 90vw;
   height: 90vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* ========================= */
-/* 🔥 FIXED CENTER WATERMARK */
-/* ========================= */
+/* IMAGE */
+.lightboxImg {
+  object-fit: contain !important;
+}
 
+/* VIDEO CENTER FIX */
+.videoWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightboxVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* WATERMARK */
 .logoWatermark {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 5;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background-image: url("/images/logo.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 140px auto;
-
+  background: url("/images/logo.png") center/140px no-repeat;
   opacity: 0.12;
-
-  filter: contrast(1.2) brightness(1.1);
 }
 
-/* LIGHTBOX WATERMARK */
 .lightboxWatermark {
-  background-size: 520px auto;
-  opacity: 0.25;
+  background-size: 450px;
+  opacity: 0.2;
 }
 
-/* ========================= */
+/* CONTROLS */
+.mediaControls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.mediaControls button {
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.mediaControls button:hover {
+  background: rgba(0,212,255,0.25);
+}
+
 /* MOBILE */
-/* ========================= */
 @media (max-width: 768px) {
   .galleryHero h1 {
     font-size: 38px;
@@ -165,6 +191,11 @@
   }
 
   .galleryCard {
-    height: 250px;
+    height: 240px;
+  }
+
+  .lightboxBox {
+    width: 95vw;
+    height: 80vh;
   }
 }
