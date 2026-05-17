@@ -9,7 +9,6 @@
 }
 
 /* HERO */
-
 .galleryHero {
   text-align: center;
   max-width: 1000px;
@@ -45,7 +44,6 @@
 }
 
 /* GRID */
-
 .galleryGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -53,7 +51,6 @@
 }
 
 /* CARD */
-
 .galleryCard {
   position: relative;
   overflow: hidden;
@@ -68,19 +65,29 @@
   transform: translateY(-8px);
 }
 
-.galleryImg {
+.imageWrapper {
+  position: relative;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.15);
+}
+
+/* IMAGE */
+.galleryImg {
+  object-fit: contain;
+  padding: 10px;
   transition: 0.5s;
 }
 
 .galleryCard:hover .galleryImg {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 /* OVERLAY */
-
 .overlay {
   position: absolute;
   inset: 0;
@@ -98,7 +105,6 @@
 }
 
 /* LIGHTBOX */
-
 .lightbox {
   position: fixed;
   inset: 0;
@@ -111,18 +117,44 @@
 }
 
 .lightboxBox {
-  max-width: 95%;
-  max-height: 95vh;
+  position: relative;
+  width: 90vw;
+  height: 90vh;
 }
 
-.lightboxImg {
-  max-width: 100%;
-  max-height: 95vh;
-  border-radius: 18px;
+/* ========================= */
+/* 🔥 FIXED CENTER WATERMARK */
+/* ========================= */
+
+.logoWatermark {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url("/images/logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 140px auto;
+
+  opacity: 0.12;
+
+  filter: contrast(1.2) brightness(1.1);
 }
 
+/* LIGHTBOX WATERMARK */
+.lightboxWatermark {
+  background-size: 520px auto;
+  opacity: 0.25;
+}
+
+/* ========================= */
 /* MOBILE */
-
+/* ========================= */
 @media (max-width: 768px) {
   .galleryHero h1 {
     font-size: 38px;
