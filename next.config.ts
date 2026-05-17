@@ -12,6 +12,13 @@ const nextConfig = {
         hostname: "s3.ap-southeast-2.amazonaws.com",
         pathname: "/poolcaptain2026/**",
       },
+
+      // 🔥 extra safety (recommended for AWS edge cases)
+      {
+        protocol: "https",
+        hostname: "**.amazonaws.com",
+        pathname: "/**",
+      },
     ],
   },
 };

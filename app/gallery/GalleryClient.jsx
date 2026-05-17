@@ -108,6 +108,7 @@ export default function GalleryClient() {
         ) : (
           <div className="galleryGrid">
             {images.map((img, i) => {
+              console.log(img)
               const url = fixImageUrl(img.image);
               const video = isVideo(url);
 
