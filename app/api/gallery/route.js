@@ -6,13 +6,14 @@ export async function GET() {
     const data = await s3.send(
       new ListObjectsV2Command({
         Bucket: process.env.AWS_BUCKET_NAME,
-        Prefix: "projectsfolder/",
       })
     );
 
+    console.log("S3 RAW KEYS:", data.Contents?.map(i => i.Key));
+
     const images = (data.Contents || []).map((item) => ({
       key: item.Key,
-      image: `https://${process.env.AWS_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${item.Key}`,
+      image: `https://${process.env.AWS_BUCKET_NAME}.s3.ap-southeast-2.amazonaws.com/${item.Key}`,
     }));
 
     return Response.json({
@@ -21,6 +22,7 @@ export async function GET() {
     });
   } catch (err) {
     console.error("S3 ERROR:", err);
+
     return Response.json(
       { error: err.message, data: [] },
       { status: 500 }

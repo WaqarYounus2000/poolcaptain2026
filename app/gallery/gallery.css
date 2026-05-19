@@ -65,10 +65,12 @@
   transform: translateY(-6px);
 }
 
+/* IMAGE WRAPPER */
 .imageWrapper {
+  position: relative;
   width: 100%;
   height: 100%;
-  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -80,6 +82,30 @@
   width: 100%;
   height: 100%;
   padding: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   WATERMARK (GRID + VIDEO)
+========================= */
+.watermarkOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0.25;
+}
+
+.watermarkOverlay img {
+  width: 270px;
+  height: auto;
+  filter: drop-shadow(0 0 8px rgba(0,0,0,0.6));
 }
 
 /* OVERLAY */
@@ -119,41 +145,27 @@
   justify-content: center;
 }
 
-/* IMAGE */
-.lightboxImg {
-  object-fit: contain !important;
-}
-
-/* VIDEO CENTER FIX */
-.videoWrapper {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
+/* MEDIA LIGHTBOX */
+.lightboxImg,
 .lightboxVideo {
+  object-fit: contain;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  position: relative;
+  z-index: 1;
 }
 
-/* WATERMARK */
-.logoWatermark {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: url("/images/logo.png") center/140px no-repeat;
-  opacity: 0.12;
-}
-
+/* =========================
+   LIGHTBOX WATERMARK
+========================= */
 .lightboxWatermark {
-  background-size: 450px;
-  opacity: 0.2;
+  opacity: 0.12;
+  z-index: 20;
+}
+
+.lightboxWatermark img {
+  width: 280px;
+  filter: drop-shadow(0 0 12px rgba(0,0,0,0.8));
 }
 
 /* CONTROLS */
@@ -164,6 +176,7 @@
   transform: translateX(-50%);
   display: flex;
   gap: 10px;
+  z-index: 999;
 }
 
 .mediaControls button {
@@ -198,4 +211,136 @@
     width: 95vw;
     height: 80vh;
   }
+
+  .watermarkOverlay img {
+    width: 270px;
+  }
+
+  .lightboxWatermark img {
+    width: 180px;
+  }
 }
+
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* MEDIA (NO IMPACT ON CONTROLS) */
+.galleryImg {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   WATERMARK (GRID + VIDEO)
+========================= */
+.watermarkOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0.25;
+}
+
+.watermarkOverlay img {
+  width: 270px;
+  height: auto;
+  filter: drop-shadow(0 0 8px rgba(0,0,0,0.6));
+}
+
+/* =========================
+   LIGHTBOX WATERMARK
+========================= */
+.lightboxWatermark {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0.25;
+}
+
+.lightboxWatermark img {
+  width: 500px;
+  filter: drop-shadow(0 0 12px rgba(0,0,0,0.8));
+}
+
+/* LIGHTBOX STACK FIX (DO NOT TOUCH CONTROLS) */
+.lightboxBox {
+  position: relative;
+}
+
+/* IMPORTANT: MEDIA stays below controls */
+.lightboxImg,
+.lightboxVideo {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   MOBILE SAFE
+========================= */
+@media (max-width: 768px) {
+  .watermarkOverlay img {
+    width: 270px;
+  }
+
+  .lightboxWatermark img {
+    width: 300px;
+  }
+
+  .galleryCard {
+    height: 240px;
+  }
+
+  .lightboxBox {
+    width: 95vw;
+    height: 80vh;
+  }
+}
+
+
+
+.lightboxBox {
+  position: relative;
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  background: black;
+}
+
+.lightboxImg,
+.lightboxVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+}
+
+

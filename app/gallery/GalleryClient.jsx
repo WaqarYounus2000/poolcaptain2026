@@ -5,57 +5,72 @@ import Image from "next/image";
 import "./gallery.css";
 
 export default function GalleryClient() {
-  const [images, setImages] = useState([]);
+  const [media, setMedia] = useState([]);
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const videoRef = useRef(null);
+
   const [isPlaying, setIsPlaying] = useState(true);
   const [muted, setMuted] = useState(true);
 
   useEffect(() => {
     let isMounted = true;
 
-    const fetchImages = async () => {
+    const fetchMedia = async () => {
       try {
         const res = await fetch("/api/gallery");
         const data = await res.json();
 
-        if (isMounted) setImages(data?.data || []);
+        // console.log("API RESPONSE:", data);
+
+        if (isMounted) {
+          setMedia(data?.data || []);
+
+          // ✅ POOL CAPTAIN IMAGE LOG (PUBLIC FOLDER)
+          // console.log("POOL CAPTAIN IMAGE:", "/images/pool-captain.png");
+        }
       } catch (err) {
-        console.error(err);
+        console.error("FETCH ERROR:", err);
       } finally {
         if (isMounted) setLoading(false);
       }
     };
 
-    fetchImages();
+    fetchMedia();
 
     return () => {
       isMounted = false;
     };
   }, []);
 
-  const fixImageUrl = (url) => (url ? url.replace(/\s+/g, "") : "");
+  const currentItem = media[selectedIndex];
+  const currentUrl = currentItem?.image || null;
+
   const isVideo = (url) => /\.(mp4|webm|ogg)$/i.test(url);
 
-  const currentItem = images[selectedIndex];
-  const currentUrl = currentItem ? fixImageUrl(currentItem.image) : null;
-
   const next = () => {
-    setSelectedIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    setSelectedIndex((prev) =>
+      prev === media.length - 1 ? 0 : prev + 1
+    );
     setIsPlaying(true);
   };
 
   const prev = () => {
-    setSelectedIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    setSelectedIndex((prev) =>
+      prev === 0 ? media.length - 1 : prev - 1
+    );
     setIsPlaying(true);
   };
 
   const toggleFullScreen = () => {
     const el = document.querySelector(".lightboxBox");
-    if (!document.fullscreenElement) el?.requestFullscreen?.();
-    else document.exitFullscreen?.();
+
+    if (!document.fullscreenElement) {
+      el?.requestFullscreen?.();
+    } else {
+      document.exitFullscreen?.();
+    }
   };
 
   const togglePlay = () => {
@@ -84,16 +99,17 @@ export default function GalleryClient() {
 
       {/* HERO */}
       <section className="galleryHero">
-        <div className="heroBadge">Premium Pool Projects & Installations</div>
+        <div className="heroBadge">
+          Premium Pool Projects & Installations
+        </div>
 
         <h1>
           Pool Captain <span>Luxury Gallery</span>
         </h1>
 
         <p>
-          Explore our completed swimming pool projects, jacuzzi installations,
-          sauna systems, steam rooms, heat pumps, filtration systems, and luxury
-          pool equipment projects across Pakistan.
+          Explore swimming pools, jacuzzis, saunas, steam rooms,
+          filtration systems and equipment installations.
         </p>
       </section>
 
@@ -107,9 +123,8 @@ export default function GalleryClient() {
           </div>
         ) : (
           <div className="galleryGrid">
-            {images.map((img, i) => {
-              console.log(img)
-              const url = fixImageUrl(img.image);
+            {media.map((item, i) => {
+              const url = item.image;
               const video = isVideo(url);
 
               return (
@@ -119,16 +134,8 @@ export default function GalleryClient() {
                   onClick={() => setSelectedIndex(i)}
                 >
                   <div className="imageWrapper">
-                    {!video ? (
-                      <Image
-                        src={url}
-                        alt={`Project ${i + 1}`}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                        className="galleryImg"
-                        loading="lazy"
-                      />
-                    ) : (
+
+                    {video ? (
                       <video
                         src={url}
                         className="galleryImg"
@@ -137,13 +144,26 @@ export default function GalleryClient() {
                         loop
                         playsInline
                       />
+                    ) : (
+                      <Image
+                        src={url}
+                        alt={`Media ${i + 1}`}
+                        fill
+                        sizes="100vw"
+                        className="galleryImg"
+                        loading="lazy"
+                      />
                     )}
 
-                    <div className="logoWatermark" />
+                    {/* ✅ WATERMARK */}
+                    <div className="watermarkOverlay">
+                      <img src="/images/logo.png" alt="logo" />
+                    </div>
+
                   </div>
 
                   <div className="overlay">
-                    <span>View Project</span>
+                    <span>View</span>
                   </div>
                 </div>
               );
@@ -154,57 +174,56 @@ export default function GalleryClient() {
 
       {/* LIGHTBOX */}
       {selectedIndex !== null && (
-        <div className="lightbox" onClick={() => setSelectedIndex(null)}>
+        <div
+          className="lightbox"
+          onClick={() => setSelectedIndex(null)}
+        >
           <div
             className="lightboxBox"
             onClick={(e) => e.stopPropagation()}
           >
-
-            {/* MEDIA */}
-            {!isVideo(currentUrl) ? (
+            {isVideo(currentUrl) ? (
+              <video
+                ref={videoRef}
+                src={currentUrl}
+                autoPlay
+                muted={muted}
+                className="lightboxVideo"
+              />
+            ) : (
               <Image
                 src={currentUrl}
-                alt="Project"
+                alt="Media"
                 fill
                 sizes="100vw"
                 className="lightboxImg"
               />
-            ) : (
-              <div className="videoWrapper">
-                <video
-                  ref={videoRef}
-                  src={currentUrl}
-                  autoPlay
-                  muted={muted}
-                  className="lightboxVideo"
-                />
-              </div>
             )}
 
-            {/* WATERMARK */}
-            <div className="logoWatermark lightboxWatermark" />
-
-            {/* CONTROLS */}
-            <div className="mediaControls">
-
-              <button onClick={prev}>⟨</button>
-
-              <button onClick={togglePlay}>
-                {isPlaying ? "❚❚" : "▶"}
-              </button>
-
-              <button onClick={toggleMute}>
-                {muted ? "🔇" : "🔊"}
-              </button>
-
-              <button onClick={next}>⟩</button>
-
-              <button onClick={toggleFullScreen}>⛶</button>
-
-              <button onClick={() => setSelectedIndex(null)}>✕</button>
-
+            {/* ✅ WATERMARK LIGHTBOX */}
+            <div className="watermarkOverlay lightboxWatermark">
+              <img src="/images/logo.png" alt="logo" />
             </div>
 
+            <div className="mediaControls">
+              <button onClick={prev}>⟨</button>
+
+              {isVideo(currentUrl) && (
+                <>
+                  <button onClick={togglePlay}>
+                    {isPlaying ? "❚❚" : "▶"}
+                  </button>
+
+                  <button onClick={toggleMute}>
+                    {muted ? "🔇" : "🔊"}
+                  </button>
+                </>
+              )}
+
+              <button onClick={next}>⟩</button>
+              <button onClick={toggleFullScreen}>⛶</button>
+              <button onClick={() => setSelectedIndex(null)}>✕</button>
+            </div>
           </div>
         </div>
       )}
