@@ -3,17 +3,11 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import {
-  FaChevronDown,
-  FaQuestionCircle,
-} from "react-icons/fa";
-
-import { faqs } from "@/data/poolservicesfaqs.js";
+import { FaChevronDown, FaQuestionCircle } from "react-icons/fa";
 
 import "../styles/faqComponent.css";
 
-export default function FAQComponent() {
-
+export default function FAQComponent({ faqs = [] }) {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleFAQ = (index) => {
@@ -30,7 +24,6 @@ export default function FAQComponent() {
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
       >
-
         <h2>
           <FaQuestionCircle className="faq_main_icon" />
           Frequently Asked Questions
@@ -41,7 +34,6 @@ export default function FAQComponent() {
           maintenance, repair, renovation, filtration systems,
           chemical treatment and spa solutions in Karachi Pakistan.
         </p>
-
       </motion.div>
 
       <div className="faq_container">

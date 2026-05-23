@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import FAQComponent from "@/components/FAQComponent";
+import {poolservicesfaqs} from "@/data/poolservicesfaqs";
+
 import { services } from "@/data/services";
 import PoolServicesIntro from "@/components/PoolServicesIntro";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
@@ -90,7 +92,7 @@ export default function ServicesClient() {
         </div>
         <BeforeAfterGallery />
 
-        <FAQComponent />
+        <FAQComponent faqs ={poolservicesfaqs} />
         <CustomPoolSolutions />
       </section>
     </>

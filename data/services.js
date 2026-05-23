@@ -19,7 +19,7 @@ export const services = [
     icon: FaSwimmingPool,
 
     desc:
-      "Premium residential and commercial swimming pool construction services with modern designs, waterproofing and advanced filtration systems.",
+      "Residential and commercial swimming pool construction services complete with modern design and installations, available services include, waterproofing,designing,plumbing steel reinforcement etc..",
 
     shortDesc:
       "Luxury swimming pool construction company in Karachi for homes, villas, hotels, gyms and resorts.",
@@ -169,7 +169,7 @@ export const services = [
     icon: FaHammer,
 
     desc:
-      "Expert swimming pool repair, renovation, crack fixing and waterproofing solutions.",
+      "Expert swimming pool repair, tiles installation & renovation, crack fixing and waterproofing solutions.",
 
     shortDesc:
       "Complete pool repair and renovation services for old and damaged swimming pools.",
@@ -181,15 +181,15 @@ export const services = [
     heroTitle: "Swimming Pool Repair & Renovation",
 
     heroSubtitle:
-      "Restore your old swimming pool with modern renovation, waterproofing and repair solutions.",
+      "Restore your old swimming pool with modern renovation, premium equipment and approved certified engineers of PoolCaptain in Karachi.",
 
     badge: "Repair Specialists",
 
     seoTitle:
-      "Swimming Pool Repair Services in Karachi | Pool Captain",
+      "Swimming Pool Repair Services & leakage detection in Karachi | Pool Captain",
 
     seoDescription:
-      "Professional swimming pool repair company in Karachi providing leak detection, waterproofing, crack repair, renovation and resurfacing solutions.",
+      "Professional swimming pool repair company in Karachi providing leak detection, chemical waterproofing, crack and patches repair, renovation and remodeling solutions.",
 
     content:
       "Pool Captain offers professional swimming pool repair and renovation services for residential and commercial swimming pools in Karachi. Our expert team handles leak detection, waterproofing, tile replacement, crack repairs, resurfacing and equipment upgrades. We transform damaged and outdated pools into modern, efficient and visually attractive swimming pools using advanced repair techniques and quality materials.",
@@ -199,7 +199,7 @@ export const services = [
       "Crack & Structural Repair",
       "Pool Waterproofing",
       "Tile Replacement",
-      "Pool Resurfacing",
+      "Pool patches and cracking repairs",
       "Filtration System Upgrades",
       "Pool Lighting Installation",
       "Complete Pool Renovation",
@@ -244,19 +244,19 @@ export const services = [
     icon: FaTint,
 
     desc:
-      "Professional swimming pool chemical balancing and water treatment services for healthy and crystal-clear water.",
+      "Professional swimming pool chemical balancing and water treatment services in karachi for healthy and crystal-clear water.",
 
     shortDesc:
-      "Safe and hygienic swimming pool water treatment and chemical balancing services.",
+      "Safe and hygienic swimming pool water treatment and chemical balancing services in karachi.",
 
     link: "/pool-services/pool-chemicals",
 
     image: "/images/poolServices/chemicals.jpeg",
 
-    heroTitle: "Pool Chemical Treatment Services",
+    heroTitle: "Pool Chemical Treatment Services in karachi",
 
     heroSubtitle:
-      "Maintain healthy, safe and sparkling swimming pool water with professional chemical treatment solutions.",
+      "Maintain healthy, safe and sparkling swimming pool water with professional chemical treatment solutions in karachi.",
 
     badge: "Water Treatment Experts",
 
@@ -264,7 +264,7 @@ export const services = [
       "Swimming Pool Chemical Treatment Services in Karachi",
 
     seoDescription:
-      "Professional pool chemical treatment company in Karachi offering chlorine balancing, pH adjustment, algae control and pool water purification services.",
+      "Professional pool chemical treatment company in Karachi offering chlorine balancing, pH adjustment, algae control and pool water purification services across Karachi, DHA, Memon goth, Nazimabad...",
 
     content:
       "Pool Captain provides complete swimming pool chemical treatment services including chlorine balancing, pH adjustment, algae prevention and water purification solutions. Our specialists use professional testing equipment and premium quality chemicals to maintain clean, hygienic and safe swimming pool water for homes, hotels, schools and commercial facilities.",
@@ -285,29 +285,29 @@ export const services = [
         icon: FaCheckCircle,
         title: "Safe Pool Water",
         text:
-          "Balanced chemicals for healthy swimming conditions.",
+          "Balanced chemicals for healthy swimming pool conditions.",
       },
       {
         icon: FaCheckCircle,
         title: "Algae Prevention",
         text:
-          "Professional treatment to prevent algae and bacteria growth.",
+          "Professional treatment to prevent algae and bacteria growth in your residential or commercial pool.",
       },
       {
         icon: FaCheckCircle,
         title: "Crystal Clear Results",
         text:
-          "Advanced water purification for sparkling pool water.",
+          "Advanced water purification system for swimming pool water.",
       },
     ],
 
     points: [
       "Swimming pool water treatment services",
-      "Professional chlorine balancing",
+      "Professional chlorine balancing and treatment",
       "pH testing and adjustment",
-      "Algae and bacteria prevention",
+      "Algae and bacteria prevention service",
       "Water purification and hygiene solutions",
-      "Chemical maintenance for all pool types",
+      "Chemical maintenance for all pool types (Residential / Commercial)",
     ],
   },
 
@@ -322,7 +322,7 @@ export const services = [
       "Advanced swimming pool filtration and circulation system installation services.",
 
     shortDesc:
-      "Energy-efficient pool filtration systems for clean and healthy water circulation.",
+      "Energy-efficient pool filtration systems for clean and healthy water circulation for cleaned and crystal pool water.",
 
     link: "/pool-services/filtration-systems",
 
@@ -331,7 +331,7 @@ export const services = [
     heroTitle: "Pool Filtration System Installation",
 
     heroSubtitle:
-      "Modern filtration and circulation systems for clean, hygienic and energy-efficient swimming pools.",
+      "Filtration and circulation systems for clean, hygienic and energy-efficient swimming pools.",
 
     badge: "Filtration Experts",
 
@@ -339,7 +339,7 @@ export const services = [
       "Swimming Pool Filtration Systems Installation Karachi",
 
     seoDescription:
-      "Professional swimming pool filtration system installation services in Karachi including pumps, sand filters, circulation systems and water purification.",
+      "Professional swimming pool filtration system installation services in Karachi including pumps, sand filters, sand media for pool pump resurculation.",
 
     content:
       "Pool Captain installs advanced swimming pool filtration systems and circulation units for residential and commercial swimming pools. We provide sand filters, pumps, piping systems and water purification solutions that improve water quality, energy efficiency and long-term pool performance. Our systems are designed for maximum cleanliness and reduced maintenance costs.",
@@ -348,9 +348,9 @@ export const services = [
       "Sand Filter Installation",
       "Pool Pump Installation",
       "Water Circulation Systems",
-      "Energy Efficient Equipment",
+      "Energy Efficient pumps & equipment",
       "Water Purification Systems",
-      "Automatic Filtration Solutions",
+      "Design Automatic Filtration Systems",
       "Commercial Pool Systems",
       "System Upgrades & Repairs",
     ],
@@ -389,12 +389,12 @@ export const services = [
   {
     slug: "spa-jacuzzi",
 
-    title: "Spa & Jacuzzi Installation",
+    title: "Spa & Jacuzzi Construction & Installation",
 
     icon: FaSpa,
 
     desc:
-      "Luxury spa, jacuzzi and hydrotherapy system installation for residential and commercial projects.",
+      "Luxury spa, jacuzzi and hydrotherapy jets system installation for residential and commercial projects in all over Karachi, Pakistan.",
 
     shortDesc:
       "Modern spa and jacuzzi installation services with premium finishing and relaxation systems.",
@@ -403,7 +403,7 @@ export const services = [
 
     image: "/images/poolServices/spa.jpeg",
 
-    heroTitle: "Luxury Spa & Jacuzzi Installation",
+    heroTitle: "Luxury Spa & Jacuzzi Construction & Installation",
 
     heroSubtitle:
       "Premium spa and jacuzzi systems designed for comfort, wellness and luxury living.",
@@ -411,7 +411,7 @@ export const services = [
     badge: "Luxury Wellness Solutions",
 
     seoTitle:
-      "Spa & Jacuzzi Installation Services in Karachi",
+      "Spa & Jacuzzi Construction & Installation Services in Karachi",
 
     seoDescription:
       "Professional spa and jacuzzi installation company in Karachi for homes, hotels, resorts and luxury wellness projects.",
@@ -421,7 +421,7 @@ export const services = [
 
     features: [
       "Luxury Jacuzzi Installation",
-      "Hydrotherapy Systems",
+      "Hydrotherapy jets Systems",
       "Modern Spa Design",
       "LED Lighting Features",
       "Water Heating Systems",
@@ -464,12 +464,12 @@ export const services = [
   {
     slug: "equipment-supply",
 
-    title: "Pool Equipment Supply",
+    title: "Pool Equipment Supply in Karachi",
 
     icon: FaCogs,
 
     desc:
-      "Supply of premium swimming pool equipment including pumps, filters, lights and accessories.",
+      "Supply of premium swimming pool equipment & cleaning accessories including pumps, filters, lights and accessories.",
 
     shortDesc:
       "High-quality swimming pool equipment supply for residential and commercial pools.",

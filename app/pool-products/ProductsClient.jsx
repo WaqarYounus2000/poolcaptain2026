@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import FAQComponent from "@/components/FAQComponent";
+import {poolproductsfaqs} from "@/data/poolproductsfaqs";
 import CustomPoolSolutions from "@/components/CustomPoolSolutions";
 import { products } from "@/data/products";
 
@@ -210,7 +211,7 @@ export default function ProductsClient() {
         </p>
       </section>
 
-      <FAQComponent />
+      <FAQComponent faqs = {poolproductsfaqs} />
       <CustomPoolSolutions />
     </section>
   );

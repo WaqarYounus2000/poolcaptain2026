@@ -5,11 +5,22 @@ import InstagramGallery from "@/components/InstagramGallery";
 import { products } from "@/data/products";
 import "./page.css";
 
+import FAQComponent from "@/components/FAQComponent";
+import { poolchemicalsfaqs } from "@/data/poolchemicalsfaqs";
+
+import { chemicalData } from "@/data/chemicalData";
+import DetailsProducts from "@/components/DetailsProducts";
+
 export default async function ProductDetail({ params }) {
   const resolvedParams = await params;
-
   const product = products.find(
     (item) => item.slug === resolvedParams.slug
+  );
+
+
+
+  const productData = Object.values(chemicalData).find(
+    (item) => item.id === product.slug
   );
 
   if (!product) {
@@ -133,11 +144,37 @@ export default async function ProductDetail({ params }) {
 
           <div className="gallery">
             {/* ================= GALLERY ================= */}
-              <InstagramGallery
-                images={product.gallery || []}
-              />
+            <InstagramGallery
+              images={product.gallery || []}
+            />
           </div>
         </div>
+
+
+        {/* //////////////////// details of products /////////////////////////////////*/}
+
+
+
+
+
+
+
+
+        <div>
+          <DetailsProducts data={productData} />
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
         {/* CTA */}
         <div className="cta">
@@ -148,8 +185,15 @@ export default async function ProductDetail({ params }) {
             Contact Now <FaArrowRight />
           </Link>
         </div>
-
+        {/* {console.log("service:", product.id)} */}
       </section>
+
+
+
+
+      {/* ///////////////////// faqs //////////////////////////////// */}
+      <FAQComponent faqs={poolchemicalsfaqs} />
+
     </main>
   );
 }

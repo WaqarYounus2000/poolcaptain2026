@@ -9,7 +9,7 @@ export async function GET() {
       })
     );
 
-    console.log("S3 RAW KEYS:", data.Contents?.map(i => i.Key));
+    // console.log("S3 RAW KEYS:", data.Contents?.map(i => i.Key));
 
     const images = (data.Contents || []).map((item) => ({
       key: item.Key,

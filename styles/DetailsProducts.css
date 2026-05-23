@@ -1,0 +1,194 @@
+.details-wrapper {
+  background: #0b1220;
+  color: #eaf0ff;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+/* ================= HERO ================= */
+
+.details-hero {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.details-hero-image {
+  object-fit: cover;
+  filter: brightness(0.6) contrast(1.1);
+}
+
+.details-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at top,
+      rgba(0, 170, 255, 0.35),
+      transparent 60%
+    ),
+    linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.35));
+}
+
+.details-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  width: 90%;
+  text-align: center;
+}
+
+.details-hero-content h1 {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.details-hero-content p {
+  font-size: 18px;
+  opacity: 0.85;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* ================= LAYOUT ================= */
+
+.details-container {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 40px;
+  width: 99%;
+  max-width: 1300px;
+  margin: auto;
+  padding: 70px 0;
+}
+
+/* ================= CONTENT CARDS ================= */
+
+.details-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 25px;
+  margin-bottom: 25px;
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease;
+}
+
+.details-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0, 170, 255, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 170, 255, 0.08);
+}
+
+.details-card h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #00c2ff;
+}
+
+/* ================= LISTS ================= */
+
+.details-card ul {
+  padding-left: 20px;
+}
+
+.details-card ul li {
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+/* ================= TABLE DESIGN (IMPORTANT) ================= */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+thead {
+  background: rgba(0, 170, 255, 0.15);
+}
+
+th {
+  text-align: left;
+  padding: 14px;
+  font-size: 14px;
+  color: #00c2ff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+td {
+  padding: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+tr:hover td {
+  background: rgba(0, 170, 255, 0.06);
+}
+
+/* ================= SIDEBAR ================= */
+
+.details-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+.details-sidebar img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: 0.3s;
+}
+
+.details-sidebar img:hover {
+  transform: scale(1.02);
+}
+
+/* ================= TYPOGRAPHY ================= */
+
+.details-card p {
+  line-height: 1.7;
+  opacity: 0.9;
+  font-size: 15px;
+}
+
+/* ================= STEP STYLE ================= */
+
+.details-card b {
+  display: block;
+  margin-top: 12px;
+  color: #00c2ff;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .details-container {
+    grid-template-columns: 1fr;
+  }
+
+  .details-hero-content h1 {
+    font-size: 32px;
+  }
+
+  .details-hero {
+    height: 60vh;
+  }
+
+  .details-sidebar {
+    position: relative;
+  }
+}

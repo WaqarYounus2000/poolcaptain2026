@@ -94,8 +94,8 @@ export default function PoolCalculationClient() {
 
     pageStyle: `
       @page {
-        size: A4 landscape;
-        margin: 12mm;
+        size: A4 portrait;
+        margin: 8mm;
       }
 
       @media print {

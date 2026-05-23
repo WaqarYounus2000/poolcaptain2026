@@ -6,7 +6,8 @@ import WhyChoosePoolCaptain from "@/components/WhyChoosePoolCaptain";
 import CommercialResidentialPoolSection from "@/components/CommercialResidentialPoolSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ServiceCoverageSection from "@/components/ServiceCoverageSection.jsx";
-import FAQComponents from "@/components/FAQComponent.jsx";
+import FAQComponent from "@/components/FAQComponent";
+import {homefaqs} from "@/data/homefaqs";
 
 // ✅ SEO Metadata (VERY IMPORTANT for Google ranking)
 export const metadata = {
@@ -62,7 +63,8 @@ export default function Home() {
       <WhyChoosePoolCaptain />
       <CommercialResidentialPoolSection />
       <ServiceCoverageSection />
-      <FAQComponents />
+      <FAQComponent faqs={homefaqs} />
+      
 
       {/* WhatsApp Floating Button */}
       <WhatsAppButton />

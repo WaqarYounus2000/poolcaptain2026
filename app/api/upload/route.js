@@ -1,5 +1,6 @@
+import { NextResponse } from "next/server";
 import { PutObjectCommand } from "@aws-sdk/client-s3";
-import { s3 } from "@/lib/s3";
+import { s3 } from "@/lib/aws";
 
 export async function POST(req) {
   try {
@@ -7,12 +8,12 @@ export async function POST(req) {
     const file = formData.get("file");
 
     if (!file) {
-      return Response.json({ error: "No file" }, { status: 400 });
+      return NextResponse.json({ message: "No file found" }, { status: 400 });
     }
 
     const buffer = Buffer.from(await file.arrayBuffer());
 
-    const fileName = `gallery/${Date.now()}-${file.name}`;
+    const fileName = `${Date.now()}-${file.name}`;
 
     await s3.send(
       new PutObjectCommand({
@@ -23,14 +24,18 @@ export async function POST(req) {
       })
     );
 
-    const images =
-      (data.Contents || []).map((item) => ({
-        image: `https://${process.env.AWS_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${item.Key}`,
-      }));
+    const imageUrl = `https://${process.env.AWS_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${fileName}`;
 
-    return Response.json({ data: images, count: images.length });
-    return Response.json({ url });
-  } catch (err) {
-    return Response.json({ error: err.message }, { status: 500 });
+    return NextResponse.json({
+      message: "Uploaded successfully",
+      url: imageUrl,
+      key: fileName,
+    });
+
+  } catch (error) {
+    return NextResponse.json(
+      { message: "Upload failed", error: error.message },
+      { status: 500 }
+    );
   }
 }

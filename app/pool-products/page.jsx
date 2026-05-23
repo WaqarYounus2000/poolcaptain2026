@@ -53,7 +53,25 @@ keywords: [
   "professional pool cleaning chemicals karachi",
   "residential pool cleaning chemicals karachi",
   "commercial pool cleaning chemicals karachi",
-  "pool maintenance chemicals karachi pakistan"
+  "pool maintenance chemicals karachi pakistan",
+
+
+  // ------------------POOL PRODUCTS -----------------------
+  "swimming pool filters in karachi",
+  "swimming pool motor pumps in karachi",
+  "swimming pool cleaning accessories in karachi",
+  "swimming pool cleaning equipment in dha karachi",
+  "swimming pool lights underwater karachi pakistan",
+  "swimming pool products dealer karachi",
+  "swimming pool products shops in  karachi",
+  "swimming pool products shops near me",
+  "swimming pool equipment shops in dha karachi",
+  "pool cleaning accessories in dha karachi",
+  "pool cleaning pumps and filter in dha karachi",
+  "pool cleaning products in dha phase 8",
+  "best swimming pool products in karachi",
+  "best swimming pool accessories in dha karachi",
+  "best swimming pool filter pumps system in karachi",
 ]
 };
 
