@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import styles from "./RegisterPage.module.css";
 
 export default function RegisterPage() {
   const [form, setForm] = useState({
@@ -20,41 +21,43 @@ export default function RegisterPage() {
     });
 
     const data = await res.json();
-
     alert(data.message);
   };
 
   return (
-    <div>
-      <h1>Register</h1>
+    <div className={styles.page}>
+      <div className={styles.card}>
+        <h1 className={styles.title}>Create Account</h1>
+        <p className={styles.subtitle}>Sign up to get started</p>
 
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email"
-          onChange={(e) =>
-            setForm({
-              ...form,
-              email: e.target.value,
-            })
-          }
-        />
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <input
+            type="email"
+            placeholder="Email address"
+            className={styles.input}
+            onChange={(e) =>
+              setForm({ ...form, email: e.target.value })
+            }
+          />
 
-        <input
-          type="password"
-          placeholder="Password"
-          onChange={(e) =>
-            setForm({
-              ...form,
-              password: e.target.value,
-            })
-          }
-        />
+          <input
+            type="password"
+            placeholder="Password"
+            className={styles.input}
+            onChange={(e) =>
+              setForm({ ...form, password: e.target.value })
+            }
+          />
 
-        <button type="submit">
-          Register
-        </button>
-      </form>
+          <button type="submit" className={styles.button}>
+            Register
+          </button>
+        </form>
+
+        <p className={styles.footerText}>
+          Already have an account? <span>Login</span>
+        </p>
+      </div>
     </div>
   );
 }

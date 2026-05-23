@@ -11,17 +11,17 @@ import {
 import CustomPoolSolutions from "@/components/CustomPoolSolutions";
 import { FiInstagram, FiFacebook } from "react-icons/fi";
 
-import "./contact.css";
+import styles from "./contact.module.css";
 
 export default function ContactClient() {
   return (
-    <div className="contact">
+    <div className={styles.contact}>
 
       {/* ================= HERO ================= */}
-      <section className="hero">
-        <div className="heroGlow" />
+      <section className={styles.hero}>
+        <div className={styles.heroGlow} />
 
-        <div className="heroContent">
+        <div className={styles.heroContent}>
           <h1>Contact Pool Captain</h1>
           <p>
             Premium swimming pool construction, maintenance & water systems in Karachi.
@@ -31,11 +31,11 @@ export default function ContactClient() {
       </section>
 
       {/* ================= CARDS ================= */}
-      <section className="infoGrid">
+      <section className={styles.infoGrid}>
 
         {/* CALL CARD */}
-        <a href="tel:03008229745" className="glassCard">
-          <div className="iconBox green">
+        <a href="tel:03008229745" className={styles.glassCard}>
+          <div className={`${styles.iconBox} ${styles.green}`}>
             <FaPhoneAlt />
           </div>
 
@@ -48,9 +48,9 @@ export default function ContactClient() {
         <a
           href="https://wa.me/923002538642"
           target="_blank"
-          className="glassCard"
+          className={styles.glassCard}
         >
-          <div className="iconBox whatsapp">
+          <div className={`${styles.iconBox} ${styles.whatsapp}`}>
             <FaWhatsapp />
           </div>
 
@@ -63,9 +63,9 @@ export default function ContactClient() {
         <a
           href="https://www.google.com/maps/place/Pool+Captain+-+Sales+Swimming+Pool+Equipment,Installation,Repairs+Services+%26+Chemical+Care/@24.8097236,67.0348686,17z/data=!3m1!4b1!4m6!3m5!1s0x3eb33d502c83d4f7:0xed1aa3fbf71d85c6!8m2!3d24.8097236!4d67.0348686!16s%2Fg%2F11jj19tl4v?hl=en&entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D"
           target="_blank"
-          className="glassCard"
+          className={styles.glassCard}
         >
-          <div className="iconBox blue">
+          <div className={`${styles.iconBox} ${styles.blue}`}>
             <FaMapMarkerAlt />
           </div>
 
@@ -79,20 +79,20 @@ export default function ContactClient() {
       </section>
 
       {/* ================= SOCIAL ================= */}
-      <section className="socialRow">
+      <section className={styles.socialRow}>
 
-        <a href="https://www.facebook.com/PoolCont/photos/" target="_blank" className="socialBtn">
+        <a href="https://www.facebook.com/PoolCont/photos/" target="_blank" className={styles.socialBtn}>
           <FiFacebook /> Facebook
         </a>
 
-        <a href="https://www.instagram.com/poolcaptain0/" target="_blank" className="socialBtn">
+        <a href="https://www.instagram.com/poolcaptain0/" target="_blank" className={`${styles.socialBtn} ${styles.instagram}`}>
           <FiInstagram /> Instagram
         </a>
 
         <a
           href="https://www.google.com/search?q=pool+captain&rlz=1C1VDKB_en-GBPK1181PK1181&oq=pool+captain&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgcIARAAGI8CMgcIAhAAGI8CMgYIAxBFGDwyBggEEEUYPNIBCDE1MDBqMGo3qAIHsAIB8QW6YALjXkTAe_EFumAC415EwHs&sourceid=chrome&ie=UTF-8"
           target="_blank"
-          className="socialBtn"
+          className={styles.socialBtn}
         >
           <FaGoogle /> Google Profile
         </a>

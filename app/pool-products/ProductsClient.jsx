@@ -10,7 +10,7 @@ import {poolproductsfaqs} from "@/data/poolproductsfaqs";
 import CustomPoolSolutions from "@/components/CustomPoolSolutions";
 import { products } from "@/data/products";
 
-import "./ProductsClient.css";
+import styles from "./ProductsClient.module.css";
 
 export default function ProductsClient() {
 
@@ -25,14 +25,14 @@ export default function ProductsClient() {
   const categories = Object.keys(grouped);
 
   return (
-    <section className="servicesPage">
+    <section className={styles.servicesPage}>
 
       
 
       {/* ================= HERO ================= */}
-      <section className="servicesHeroSection">
+      <section className={styles.servicesHeroSection}>
 
-        <div className="servicesHeroImageWrapper">
+        <div className={styles.servicesHeroImageWrapper}>
           <Image
             src="/images/products/pool-product-bg.png"
             alt="Swimming Pool Products Karachi Pakistan"
@@ -43,10 +43,10 @@ export default function ProductsClient() {
           />
         </div>
 
-        <div className="servicesHeroOverlay" />
+        <div className={styles.servicesHeroOverlay} />
 
         <motion.div
-          className="servicesHeroContent"
+          className={styles.servicesHeroContent}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7 }}
@@ -57,14 +57,14 @@ export default function ProductsClient() {
       </section>
 
       {/* ================= PREMIUM CATEGORY NAV ================= */}
-      <div className="categoryNavWrapper">
-        <div className="categoryNav">
+      <div className={styles.categoryNavWrapper}>
+        <div className={styles.categoryNav}>
 
           {categories.map((cat, i) => (
             <a
               key={i}
               href={`#cat-${cat.replace(/\s+/g, "-")}`}
-              className="categoryNavItem"
+              className={styles.categoryNavItem}
             >
               {cat}
             </a>
@@ -74,9 +74,9 @@ export default function ProductsClient() {
       </div>
        {/* /////////////////////////////////// */}
       {/* ================= PREMIUM SEO SECTION ================= */}
-      <section className="seoPremiumSection">
+      <section className={styles.seoPremiumSection}>
 
-        <div className="seoContainer">
+        <div className={styles.seoContainer}>
 
           <h2>Premium Swimming Pool & Spa Equipment in Karachi</h2>
 
@@ -87,9 +87,9 @@ export default function ProductsClient() {
             resorts, and commercial swimming pool projects with long-lasting durability and premium performance.
           </p>
 
-          <div className="seoGrid">
+          <div className={styles.seoGrid}>
 
-            <div className="seoCard">
+            <div className={styles.seoCard}>
               <h3>Pool Pumps & Filtration</h3>
               <p>
                 Energy-efficient swimming pool pumps in Karachi with advanced filtration systems ensuring crystal-clear
@@ -97,7 +97,7 @@ export default function ProductsClient() {
               </p>
             </div>
 
-            <div className="seoCard">
+            <div className={styles.seoCard}>
               <h3>Pool Cleaning Equipment</h3>
               <p>
                 Professional pool cleaning tools including vacuum systems, brushes, and automatic cleaners for complete
@@ -105,7 +105,7 @@ export default function ProductsClient() {
               </p>
             </div>
 
-            <div className="seoCard">
+            <div className={styles.seoCard}>
               <h3>Heating & Heat Pumps</h3>
               <p>
                 Swimming pool heat pumps and heaters in Pakistan designed for temperature control, energy efficiency,
@@ -113,7 +113,7 @@ export default function ProductsClient() {
               </p>
             </div>
 
-            <div className="seoCard">
+            <div className={styles.seoCard}>
               <h3>Spa & Sauna Systems</h3>
               <p>
                 Luxury sauna rooms, steam generators, and hydrotherapy systems for modern wellness projects in Karachi
@@ -135,21 +135,21 @@ export default function ProductsClient() {
         <section
           key={index}
           id={`cat-${category.replace(/\s+/g, "-")}`}
-          className="productCategorySection"
+          className={styles.productCategorySection}
         >
 
           {/* CENTERED CATEGORY HEADING */}
-          <div className="categoryHeader">
+          <div className={styles.categoryHeader}>
             <h2>{category}</h2>
-            <div className="categoryLine" />
+            <div className={styles.categoryLine} />
           </div>
 
-          <div className="servicesGrid">
+          <div className={styles.servicesGrid}>
 
             {items.map((item, i) => (
               <motion.div
                 key={item.id}
-                className="serviceCard"
+                className={styles.serviceCard}
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -157,7 +157,7 @@ export default function ProductsClient() {
                 whileHover={{ y: -8 }}
               >
 
-                <div className="productImageWrapper">
+                <div className={styles.productImageWrapper}>
                   <Image
                     src={item.image}
                     alt={item.title}
@@ -166,21 +166,21 @@ export default function ProductsClient() {
                   />
                 </div>
 
-                <div className="serviceCardContent">
+                <div className={styles.serviceCardContent}>
 
-                  <span className="productCategory">
+                  <span className={styles.productCategory}>
                     {item.category}
                   </span>
 
                   <h3>{item.title}</h3>
 
-                  <p className="serviceCard-paragrah">
+                  <p className={styles.serviceCardparagrah}>
                     {item.shortDesc}
                   </p>
 
-                  <div className="productFeatures">
+                  <div className={styles.productFeatures}>
                     {item.features?.slice(0, 3).map((f, i) => (
-                      <span key={i} className="featureBadge">
+                      <span key={i} className={styles.featureBadge}>
                         ✔ {f}
                       </span>
                     ))}
@@ -188,7 +188,7 @@ export default function ProductsClient() {
 
                   <Link
                     href={`/pool-products/${item.slug}`}
-                    className="serviceBtn"
+                    className={styles.serviceBtn}
                   >
                     View Details →
                   </Link>
@@ -203,7 +203,7 @@ export default function ProductsClient() {
       ))}
 
       {/* ================= SEO ================= */}
-      <section className="servicesSEOIntro">
+      <section className={styles.servicesSEOIntro}>
         <h2>Premium Swimming Pool Products Supplier in Karachi</h2>
         <p>
           We provide high-quality swimming pool pumps, filters, chemicals, lighting,

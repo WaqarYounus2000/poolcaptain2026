@@ -12,18 +12,18 @@ import PoolServicesIntro from "@/components/PoolServicesIntro";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 import CustomPoolSolutions from "@/components/CustomPoolSolutions";
 
-import "./ServicesClient.css";
+import styles from "./ServicesClient.module.css";
 
 export default function ServicesClient() {
   return (
     <>
 
-      <section className="servicesPage">
+      <section className={styles.servicesPage}>
 
         {/* HERO SECTION */}
-        <section className="servicesHeroSection">
+        <section className={styles.servicesHeroSection}>
 
-          <div className="servicesHeroImageWrapper">
+          <div className={styles.servicesHeroImageWrapper}>
             <Image
               src="/images/poolServices/servicesHero.png"
               alt="Swimming Pool Services Karachi Pakistan"
@@ -37,10 +37,10 @@ export default function ServicesClient() {
             />
           </div>
 
-          <div className="servicesHeroOverlay"></div>
+          <div className={styles.servicesHeroOverlay}></div>
 
           <motion.div
-            className="servicesHeroContent"
+            className={styles.servicesHeroContent}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
@@ -56,7 +56,7 @@ export default function ServicesClient() {
         <PoolServicesIntro />
 
         {/* SERVICES GRID */}
-        <div className="servicesGrid">
+        <div className={styles.servicesGrid}>
 
           {services.map((item, index) => {
 
@@ -65,7 +65,7 @@ export default function ServicesClient() {
             return (
               <motion.div
                 key={index}
-                className="serviceCard"
+                className={styles.serviceCard}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -73,15 +73,15 @@ export default function ServicesClient() {
                 whileHover={{ y: -8 }}
               >
 
-                <div className="serviceIcon">
+                <div className={styles.serviceIcon}>
                   <Icon />
                 </div>
 
                 <h3>{item.title}</h3>
 
-                <p className="serviceCard-paragrah">{item.desc}</p>
+                <p className={styles.serviceCardparagrah}>{item.desc}</p>
 
-                <Link href={item.link} className="serviceBtn">
+                <Link href={item.link} className={styles.serviceBtn}>
                   View Details →
                 </Link>
 

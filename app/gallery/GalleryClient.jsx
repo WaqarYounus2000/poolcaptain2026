@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
-import "./gallery.css";
+import styles from "./gallery.module.css";
 
 export default function GalleryClient() {
   const [media, setMedia] = useState([]);
@@ -20,18 +20,22 @@ export default function GalleryClient() {
     const fetchMedia = async () => {
       try {
         const res = await fetch("/api/gallery");
+
+        // ❌ IMPORTANT: handle non-OK responses (404/500)
+        if (!res.ok) {
+          const text = await res.text();
+          console.error("API ERROR RESPONSE:", text);
+          throw new Error("API failed");
+        }
+
         const data = await res.json();
 
-        // console.log("API RESPONSE:", data);
-
         if (isMounted) {
-          setMedia(data?.data || []);
-
-          // ✅ POOL CAPTAIN IMAGE LOG (PUBLIC FOLDER)
-          // console.log("POOL CAPTAIN IMAGE:", "/images/pool-captain.png");
+          setMedia(Array.isArray(data?.data) ? data.data : []);
         }
       } catch (err) {
         console.error("FETCH ERROR:", err);
+        if (isMounted) setMedia([]);
       } finally {
         if (isMounted) setLoading(false);
       }
@@ -44,8 +48,8 @@ export default function GalleryClient() {
     };
   }, []);
 
-  const currentItem = media[selectedIndex];
-  const currentUrl = currentItem?.image || null;
+  const currentItem = media?.[selectedIndex];
+  const currentUrl = currentItem?.image || "";
 
   const isVideo = (url) => /\.(mp4|webm|ogg)$/i.test(url);
 
@@ -95,11 +99,11 @@ export default function GalleryClient() {
   };
 
   return (
-    <div className="galleryPage">
+    <div className={styles.galleryPage}>
 
       {/* HERO */}
-      <section className="galleryHero">
-        <div className="heroBadge">
+      <section className={styles.galleryHero}>
+        <div className={styles.heroBadge}>
           Premium Pool Projects & Installations
         </div>
 
@@ -114,26 +118,26 @@ export default function GalleryClient() {
       </section>
 
       {/* GRID */}
-      <section className="gallerySection">
+      <section className={styles.gallerySection}>
         {loading ? (
-          <div className="loaderGrid">
+          <div className={styles.loaderGrid}>
             {Array.from({ length: 6 }).map((_, i) => (
-              <div key={i} className="skeletonCard" />
+              <div key={i} className={styles.skeletonCard} />
             ))}
           </div>
         ) : (
-          <div className="galleryGrid">
+          <div className={styles.galleryGrid}>
             {media.map((item, i) => {
-              const url = item.image;
+              const url = item?.image || "";
               const video = isVideo(url);
 
               return (
                 <div
                   key={i}
-                  className="galleryCard"
+                  className={styles.galleryCard}
                   onClick={() => setSelectedIndex(i)}
                 >
-                  <div className="imageWrapper">
+                  <div className={styles.imageWrapper}>
 
                     {video ? (
                       <video
@@ -150,19 +154,18 @@ export default function GalleryClient() {
                         alt={`Media ${i + 1}`}
                         fill
                         sizes="100vw"
-                        className="galleryImg"
+                        className={styles.galleryImg}
                         loading="lazy"
                       />
                     )}
 
-                    {/* ✅ WATERMARK */}
-                    <div className="watermarkOverlay">
+                    <div className={styles.watermarkOverlay}>
                       <img src="/images/logo.png" alt="logo" />
                     </div>
 
                   </div>
 
-                  <div className="overlay">
+                  <div className={styles.overlay}>
                     <span>View</span>
                   </div>
                 </div>
@@ -173,13 +176,13 @@ export default function GalleryClient() {
       </section>
 
       {/* LIGHTBOX */}
-      {selectedIndex !== null && (
+      {selectedIndex !== null && media[selectedIndex] && (
         <div
-          className="lightbox"
+          className={styles.lightbox}
           onClick={() => setSelectedIndex(null)}
         >
           <div
-            className="lightboxBox"
+            className={styles.lightboxBox}
             onClick={(e) => e.stopPropagation()}
           >
             {isVideo(currentUrl) ? (
@@ -188,7 +191,7 @@ export default function GalleryClient() {
                 src={currentUrl}
                 autoPlay
                 muted={muted}
-                className="lightboxVideo"
+                className={styles.lightboxVideo}
               />
             ) : (
               <Image
@@ -196,16 +199,15 @@ export default function GalleryClient() {
                 alt="Media"
                 fill
                 sizes="100vw"
-                className="lightboxImg"
+                className={styles.lightboxImg}
               />
             )}
 
-            {/* ✅ WATERMARK LIGHTBOX */}
-            <div className="watermarkOverlay lightboxWatermark">
+            <div className={`${styles.watermarkOverlay} ${styles.lightboxWatermark}`}>
               <img src="/images/logo.png" alt="logo" />
             </div>
 
-            <div className="mediaControls">
+            <div className={styles.mediaControls}>
               <button onClick={prev}>⟨</button>
 
               {isVideo(currentUrl) && (

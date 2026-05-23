@@ -14,7 +14,7 @@ import {
 
 import CustomPoolSolutions from "@/components/CustomPoolSolutions";
 
-import "./poolcalculation.css";
+import styles from "./poolcalculation.module.css";
 
 export default function PoolCalculationClient() {
 
@@ -143,13 +143,14 @@ Tiles Area: ${tilesM} sq m
 
       {/* ================= HERO ================= */}
 
-      <section className="calculatorHero">
+      <section className={styles.calculatorHero}>
 
-        <div className="heroWaves">
+        <div className={styles.heroWaves}>
 
-          <div className="wave wave1"></div>
-          <div className="wave wave2"></div>
-          <div className="wave wave3"></div>
+          <div className={`${styles.wave} ${styles.wave1}`}></div>
+          <div className={`${styles.wave} ${styles.wave2}`}></div>
+          <div className={`${styles.wave} ${styles.wave3}`}></div>
+          
 
         </div>
 
@@ -160,7 +161,7 @@ Tiles Area: ${tilesM} sq m
           className="heroContent"
         >
 
-          <div className="heroBadge">
+          <div className={styles.heroBadge}>
             Pool Captain Karachi Pakistan
           </div>
 
@@ -177,26 +178,26 @@ Tiles Area: ${tilesM} sq m
 
       {/* ================= MAIN ================= */}
 
-      <section className="calculatorSection">
+      <section className={styles.calculatorSection}>
 
         <div
           ref={printRef}
-          className="calculatorContainer"
+          className={styles.calculatorContainer}
         >
 
           {/* ================= WATERMARK ================= */}
 
-          <div className="bgWatermark"></div>
+          <div className={styles.bgWatermark}></div>
 
-          <div className="bigTextWatermark">
+          <div className={styles.bigTextWatermark}>
             POOL CAPTAIN
           </div>
 
           {/* ================= HEADER ================= */}
 
-          <div className="reportHeader">
+          <div className={styles.reportHeader}>
 
-            <div className="reportTitle">
+            <div className={styles.reportTitle}>
 
               <h2>
                 Swimming Pool Calculator
@@ -208,7 +209,7 @@ Tiles Area: ${tilesM} sq m
 
             </div>
 
-            <div className="reportLogo">
+            <div className={styles.reportLogo}>
 
               <Image
                 src="/images/logo.png"
@@ -224,7 +225,7 @@ Tiles Area: ${tilesM} sq m
 
           {/* ================= GRID ================= */}
 
-          <div className="calculatorGrid">
+          <div className={styles.calculatorGrid}>
 
             {/* ================= LEFT ================= */}
 
@@ -232,14 +233,14 @@ Tiles Area: ${tilesM} sq m
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="glassCard formCard"
+              className={`${styles.glassCard} ${styles.formCard}`} 
             >
 
               <h3>Pool Information</h3>
 
               {/* SHAPE */}
 
-              <div className="inputGroup">
+              <div className={styles.inputGroup}>
 
                 <label>Pool Shape</label>
 
@@ -262,7 +263,7 @@ Tiles Area: ${tilesM} sq m
 
               {/* UNIT */}
 
-              <div className="inputGroup">
+              <div className={styles.inputGroup}>
 
                 <label>Measurement Unit</label>
 
@@ -285,7 +286,7 @@ Tiles Area: ${tilesM} sq m
 
               {/* LENGTH */}
 
-              <div className="inputGroup">
+              <div className={styles.inputGroup}>
 
                 <label>
                   Length ({unit === "ft" ? "ft" : "m"})
@@ -304,7 +305,7 @@ Tiles Area: ${tilesM} sq m
 
               {shape === "rectangle" && (
 
-                <div className="inputGroup">
+                <div className={styles.inputGroup}>
 
                   <label>
                     Width ({unit === "ft" ? "ft" : "m"})
@@ -322,9 +323,9 @@ Tiles Area: ${tilesM} sq m
 
               {/* DEPTH */}
 
-              <div className="inputRow">
+              <div className={styles.inputRow}>
 
-                <div className="inputGroup">
+                <div className={styles.inputGroup}>
 
                   <label>
                     Deep End ({unit === "ft" ? "ft" : "m"})
@@ -339,7 +340,7 @@ Tiles Area: ${tilesM} sq m
 
                 </div>
 
-                <div className="inputGroup">
+                <div className={styles.inputGroup}>
 
                   <label>
                     Shallow End ({unit === "ft" ? "ft" : "m"})
@@ -358,38 +359,38 @@ Tiles Area: ${tilesM} sq m
 
               {/* ================= SUMMARY ================= */}
 
-              <div className="measurementSummary">
+              <div className={styles.measurementSummary}>
 
                 <h4>Measurement Summary</h4>
 
-                <div className="summaryRow">
+                <div className={styles.summaryRow}>
                   <span>Pool Shape</span>
                   <b>{shape}</b>
                 </div>
 
-                <div className="summaryRow">
+                <div className={styles.summaryRow}>
                   <span>Measurement Unit</span>
                   <b>{unit === "ft" ? "Feet" : "Meters"}</b>
                 </div>
 
-                <div className="summaryRow">
+                <div className={styles.summaryRow}>
                   <span>Length</span>
                   <b>{length || 0}</b>
                 </div>
 
                 {shape === "rectangle" && (
-                  <div className="summaryRow">
+                  <div className={styles.summaryRow}>
                     <span>Width</span>
                     <b>{width || 0}</b>
                   </div>
                 )}
 
-                <div className="summaryRow">
+                <div className={styles.summaryRow}>
                   <span>Deep End</span>
                   <b>{deep || 0}</b>
                 </div>
 
-                <div className="summaryRow">
+                <div className={styles.summaryRow}>
                   <span>Shallow End</span>
                   <b>{shallow || 0}</b>
                 </div>
@@ -409,9 +410,9 @@ Tiles Area: ${tilesM} sq m
 
               <h3>Engineering Report</h3>
 
-              <div className="resultItem">
+              <div className={styles.resultItem}>
 
-                <div className="left">
+                <div className={styles.left}>
                   <FaRulerCombined />
                   <span>Average Depth</span>
                 </div>
@@ -420,9 +421,9 @@ Tiles Area: ${tilesM} sq m
 
               </div>
 
-              <div className="resultItem featured">
+              <div className={`${styles.resultItem} ${styles.featured}`}>
 
-                <div className="left">
+                <div className={styles.left}>
                   <FaWater />
                   <span>UK Gallons</span>
                 </div>
@@ -431,9 +432,9 @@ Tiles Area: ${tilesM} sq m
 
               </div>
 
-              <div className="resultItem">
+              <div className={styles.resultItem}>
 
-                <div className="left">
+                <div className={styles.left}>
                   <FaWater />
                   <span>Pool Volume</span>
                 </div>
@@ -442,9 +443,9 @@ Tiles Area: ${tilesM} sq m
 
               </div>
 
-              <div className="resultItem">
+              <div className={styles.resultItem}>
 
-                <div className="left">
+                <div className={styles.left}>
                   <FaWater />
                   <span>Water Capacity</span>
                 </div>
@@ -453,9 +454,9 @@ Tiles Area: ${tilesM} sq m
 
               </div>
 
-              <div className="resultItem">
+              <div className={styles.resultItem}>
 
-                <div className="left">
+                <div className={styles.left}>
                   <FaRulerCombined />
                   <span>Tiles Area (sq ft)</span>
                 </div>
@@ -464,9 +465,9 @@ Tiles Area: ${tilesM} sq m
 
               </div>
 
-              <div className="resultItem">
+              <div className={styles.resultItem}>
 
-                <div className="left">
+                <div className={styles.left}>
                   <FaRulerCombined />
                   <span>Tiles Area (sq m)</span>
                 </div>
@@ -477,10 +478,10 @@ Tiles Area: ${tilesM} sq m
 
               {/* ================= BUTTONS ================= */}
 
-              <div className="actionButtons">
+              <div className={styles.actionButtons}>
 
                 <button
-                  className="downloadBtn"
+                  className={styles.downloadBtn}
                   onClick={handlePrint}
                 >
 
@@ -490,7 +491,7 @@ Tiles Area: ${tilesM} sq m
                 </button>
 
                 <button
-                  className="whatsappBtn"
+                  className={styles.whatsappBtn}
                   onClick={handleWhatsApp}
                 >
 
@@ -507,7 +508,7 @@ Tiles Area: ${tilesM} sq m
 
           {/* ================= FOOTER ================= */}
 
-          <div className="reportFooter">
+          <div className={styles.reportFooter}>
 
             Pool Captain Karachi Pakistan •
             Professional Swimming Pool Engineering Report
