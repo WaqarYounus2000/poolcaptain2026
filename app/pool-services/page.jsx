@@ -1,4 +1,6 @@
 import ServicesClient from "./ServicesClient";
+import connectDB from "../../lib/mongodb";
+import Service from "../../models/Service";
 
 export const metadata = {
   title:
@@ -59,6 +61,15 @@ export const metadata = {
   },
 };
 
-export default function ServicesPage() {
-  return <ServicesClient />;
+export default async function ServicesPage() {
+  await connectDB();
+
+  const services = await Service.find({}).lean();
+
+  const serializedServices = services.map((service) => ({
+    ...service,
+    _id: service._id.toString(),
+  }));
+
+  return <ServicesClient services={serializedServices} />;
 }

@@ -242,3 +242,87 @@
     font-size: 14px;
   }
 }
+
+
+.servicesGrid {
+  padding: 40px 70px; /* side space from screen edges */
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  gap: 28px;
+
+  align-items: stretch;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 1200px) {
+  .servicesGrid {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 30px 50px;
+  }
+}
+
+@media (max-width: 900px) {
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 25px 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .servicesGrid {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 20px;
+  }
+}
+
+
+.sectionHeader {
+  padding: 60px 70px 20px 70px;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sectionHeader h2 {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #111827;
+  margin-bottom: 14px;
+  letter-spacing: -0.5px;
+}
+
+.sectionHeader p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #6b7280;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .sectionHeader {
+    padding: 40px 30px 10px 30px;
+  }
+
+  .sectionHeader h2 {
+    font-size: 2rem;
+  }
+
+  .sectionHeader p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .sectionHeader h2 {
+    font-size: 1.6rem;
+  }
+
+  .sectionHeader p {
+    font-size: 0.9rem;
+  }
+}

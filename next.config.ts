@@ -7,6 +7,15 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "poolcaptain2026.s3.ap-southeast-2.amazonaws.com",
       },
+      {
+        protocol: "https",
+        hostname: "poolproducts.s3.ap-southeast-2.amazonaws.com",
+      },
+      {
+        protocol: "https",
+        hostname: "poolservicesimages.s3.ap-southeast-2.amazonaws.com",
+        
+      },
     ],
   },
 };

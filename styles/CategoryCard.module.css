@@ -1,0 +1,89 @@
+.cardLink {
+  text-decoration: none;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #fff;
+  transition: 0.4s ease;
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.imageWrapper {
+  position: relative;
+  height: 320px;
+}
+
+.image {
+  object-fit: cover;
+  transition: 0.7s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.08);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.1)
+    );
+}
+
+.content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px;
+  color: white;
+}
+
+.content h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.content p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 20px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 12px 20px;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.15);
+
+  backdrop-filter: blur(10px);
+
+  font-weight: 700;
+
+  transition: 0.3s ease;
+}
+
+.card:hover .button {
+  background: white;
+  color: #111827;
+}

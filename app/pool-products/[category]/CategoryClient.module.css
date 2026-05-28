@@ -1,0 +1,299 @@
+/* ================= WRAPPER ================= */
+.wrapper {
+  padding: 60px 5%;
+  background: #0b1220;
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* ================= TITLE ================= */
+.title {
+  font-size: 42px;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-bottom: 40px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+.title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  margin: 12px auto 0;
+  border-radius: 10px;
+}
+
+/* ================= GRID ================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* ================= CARD ================= */
+.card {
+  background: #111a2e;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+/* ================= IMAGE ================= */
+.imageBox {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.imageBox img {
+  transition: transform 0.5s ease;
+}
+
+.card:hover .imageBox img {
+  transform: scale(1.1);
+}
+
+/* ================= CONTENT ================= */
+.content {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #140101;
+}
+
+.content p {
+  font-size: 14px;
+  color: #b5c3d6;
+  line-height: 1.5;
+}
+
+/* ================= FEATURES LIST ================= */
+.content ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.content ul li {
+  font-size: 13px;
+  color: #9fb3c8;
+  margin-bottom: 6px;
+  position: relative;
+  padding-left: 18px;
+}
+
+.content ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #00c6ff;
+  font-size: 12px;
+}
+
+/* ================= BUTTON ================= */
+.btn {
+  margin-top: auto;
+  display: inline-block;
+  text-align: center;
+  padding: 10px 15px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  opacity: 0.85;
+  transform: scale(1.03);
+}
+
+/* ================= EMPTY STATE ================= */
+.wrapper p {
+  text-align: center;
+  color: #aaa;
+  font-size: 16px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .title {
+    font-size: 30px;
+  }
+
+  .imageBox {
+    height: 180px;
+  }
+}
+
+.wrapper {
+  padding: 60px 8%;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 800;
+  text-transform: capitalize;
+  color: #0f172a;
+}
+
+.subtitle {
+  color: #64748b;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.12);
+}
+
+/* IMAGE */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  background: #e2e8f0;
+}
+
+.image {
+  object-fit: cover;
+}
+
+/* CONTENT */
+.content {
+  padding: 18px;
+}
+
+.productTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.desc {
+  font-size: 14px;
+  color: #64748b;
+  margin-top: 8px;
+  min-height: 40px;
+}
+
+/* TAGS */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px 0;
+}
+
+.tag {
+  font-size: 11px;
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+/* BUTTON */
+.button {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #0ea5e9, #2563eb);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+.emptyBox {
+  text-align: center;
+  padding: 80px;
+  color: #64748b;
+}
+
+.seoHero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border-radius: 18px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  margin-bottom: 40px;
+}
+
+.seo_title {
+  font-size: 34px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+
+  max-width: 900px;
+}
+
+.subtitle {
+  margin-top: 12px;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+
+  max-width: 800px;
+}

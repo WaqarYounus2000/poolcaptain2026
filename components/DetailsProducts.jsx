@@ -2,40 +2,36 @@
 
 import Image from "next/image";
 import { useEffect } from "react";
+import { FaCheckCircle } from "react-icons/fa";
 import "../styles/DetailsProducts.css";
 
 export default function DetailsProducts({ data }) {
   if (!data) return <h1>Product Not Found</h1>;
 
-  const fallbackImage = "/images/products/placeholder.jpg";
-
   const safeImage =
     typeof data?.image === "string" && data.image.trim()
       ? data.image
-      : fallbackImage;
+      : "";
 
-  const safeSideImage =
-    typeof data?.sideImage === "string" && data.sideImage.trim()
-      ? data.sideImage
-      : fallbackImage;
-
-  // ✅ META TAGS (SEO)
   useEffect(() => {
-    if (data?.metaTitle) {
-      document.title = data.metaTitle;
+    // ✅ TITLE
+    if (data?.seoTitle || data?.title) {
+      document.title = data.seoTitle || data.title;
     }
 
-    if (data?.metaDescription) {
+    // ✅ DESCRIPTION
+    if (data?.seoDesc) {
       let meta = document.querySelector("meta[name='description']");
       if (!meta) {
         meta = document.createElement("meta");
         meta.name = "description";
         document.head.appendChild(meta);
       }
-      meta.content = data.metaDescription;
+      meta.content = data.seoDesc;
     }
 
-    if (data?.keywords) {
+    // ✅ KEYWORDS
+    if (data?.keywords?.length) {
       let kw = document.querySelector("meta[name='keywords']");
       if (!kw) {
         kw = document.createElement("meta");
@@ -44,172 +40,123 @@ export default function DetailsProducts({ data }) {
       }
       kw.content = data.keywords.join(", ");
     }
+
+    // ✅ OG TITLE
+    let ogTitle = document.querySelector("meta[property='og:title']");
+    if (!ogTitle) {
+      ogTitle = document.createElement("meta");
+      ogTitle.setAttribute("property", "og:title");
+      document.head.appendChild(ogTitle);
+    }
+    ogTitle.content = data.seoTitle || data.title;
+
+    // ✅ OG DESC
+    let ogDesc = document.querySelector("meta[property='og:description']");
+    if (!ogDesc) {
+      ogDesc = document.createElement("meta");
+      ogDesc.setAttribute("property", "og:description");
+      document.head.appendChild(ogDesc);
+    }
+    ogDesc.content = data.seoDesc || "";
+
   }, [data]);
 
-  const renderTable = (table) => {
-    if (!table?.headers || !table?.rows) return null;
-
-    return (
-      <div className="details-card">
-        <table>
-          <thead>
-            <tr>
-              {table.headers.map((h, i) => (
-                <th key={i}>{h}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {table.rows.map((row, i) => (
-              <tr key={i}>
-                {row.map((cell, j) => (
-                  <td key={j}>{cell}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    );
-  };
-
-  const renderList = (title, items) => {
-    if (!items?.length) return null;
-
-    return (
-      <div className="details-card">
-        <h2>{title}</h2>
-        <ul>
-          {items.map((item, i) => (
-            <li key={i}>{item}</li>
-          ))}
-        </ul>
-      </div>
-    );
-  };
-
-  const renderSteps = () => {
-    if (!data.treatmentSteps?.length) return null;
-
-    return (
-      <div className="details-card">
-        <h2>Treatment Steps</h2>
-        {data.treatmentSteps.map((step, i) => (
-          <div key={i} className="step-box">
-            <b>
-              {step.step}. {step.title}
-            </b>
-            <p>{step.description}</p>
-          </div>
-        ))}
-      </div>
-    );
-  };
-
-  const renderDosage = () => {
-    if (!data.dosageGuide?.length) return null;
-
-    const keys = Object.keys(data.dosageGuide[0]);
-
-    return (
-      <div className="details-card">
-        <h2>Dosage Guide</h2>
-        <table>
-          <thead>
-            <tr>
-              {keys.map((k, i) => (
-                <th key={i}>{k}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {data.dosageGuide.map((row, i) => (
-              <tr key={i}>
-                {keys.map((k, j) => (
-                  <td key={j}>{row[k]}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    );
-  };
-
   return (
-    <div className="details-wrapper">
+    <div className="dp-wrapper">
 
-      {/* HERO */}
-      <div className="details-hero">
-        <Image
-          src={safeImage}
-          alt={data.title}
-          fill
-          className="details-hero-image"
-        />
-        <div className="details-overlay" />
-        <div className="details-hero-content">
-          <h1>{data.title}</h1>
-          <p>{data.shortDescription}</p>
-        </div>
-      </div>
+      {/* ================= HERO ================= */}
+      <section className="dp-hero">
 
-      <div className="details-container">
-
-        <div className="details-content">
-
-          <div className="details-card">
-            <h2>Introduction</h2>
-            <p>{data.introduction}</p>
-          </div>
-
-          {renderList("Why Use", data.whyUse)}
-
-          {data.recommendedLevel && (
-            <div className="details-card">
-              <h2>Recommended Level</h2>
-              <p>{data.recommendedLevel}</p>
-            </div>
-          )}
-
-          {data.idealRange && (
-            <div className="details-card">
-              <h2>Ideal Range</h2>
-              <p>{data.idealRange}</p>
-            </div>
-          )}
-
-          {renderSteps()}
-
-          {renderTable(data.chlorineTypes)}
-          {renderTable(data.waterConditionTable)}
-          {renderTable(data.algaeComparisonTable)}
-          {renderTable(data.safetyTable)}
-          {renderTable(data.conditionTable)}
-          {renderTable(data.problemTable)}
-
-          {renderDosage()}
-
-          {renderList("Expert Tips", data.expertTips)}
-          {renderList("Common Mistakes", data.commonMistakes)}
-
-          <div className="details-card">
-            <h2>Conclusion</h2>
-            <p>{data.conclusion}</p>
-          </div>
-
-        </div>
-
-        <aside className="details-sidebar">
+        <div className="dp-hero-image">
           <Image
-            src={safeSideImage}
+            src={safeImage}
             alt={data.title}
-            width={400}
-            height={400}
+            fill
+            priority
           />
-        </aside>
+        </div>
 
-      </div>
+        <div className="dp-hero-content">
+
+          <span className="dp-badge">{data.category}</span>
+
+          <h1>{data.heroTitle || data.title}</h1>
+
+          <p>{data.heroDesc || data.shortDesc}</p>
+
+          {/* QUICK SEO TAGS */}
+          {data.keywords?.length > 0 && (
+            <div className="dp-tags">
+              {data.keywords.slice(0, 6).map((k, i) => (
+                <span key={i}>{k}</span>
+              ))}
+            </div>
+          )}
+
+        </div>
+      </section>
+
+      {/* ================= SEO CONTENT ================= */}
+      <section className="dp-content">
+
+        <div className="dp-card">
+          <h2>Overview</h2>
+          <p>{data.seoDesc}</p>
+        </div>
+
+        {/* FEATURES */}
+        {data.features?.length > 0 && (
+          <div className="dp-card">
+            <h2>Key Features</h2>
+            <div className="dp-grid">
+              {data.features.map((item, i) => (
+                <div key={i} className="dp-item">
+                  <FaCheckCircle />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* SPECIFICATIONS */}
+        {data.specifications?.length > 0 && (
+          <div className="dp-card dark">
+            <h2>Specifications</h2>
+            <div className="dp-grid">
+              {data.specifications.map((item, i) => (
+                <div key={i} className="dp-item">
+                  <FaCheckCircle />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* BENEFITS */}
+        {data.benefits?.length > 0 && (
+          <div className="dp-card">
+            <h2>Benefits</h2>
+            <div className="dp-grid">
+              {data.benefits.map((item, i) => (
+                <div key={i} className="dp-item">
+                  <FaCheckCircle />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+      </section>
+
+      {/* ================= KEYWORDS SECTION ================= */}
+      <section className="dp-keywords">
+        <h3>SEO Keywords</h3>
+        <p>{data.keywords?.join(", ")}</p>
+      </section>
+
     </div>
   );
 }

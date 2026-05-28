@@ -34,37 +34,37 @@ const products = [
   {
     title: "Swimming Pool Pumps",
     desc: "High-performance swimming pool pumps for efficient water circulation and energy saving.",
-    img: "/images/products/laswim-pump.png",
+    img: "https://poolproducts.s3.ap-southeast-2.amazonaws.com/lx-pump.png",
     icon: <SettingsInputComponentIcon />,
   },
   {
     title: "Pool Sand Filters",
     desc: "Premium quality pool filtration systems for crystal clear and hygienic swimming pool water.",
-    img: "/images/products/laswim-filter.png",
+    img: "https://poolproducts.s3.ap-southeast-2.amazonaws.com/fivestar-filter-2.png",
     icon: <WaterIcon />,
   },
   {
     title: "Pool Chemicals",
     desc: "Professional pool chemicals for water treatment, chlorine balancing and algae control.",
-    img: "/images/products/chemicals.jpeg",
+    img: "https://poolproducts.s3.ap-southeast-2.amazonaws.com/pool-chemicals/chemical-cover.png",
     icon: <OpacityIcon />,
   },
   {
     title: "Pool Underwater Lights",
     desc: "Modern LED underwater pool lights for luxury swimming pool lighting solutions.",
-    img: "/images/products/pool-lights.png",
+    img: "https://poolproducts.s3.ap-southeast-2.amazonaws.com/lights/light-rgb.png",
     icon: <HighlightIcon />,
   },
   {
     title: "Pool Cleaning Equipment",
     desc: "Advanced pool cleaning accessories and maintenance tools for residential and commercial pools.",
-    img: "/images/products/cleaning.png",
+    img: "https://poolproducts.s3.ap-southeast-2.amazonaws.com/cleaning-products/pool-cleaning-cover.png",
     icon: <HighlightIcon />,
   },
   {
     title: "Pool Ladders & Accessories",
     desc: "Stainless steel swimming pool ladders and premium accessories for safety and durability.",
-    img: "/images/products/pool-ladder.png",
+    img: "https://poolproducts.s3.ap-southeast-2.amazonaws.com/pool-accessories/pool-accessories-cover.png",
     icon: <HighlightIcon />,
   },
 ];

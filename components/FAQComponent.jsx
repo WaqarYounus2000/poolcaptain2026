@@ -7,7 +7,7 @@ import { FaChevronDown, FaQuestionCircle } from "react-icons/fa";
 
 import "../styles/faqComponent.css";
 
-export default function FAQComponent({ faqs = [] }) {
+export default function FAQComponent({ faqs }) {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleFAQ = (index) => {
@@ -38,7 +38,7 @@ export default function FAQComponent({ faqs = [] }) {
 
       <div className="faq_container">
 
-        {faqs.map((faq, index) => (
+        {Array.isArray(faqs) && faqs.map((faq, index) => (
 
           <motion.div
             key={index}

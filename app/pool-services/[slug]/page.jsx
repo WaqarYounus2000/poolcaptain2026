@@ -1,22 +1,48 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import connectDB from "@/lib/mongodb";
 import {
   FaArrowRight,
   FaCheckCircle,
 } from "react-icons/fa";
+import * as Icons from "react-icons/fa";
 
-import { services } from "@/data/services";
+import Service from "@/models/Service";
+import FAQComponent from "@/components/FAQComponent";
 
 import "./page.css";
 
+/* =========================
+   SEO (FIXED)
+========================= */
+export async function generateMetadata({ params }) {
+  const Tem = await params
+  await connectDB();
+
+  const service = await Service.findOne({
+    slug: Tem.slug,
+  });
+
+  return {
+    title: service?.seoTitle || service?.title,
+    description: service?.seoDescription || service?.desc,
+    keywords: service?.seoKeywords?.join(", "),
+  };
+}
+
+/* =========================
+   PAGE
+========================= */
 export default async function ServiceDetail({ params }) {
+const resolvedParams = await params
+  await connectDB();
 
-  const resolvedParams = await params;
+  const service = await Service.findOne({
+    slug: resolvedParams.slug,
+  });
 
-  const service = services.find(
-    (item) => item.slug === resolvedParams.slug
-  );
+  const faqsData = service.faqs
 
   if (!service) {
     return <h1>Service Not Found</h1>;
@@ -36,35 +62,26 @@ export default async function ServiceDetail({ params }) {
           className="serviceHeroImage"
         />
 
-        {/* OVERLAY */}
         <div className="serviceHeroOverlay" />
 
-        {/* CONTENT */}
         <div className="serviceHeroContentWrapper">
 
           <div className="serviceHeroContent">
 
-            {/* BADGE */}
             <span className="serviceBadge">
               {service.badge}
             </span>
 
-            {/* TITLE */}
             <h1>
-              {service.heroTitle || service.title}
+              {service.heroTitle}
             </h1>
 
-            {/* SUBTITLE */}
             <p>
               {service.heroSubtitle}
             </p>
 
-            {/* BUTTON */}
-            <Link
-              href="/contact"
-              className="serviceHeroBtn"
-            >
-              Get Free Consultation
+            <Link href="/contact" className="serviceHeroBtn">
+              {service.ctaButton}
               <FaArrowRight />
             </Link>
 
@@ -79,115 +96,124 @@ export default async function ServiceDetail({ params }) {
         {/* TOP GRID */}
         <div className="serviceTopGrid">
 
-          {/* LEFT CONTENT */}
           <div>
 
-            <span className="serviceMiniTitle">
-              Premium Pool Services
-            </span>
+           
 
             <h2 className="serviceMainHeading">
               {service.title}
             </h2>
 
+             <span className="serviceMiniTitle">
+              {service.shortDesc}
+            </span>
+
             <p className="serviceContentText">
               {service.content}
             </p>
 
+            <p className="serviceContentText">
+              {service.extraContent}
+            </p>
+
           </div>
 
-          {/* RIGHT CARD */}
+          {/* FEATURES */}
           <div className="serviceFeatureCard">
 
-            <h3>
-              Key Features
-            </h3>
+            <h3>Key Features</h3>
 
             <div className="serviceFeatureList">
 
               {service.features?.map((feature, index) => (
-                <div
-                  key={index}
-                  className="serviceFeatureItem"
-                >
-
+                <div key={index} className="serviceFeatureItem">
                   <FaCheckCircle className="featureIcon" />
-
-                  <span>
-                    {feature}
-                  </span>
-
+                  <span>{feature}</span>
                 </div>
               ))}
 
             </div>
 
           </div>
+
         </div>
 
         {/* HIGHLIGHTS */}
         <div className="serviceHighlights">
 
-          <h2>
-            Why Choose Our Services
-          </h2>
+          <h2>Why Choose Our Services</h2>
 
           <div className="serviceHighlightsGrid">
 
             {service.highlights?.map((item, index) => {
 
-              const Icon = item.icon;
+              const Icon = Icons[item.icon] || FaCheckCircle;
 
               return (
-                <div
-                  key={index}
-                  className="highlightCard"
-                >
+                <div key={index} className="highlightCard">
 
                   <div className="highlightIcon">
                     <Icon />
                   </div>
 
-                  <h3>
-                    {item.title}
-                  </h3>
+                  <h3>{item.title}</h3>
 
-                  <p>
-                    {item.text}
-                  </p>
+                  <p>{item.text}</p>
 
                 </div>
               );
             })}
-
           </div>
         </div>
 
-        {/* BULLET POINTS */}
+        {/* POINTS */}
         <div className="serviceSolutions">
 
-          <h2>
-            Our Service Solutions
-          </h2>
+          <h2>Our Service Solutions</h2>
 
           <div className="serviceSolutionsGrid">
 
             {service.points?.map((point, index) => (
-              <div
-                key={index}
-                className="solutionItem"
-              >
-
+              <div key={index} className="solutionItem">
                 <FaCheckCircle className="solutionIcon" />
-
-                <p>
-                  {point}
-                </p>
-
+                <p>{point}</p>
               </div>
             ))}
 
           </div>
+        </div>
+
+        {/* SERVICE AREAS */}
+        <div className="serviceAreas">
+
+          <h2>Service Areas</h2>
+
+          <div className="areasGrid">
+
+            {service.serviceAreas?.map((area, index) => (
+              <span key={index} className="areaBadge">
+                {area}
+              </span>
+            ))}
+
+          </div>
+
+        </div>
+
+        {/* FAQ */}
+        <FAQComponent faqs={JSON.parse(JSON.stringify(service?.faqs || []))} />
+
+        {/* CTA */}
+        <div className="serviceCTA">
+
+          <h2>{service.ctaTitle}</h2>
+
+          <p>{service.ctaText}</p>
+
+          <Link href="/contact" className="serviceHeroBtn">
+            {service.ctaButton}
+            <FaArrowRight />
+          </Link>
 
         </div>
 

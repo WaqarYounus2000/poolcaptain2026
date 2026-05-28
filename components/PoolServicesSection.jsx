@@ -24,43 +24,30 @@ const services = [
   {
     title: "Pool Construction",
     desc: "Professional swimming pool construction in Karachi for homes, villas & commercial projects.",
-    img: "/images/poolServices/construction.jpeg",
+    img: "https://poolservicesimages.s3.ap-southeast-2.amazonaws.com/pool-construction.jpeg",
   },
   {
     title: "Pool Installation",
     desc: "Complete swimming pool installation with modern engineering & waterproof systems.",
-    img: "/images/poolServices/installation.jpeg",
+    img: "https://poolservicesimages.s3.ap-southeast-2.amazonaws.com/pool-installation.jpeg",
   },
   {
     title: "Pool Repair Services",
     desc: "Leak fixing, crack repair & structural restoration for all pool types.",
-    img: "/images/poolServices/repair.jpeg",
+    img: "https://poolservicesimages.s3.ap-southeast-2.amazonaws.com/pool-repair.jpeg",
   },
   {
     title: "Pool Maintenance",
     desc: "Weekly & monthly pool cleaning, water balancing & maintenance services.",
-    img: "/images/poolServices/maintenance.jpeg",
+    img: "https://poolservicesimages.s3.ap-southeast-2.amazonaws.com/maintenance.jpeg",
   },
   {
     title: "Pool Equipment Supply",
     desc: "High-quality pumps, motors, ladders, lights & pool accessories supply.",
-    img: "/images/poolServices/equipment.png",
+    img: "https://poolservicesimages.s3.ap-southeast-2.amazonaws.com/poolequipmentsupply.png",
   },
-  {
-    title: "Pool Chemicals",
-    desc: "Safe chlorine, balancing chemicals & water treatment solutions for pools.",
-    img: "/images/poolServices/chemicals.jpeg",
-  },
-  {
-    title: "Pool Filters",
-    desc: "Sand filters, cartridge filters & full filtration system installation.",
-    img: "/images/products/fivestar-filter.png",
-  },
-  {
-    title: "Pool Pumps",
-    desc: "Energy-efficient pool pumps for smooth water circulation systems.",
-    img: "/images/products/minder-pump.png",
-  },
+
+ 
 ];
 
 export default function PoolServicesSection() {

@@ -120,7 +120,7 @@
 
     color: #0a3d62;
 
-    font-weight: 700 !important;
+    font-weight: 800 !important;
 
 
     font-size: 42px;
@@ -308,4 +308,50 @@
         padding: 40px 25px;
     }
 
+}
+
+.serviceAreas {
+  margin-top: 60px;
+  padding: 0 70px;
+}
+
+.serviceAreas h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.areasGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.areaBadge {
+  background: #111827;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+/* CTA SECTION */
+.serviceCTA {
+  margin: 80px 70px;
+  padding: 50px;
+  background: #0f172a;
+  color: white;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.serviceCTA h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.serviceCTA p {
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 20px;
 }

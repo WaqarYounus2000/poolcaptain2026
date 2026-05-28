@@ -2,26 +2,38 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
 import InstagramGallery from "@/components/InstagramGallery";
-import { products } from "@/data/products";
 import "./page.css";
+
+import connectDB from "@/lib/mongodb";
+import Product from "@/models/Product";
 
 import FAQComponent from "@/components/FAQComponent";
 import { poolchemicalsfaqs } from "@/data/poolchemicalsfaqs";
-
-import { chemicalData } from "@/data/chemicalData";
 import DetailsProducts from "@/components/DetailsProducts";
 
+// ================= SEO METADATA =================
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+
+  await connectDB();
+
+  const product = await Product.findOne({ slug }).lean();
+
+  return {
+    title: `${product?.title || ""} ${product?.seoDesc || ""}`,
+    description: product?.seoDesc || "",
+    keywords: product?.keywords?.join(", ") || "",
+  };
+}
+
+// ================= PAGE =================
 export default async function ProductDetail({ params }) {
-  const resolvedParams = await params;
-  const product = products.find(
-    (item) => item.slug === resolvedParams.slug
-  );
+  const { slug } = await params;
 
+  await connectDB();
 
-
-  const productData = Object.values(chemicalData).find(
-    (item) => item.id === product.slug
-  );
+  // ✅ fetch from MongoDB (MAIN SOURCE)
+  const product = await Product.findOne({ slug }).lean();
 
   if (!product) {
     return (
@@ -55,7 +67,7 @@ export default async function ProductDetail({ params }) {
 
           <h1>{product.heroTitle || product.title}</h1>
 
-          <p>{product.heroDesc}</p>
+          <p>{product.heroDesc || product.shortDesc}</p>
 
           <div className="heroActions">
             <Link href="/contact" className="btnPrimary">
@@ -97,80 +109,63 @@ export default async function ProductDetail({ params }) {
         </div>
 
         {/* FEATURES */}
-        <div className="cardBlock">
-          <h3>Key Features</h3>
-
-          <div className="grid">
-            {product.features?.map((item, i) => (
-              <div key={i} className="item">
-                <FaCheckCircle />
-                <span>{item}</span>
-              </div>
-            ))}
+        {product.features?.length > 0 && (
+          <div className="cardBlock">
+            <h3>Key Features</h3>
+            <div className="grid">
+              {product.features.map((item, i) => (
+                <div key={i} className="item">
+                  <FaCheckCircle />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* SPECIFICATIONS */}
-        <div className="cardBlock dark">
-          <h3>Specifications</h3>
-
-          <div className="grid">
-            {product.specifications?.map((item, i) => (
-              <div key={i} className="item">
-                <FaCheckCircle />
-                <span>{item}</span>
-              </div>
-            ))}
+        {product.specifications?.length > 0 && (
+          <div className="cardBlock dark">
+            <h3>Specifications</h3>
+            <div className="grid">
+              {product.specifications.map((item, i) => (
+                <div key={i} className="item">
+                  <FaCheckCircle />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* BENEFITS */}
-        <div className="cardBlock">
-          <h3>Benefits</h3>
-
-          <div className="grid">
-            {product.benefits?.map((item, i) => (
-              <div key={i} className="item">
-                <FaCheckCircle />
-                <span>{item}</span>
-              </div>
-            ))}
+        {product.benefits?.length > 0 && (
+          <div className="cardBlock">
+            <h3>Benefits</h3>
+            <div className="grid">
+              {product.benefits.map((item, i) => (
+                <div key={i} className="item">
+                  <FaCheckCircle />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* GALLERY */}
-        <div className="gallerySection">
-          <h3>Product Gallery</h3>
+        {product.gallery?.length > 0 && (
+          <div className="gallerySection">
+            <h3>Product Gallery</h3>
 
-          <div className="gallery">
-            {/* ================= GALLERY ================= */}
-            <InstagramGallery
-              images={product.gallery || []}
-            />
+            <InstagramGallery images={product.gallery} />
           </div>
-        </div>
-
-
-        {/* //////////////////// details of products /////////////////////////////////*/}
+        )}
 
 
 
-
-
-
-
-
-        <div>
-          <DetailsProducts data={productData} />
-        </div>
-
-
-
-
-
-
-
-
+        {/* OPTIONAL EXTRA DETAILS COMPONENT */} 
+        {/* <DetailsProducts data={product} /> */}
 
 
 
@@ -185,13 +180,10 @@ export default async function ProductDetail({ params }) {
             Contact Now <FaArrowRight />
           </Link>
         </div>
-        {/* {console.log("service:", product.id)} */}
+
       </section>
 
-
-
-
-      {/* ///////////////////// faqs //////////////////////////////// */}
+      {/* FAQ */}
       <FAQComponent faqs={poolchemicalsfaqs} />
 
     </main>

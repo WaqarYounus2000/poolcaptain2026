@@ -1,0 +1,191 @@
+.cardLink {
+  text-decoration: none;
+  display: block;
+}
+
+/* =========================
+   GRID (kept safe, optional use)
+========================= */
+.servicesGrid {
+  padding: 40px 70px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+/* =========================
+   CARD (FIXED SIZE PREMIUM)
+========================= */
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #fff;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  transition: 0.35s ease;
+
+  height: 500px; /* fixed size */
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================
+   IMAGE
+========================= */
+.imageWrapper {
+  position: relative;
+  height: 100%;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.08);
+}
+
+/* overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.78),
+    rgba(0, 0, 0, 0.1)
+  );
+}
+
+/* =========================
+   CONTENT
+========================= */
+.content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 26px;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* =========================
+   ICON BADGE (NEW DESIGN)
+========================= */
+.iconBadge {
+  width: 46px;
+  height: 46px;
+
+  background: #ffffff;
+  color: #111827;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px; /* makes icon feel bold/filled */
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.18),
+    inset 0 2px 6px rgba(255, 255, 255, 0.8);
+
+  transition: 0.3s ease;
+}
+
+/* hover polish */
+.card:hover .iconBadge {
+  transform: scale(1.05);
+  background: #ffffff;
+}
+
+/* =========================
+   TITLE (NO OVERFLOW)
+========================= */
+.content h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0;
+
+  
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =========================
+   DESCRIPTION (LIMITED LINES)
+========================= */
+.content p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.88);
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* limit text */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.button {
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 18px;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+
+  font-weight: 700;
+  font-size: 0.85rem;
+
+  width: fit-content;
+
+  transition: 0.3s ease;
+}
+
+.card:hover .button {
+  background: #ffffff;
+  color: #111827;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1200px) {
+  .servicesGrid {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 30px 50px;
+  }
+}
+
+@media (max-width: 900px) {
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 25px 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .servicesGrid {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 20px;
+  }
+
+  .card {
+    height: 450px;
+  }
+}

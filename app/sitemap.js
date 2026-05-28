@@ -21,7 +21,7 @@ export default async function sitemap() {
   }));
 
   // ---------------------------
-  // SERVICE PAGES (MANUAL)
+  // SERVICE PAGES
   // ---------------------------
   const servicePages = [
     "pool-construction",
@@ -29,9 +29,7 @@ export default async function sitemap() {
     "pool-repair",
     "pool-chemicals",
     "filtration-systems",
-    "spa-jacuzzi",
     "equipment-supply",
-
   ];
 
   const serviceUrls = servicePages.map((slug) => ({
@@ -40,7 +38,7 @@ export default async function sitemap() {
   }));
 
   // ---------------------------
-  // BLOG PAGES (MANUAL)
+  // BLOG PAGES
   // ---------------------------
   const blogPages = [
     "how-to-maintain-swimming-pool",
@@ -54,19 +52,102 @@ export default async function sitemap() {
   }));
 
   // ---------------------------
-  // PRODUCT PAGES (MANUAL)
+  // PRODUCT CATEGORY PAGES
   // ---------------------------
-  const productPages = [
-   "minder-pool-filters",
-   "laswim-pool-filter","five-star-pool-filter","pool-heat-pumps","electric-pool-water-heater","sauna-heaters","steam-heater","cold-plunge-water-chiller","laswim-pumps"
-    ,"minder-pool-pump","leo-pump","pool-brush-nylon","pool-deep-net","pool-chlorine","algaecide","ph-plus-ph-minus","potassium-sulphate"
+  const categoryPages = [
+    "pool-pumps",
+    "pool-cleaning-accessories",
+    "pool-filters",
+    "pool-heating-systems",
+    "pool-lights",
+    "pool-chemicals",
+    "pool-accessories",
+    "sauna-steam-generators-accessories",
+    "pool-fountains",
+    "cold-plunge",
+  ];
 
-];
-
-  const productUrls = productPages.map((slug) => ({
+  const categoryUrls = categoryPages.map((slug) => ({
     url: `${baseUrl}/pool-products/${slug}`,
     lastModified: new Date(),
   }));
+
+  // ---------------------------
+  // PRODUCT PAGES (NESTED)
+  // ---------------------------
+  const products = {
+    "pool-pumps": [
+      "laswim-pumps",
+      "minder-pool-pumps",
+      "lx-pool-pumps",
+      "fivestar-pool-pumps",
+    ],
+
+    "pool-filters": [
+      "minder-pool-filter",
+      "aquant-pool-filter",
+      "laswim-pool-filter",
+      "fivestar-pool-filter",
+    ],
+
+    "pool-cleaning-accessories": [
+      "deep-net",
+      "hose-pipe",
+      "nylon-brush",
+      "telescopic-pole",
+      "test-kit",
+      "vacuum-head",
+    ],
+
+    "pool-heating-systems": [
+      "inverex-alsavo-heat-pump",
+      "coates-pool-heat-pump",
+      "power-world-heat-pump",
+      "fivestar-heat-pump",
+    ],
+
+    "pool-lights": [
+      "rgb-pool-light",
+      "warm-white-pool-light",
+      "cool-white-pool-light",
+    ],
+
+    "pool-chemicals": [
+      "pool-algaecide",
+      "pool-chlorine",
+      "pool-ph-balancer",
+      "potassium-sulphate",
+    ],
+
+    "pool-accessories": [
+      "pool-ladder",
+      "skimmer",
+      "pool-vacuum-point",
+      "pool-inlet-point",
+    ],
+
+    "sauna-steam-generators-accessories": [
+      "sauna-steam-generator",
+      "sauna-heater",
+    ],
+
+    "pool-fountains": [
+      "acrylic-pool-fountain",
+      "cobra-stainless-steel-pool-fountain",
+    ],
+
+    "cold-plunge": [
+      "cold-plunge",
+    ],
+  };
+
+  const productUrls = Object.entries(products).flatMap(
+    ([category, slugs]) =>
+      slugs.map((slug) => ({
+        url: `${baseUrl}/pool-products/${category}/${slug}`,
+        lastModified: new Date(),
+      }))
+  );
 
   // ---------------------------
   // FINAL RETURN
@@ -75,6 +156,7 @@ export default async function sitemap() {
     ...staticUrls,
     ...serviceUrls,
     ...blogUrls,
+    ...categoryUrls,
     ...productUrls,
   ];
 }

@@ -164,7 +164,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Clifton Block 02, Karachi
+                Main 26th street Phase-5 DHa, Karachi.
               </a>
             </div>
 
