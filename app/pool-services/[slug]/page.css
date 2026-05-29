@@ -79,7 +79,7 @@
     padding: 16px 30px;
     border-radius: 60px;
     text-decoration: none;
-    font-weight: 600;
+
     box-shadow: 0 10px 30px rgba(0, 119, 255, 0.35);
     transition: 0.3s ease;
 }
@@ -131,6 +131,7 @@
 
 .serviceContentText {
     font-size: 17px;
+    text-align: justify;
     line-height: 2;
     color: #555;
 }
@@ -312,7 +313,7 @@
 
 .serviceAreas {
   margin-top: 60px;
-  padding: 0 70px;
+  padding: 0 0px;
 }
 
 .serviceAreas h2 {
@@ -337,7 +338,7 @@
 
 /* CTA SECTION */
 .serviceCTA {
-  margin: 80px 70px;
+
   padding: 50px;
   background: #0f172a;
   color: white;

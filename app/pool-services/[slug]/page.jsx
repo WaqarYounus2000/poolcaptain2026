@@ -73,7 +73,7 @@ const resolvedParams = await params
             </span>
 
             <h1>
-              {service.heroTitle}
+              {service.title}
             </h1>
 
             <p>
@@ -101,7 +101,7 @@ const resolvedParams = await params
            
 
             <h2 className="serviceMainHeading">
-              {service.title}
+              {service.heroTitle}
             </h2>
 
              <span className="serviceMiniTitle">

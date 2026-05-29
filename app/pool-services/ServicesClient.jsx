@@ -16,7 +16,6 @@ export default function ServicesClient({ services }) {
   return (
     <>
 
-      {console.log(services)}
       <section className={styles.servicesPage}>
         {/* HERO SECTION */}
         <section className={styles.servicesHeroSection}>
