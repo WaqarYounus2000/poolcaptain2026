@@ -216,11 +216,13 @@
 
     .project_gallery_heading h2 {
         font-size: 30px;
+        text-align: start;
     }
 
     .project_gallery_heading p {
         font-size: 15px;
         line-height: 1.9;
+        text-align: start;
     }
 
     .project_gallery_content h3 {

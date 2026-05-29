@@ -243,11 +243,13 @@
 
     .pool_intro_heading h2 {
         font-size: 30px;
+        text-align: start   ;
     }
 
     .pool_intro_heading p {
         font-size: 15px;
         line-height: 1.9;
+        text-align: start;
     }
 
     .pool_intro_card {

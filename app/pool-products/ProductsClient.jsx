@@ -20,7 +20,7 @@ export default function ProductsClient({ categories = [] }) {
 
         <div className={styles.servicesHeroImageWrapper}>
           <Image
-            src="/images/products/pool-product-bg.png"
+            src="https://poolproducts.s3.ap-southeast-2.amazonaws.com/pool-products-cover-desktop.png"
             alt="Swimming Pool Products Karachi Pakistan"
             fill
             priority
