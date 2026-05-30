@@ -3,11 +3,9 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-import FAQComponent from "@/components/FAQComponent";
-import { poolproductsfaqs } from "@/data/poolproductsfaqs";
-import CustomPoolSolutions from "@/components/CustomPoolSolutions";
 
-import CategoryCard from "@/components/CategoryCard";
+
+
 
 import styles from "./ProductsClient.module.css";
 
@@ -191,7 +189,7 @@ export default function ProductsClient({ categories = [] }) {
       {/* //////////////////////////////////////////////////////////////////// */}
 
       {/* ================= CATEGORY PRODUCTS ================= */}
-
+{/* 
       <section className={styles.categoriesSection}>
 
         <div className={styles.categoriesContainer}>
@@ -222,7 +220,7 @@ export default function ProductsClient({ categories = [] }) {
 
         </div>
 
-      </section>
+      </section> */}
 
       {/* ================= SEO ================= */}
 
@@ -258,9 +256,7 @@ export default function ProductsClient({ categories = [] }) {
 
 
 
-      <FAQComponent faqs={poolproductsfaqs} />
-
-      <CustomPoolSolutions />
+      
 
     </section>
   );

@@ -496,3 +496,87 @@
   max-width: 1000px;
 }
 
+
+/* ================= TECHNICAL SPEC PREMIUM UI ================= */
+
+.techSpec {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* MAIN TECH CARD */
+.techCard {
+  background: linear-gradient(145deg, #0f172a, #111827);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  transition: 0.3s ease;
+}
+
+.techCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0,170,255,0.25);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
+
+/* ALTERNATE DARK CARD */
+.techCard.dark {
+  background: linear-gradient(145deg, #0b1220, #0f172a);
+}
+
+/* TITLE */
+.techCard h3 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+/* DESCRIPTION TEXT */
+.techCard p {
+  font-size: 14px;
+  color: #94a3b8;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+/* BULLET LIST */
+.techCard ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.techCard ul li {
+  
+  color: #e2e8f0;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: 0.25s ease;
+}
+
+.techCard ul li:hover {
+  background: rgba(0,170,255,0.08);
+  border-color: rgba(0,170,255,0.25);
+  transform: translateX(4px);
+}
+
+/* CHECK ICON STYLE (optional if using ✔) */
+.techCard ul li::before {
+  content: "✔";
+  color: #00aaff;
+  font-weight: bold;
+  margin-right: 8px;
+}

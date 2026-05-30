@@ -1,13 +1,19 @@
 import ServicesClient from "./ServicesClient";
 import connectDB from "../../lib/mongodb";
 import Service from "../../models/Service";
+import FAQComponent from "@/components/FAQComponent";
 
+import styles from "./ServicesClient.module.css";
+import CategoryCardServices from "@/components/CategoryCardServices";
+import BeforeAfterGallery from "@/components/BeforeAfterGallery";
+import CustomPoolSolutions from "@/components/CustomPoolSolutions";
+import { poolservicesfaqs } from "@/data/poolservicesfaqs";
 export const metadata = {
   title:
-    "Swimming Pool Services in Karachi | Pool Construction, Maintenance & Repair Pakistan",
+    "Swimming Pool Services in Karachi | Pool Construction, Pool Maintenance & Chemicals",
 
   description:
-    "Professional swimming pool services in Karachi including pool construction, maintenance, repair, renovation, leak detection, waterproofing, filtration systems, pool cleaning chemicals, chlorine treatment, algaecide services, jacuzzi installation and swimming pool equipment supply across Pakistan.",
+    "Professional swimming pool services in Karachi including pool construction, maintenance, repair, renovation, leak detection, waterproofing, filtration systems, pool cleaning chemicals.",
 
   keywords: [
     "swimming pool services Karachi",
@@ -60,16 +66,45 @@ export const metadata = {
     ],
   },
 };
-
 export default async function ServicesPage() {
   await connectDB();
 
-  const services = await Service.find({}).lean();
+  const services = await Service.find(
+    {},
+    {
+      slug: 1,
+      title: 1,
+      image: 1,
+      shortDesc: 1,
+      icon: 1,
+    }
+  ).lean();
 
-  const serializedServices = services.map((service) => ({
-    ...service,
-    _id: service._id.toString(),
-  }));
+  return (
+    <section>
 
-  return <ServicesClient services={serializedServices} />;
+      {/* SERVICES GRID */}
+      <ServicesClient />
+
+
+      <div className={styles.servicesGrid}>
+        {services.map((service) => (
+          <CategoryCardServices
+            key={service._id}
+            category={service}
+            href={`/pool-services/${service.slug}`}
+          />
+        ))}
+      </div>
+
+
+      {/* OTHER SECTIONS */}
+      <BeforeAfterGallery />
+
+      <FAQComponent faqs={poolservicesfaqs} />
+
+      <CustomPoolSolutions />
+
+    </section>
+  );
 }

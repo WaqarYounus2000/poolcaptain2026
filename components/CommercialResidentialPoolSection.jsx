@@ -65,9 +65,9 @@ export default function CommercialResidentialPoolSection() {
         {/* ================= HEADER ================= */}
         <Box className="maintenanceHeader">
 
-          <Typography className="maintenanceTitle">
+          <h2 className="maintenanceTitle">
             Commercial & Residential Swimming Pool Maintenance Services in Karachi
-          </Typography>
+          </h2>
 
           <Typography className="maintenanceSubtitle">
             Pool Captain provides professional swimming pool maintenance services in Karachi Pakistan
@@ -114,14 +114,14 @@ export default function CommercialResidentialPoolSection() {
         {/* ================= SEO CONTENT ================= */}
         <Box className="seoSection">
 
-          <Typography className="seoHeading">
+          <h3 className="seoHeading">
             Trusted Swimming Pool Maintenance Company in Karachi
-          </Typography>
+          </h3>
 
           <Typography className="seoText">
             Pool Captain is one of the leading swimming pool maintenance companies in Karachi,
             offering premium commercial and residential swimming pool maintenance services with
-            30+ years of experience. Our expert swimming pool technicians provide complete pool
+            35+ years of experience. Our expert swimming pool technicians provide complete pool
             cleaning, water treatment, filtration system servicing, pool pump maintenance,
             underwater lighting inspection, leak detection and chemical balancing solutions.
 

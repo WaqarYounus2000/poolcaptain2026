@@ -1,14 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
+
 import Image from "next/image";
-import FAQComponent from "@/components/FAQComponent";
-import { poolservicesfaqs } from "@/data/poolservicesfaqs";
-import CategoryCardServices from "@/components/CategoryCardServices";
+
+
 import PoolServicesIntro from "@/components/PoolServicesIntro";
-import BeforeAfterGallery from "@/components/BeforeAfterGallery";
-import CustomPoolSolutions from "@/components/CustomPoolSolutions";
+
 
 import styles from "./ServicesClient.module.css";
 
@@ -43,7 +41,7 @@ export default function ServicesClient({ services }) {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <h1>Swimming Pool Services in Karachi Pakistan</h1>
+            <h1>Swimming Pool Services in Karachi, Pakistan</h1>
 
             <p>
               Construction • Maintenance • Repair • Chemicals • Equipment Supply
@@ -72,7 +70,7 @@ export default function ServicesClient({ services }) {
 
         {/* SERVICES GRID */}
 
-        <div className={styles.servicesGrid}>
+        {/* <div className={styles.servicesGrid}>
           {services?.map((item, index) => {
             return (
               <motion.div
@@ -89,15 +87,10 @@ export default function ServicesClient({ services }) {
                 />
               </motion.div>
             );
-          })}
-        </div>
+          })} */}
+        {/* </div> */}
 
-        <BeforeAfterGallery />
-
-        <FAQComponent faqs={poolservicesfaqs} />
-
-        <CustomPoolSolutions />
-      </section>
+        </section>
     </>
   );
 }

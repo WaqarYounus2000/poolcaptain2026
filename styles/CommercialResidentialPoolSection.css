@@ -46,6 +46,7 @@
   font-size: 15px !important;
   color: rgba(255,255,255,0.85);
   line-height: 1.9 !important;
+ 
 }
 
 /* ================= CARD ================= */
@@ -140,6 +141,7 @@
   font-size: 20px !important;
   color: rgba(255,255,255,0.88) !important;
   line-height: 2 !important;
+  text-align: justify;
 }
 
 /* ================= BUTTON ================= */
@@ -176,6 +178,7 @@
 
   .maintenanceTitle {
     font-size: 28px !important;
+    text-align: start;
   }
 
   .maintenanceSubtitle {
@@ -194,5 +197,8 @@
 
   .seoText {
     font-size: 14px !important;
+  }
+  .maintenanceSubtitle{
+    text-align: justify;
   }
 }

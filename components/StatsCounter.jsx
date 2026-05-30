@@ -1,6 +1,6 @@
 "use client";
 import "@/styles/StatsCounter.css";
-import React from "react";
+
 import { Container, Grid, Box, Typography, Card } from "@mui/material";
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
@@ -18,13 +18,13 @@ export default function StatsCounter() {
       <Container>
 
         <Box className="statsHeader">
-          <Typography className="statsTitle">
+          <h2 className="statsTitle">
             Our Achievements in Swimming Pool Industry
-          </Typography>
+          </h2>
 
-          <Typography className="statsSub">
+          <h3 className="statsSub">
             Trusted swimming pool construction company in Karachi with proven results
-          </Typography>
+          </h3>
         </Box>
 
 

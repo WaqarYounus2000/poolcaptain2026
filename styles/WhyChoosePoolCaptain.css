@@ -16,11 +16,13 @@
     font-weight: 700 !important;
     background: linear-gradient(90deg, #0077b6, #00b4d8);
     -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text
+    -webkit-background-clip: text;
+   
 }
 
 .whySubtitle {
     margin-top: 12px;
+    
 
     line-height: 1.7;
     color: rgb(102, 102, 102);
@@ -156,6 +158,12 @@
     .whyCard {
         max-width: 100%;
         height: 220px;
+    }
+    .whyTitle{
+        text-align: start;
+    }
+    .whySubtitle{
+        text-align: justify;
     }
 }
 

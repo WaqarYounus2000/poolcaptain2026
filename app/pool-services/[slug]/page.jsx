@@ -25,8 +25,8 @@ export async function generateMetadata({ params }) {
   });
 
   return {
-    title: service?.seoTitle || service?.title,
-    description: service?.seoDescription || service?.desc,
+    title: service?.seoTitle,
+    description: service?.seoDescription,
     keywords: service?.seoKeywords?.join(", "),
   };
 }

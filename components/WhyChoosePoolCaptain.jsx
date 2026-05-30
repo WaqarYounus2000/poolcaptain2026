@@ -64,9 +64,9 @@ export default function WhyChoosePoolCaptain() {
                 {/* ================= HEADER ================= */}
                 <Box className="whyHeader">
 
-                    <Typography className="whyTitle">
+                    <h2 className="whyTitle">
                         Why Choose Pool Captain in Karachi?
-                    </Typography>
+                    </h2>
 
                     <Typography className="whySubtitle">
                         Leading swimming pool construction & maintenance company in Karachi Pakistan,
@@ -92,9 +92,9 @@ export default function WhyChoosePoolCaptain() {
                                         {item.icon}
                                     </Box>
 
-                                    <Typography className="whyCardTitle">
+                                    <h3 className="whyCardTitle">
                                         {item.title}
-                                    </Typography>
+                                    </h3>
 
                                     <Typography className="whyCardDesc">
                                         {item.desc}
@@ -111,17 +111,7 @@ export default function WhyChoosePoolCaptain() {
                 {/* ================= SEO TEXT ================= */}
                 <Box className="whySeo">
 
-                    <Typography className="seoHeading">
-                        Premium Swimming Pool Construction Company in Karachi
-                    </Typography>
-
-                    <Typography className="seoText">
-                        Pool Captain is a trusted swimming pool construction company in Karachi Pakistan,
-                        specializing in residential pools, commercial swimming pools, luxury pool designs,
-                        waterproofing, filtration systems, pumps, chemicals, maintenance and complete pool
-                        solutions. With over 35+ years of industry experience, we deliver durable, modern,
-                        and high-quality swimming pool projects that meet international standards.
-                    </Typography>
+                    
 
                 </Box>
 

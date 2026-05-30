@@ -67,9 +67,9 @@ export default function HeroSlider() {
               <div className="slide-content">
                 <h1>{slide.title}</h1>
                 <p>{slide.description}</p>
-                <Link href="/contact">
-  <button>Explore Services</button>
-</Link>
+                <Link href="/pool-services">
+                  <button>Explore Services</button>
+                </Link>
               </div>
             </div>
           </SwiperSlide>

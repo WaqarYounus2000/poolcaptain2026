@@ -12,9 +12,9 @@ import {homefaqs} from "@/data/homefaqs";
 // ✅ SEO Metadata (VERY IMPORTANT for Google ranking)
 export const metadata = {
   title:
-    "Pool Captain | Best Pool Services in Pakistan - Karachi, Lahore, Islamabad",
+    "Pool Captain | Best Pool Services in - Karachi, Pakistan",
   description:
-    "Professional swimming pool maintenance, pool cleaning, pool installation, pool repair and pool equipment services in Pakistan. Serving Karachi DHA, Behria town, Nazimabad, Lahore, Islamabad and all major cities with expert pool technicians.",
+    "Professional swimming pool maintenance, pool cleaning, pool installation, pool repair and pool equipment services in Pakistan.",
   keywords: [
     "pool services karachi",
     "pool vacuuming services near me",
@@ -23,7 +23,7 @@ export const metadata = {
     "pool services phase 4",
     "pool maintenance services phase 7",
     "swimming pool maintenance Karachi",
-    "pool cleaning karachi",
+    "pool cleaning services karachi",
     "pool repair karachi",
     "pool installation services karachi",
     "commercial pool services in karachi",

@@ -9,6 +9,7 @@ export default function CategoryCardServices({ category, href }) {
   const Icon = Icons[category?.icon];
 
   return (
+    
     <Link href={href} className={styles.cardLink}>
       <div className={styles.card}>
 
@@ -17,7 +18,9 @@ export default function CategoryCardServices({ category, href }) {
             src={category?.image}
             alt={category?.title}
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className={styles.image}
+            loading="lazy"
           />
           <div className={styles.overlay} />
         </div>

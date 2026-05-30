@@ -2,6 +2,12 @@
   text-decoration: none;
   display: block;
 }
+.servicesGrid {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 28px;
+}
 
 /* =========================
    GRID (kept safe, optional use)
@@ -118,6 +124,35 @@
   
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.servicesGrid {
+  padding: 40px 70px; /* side space from screen edges */
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  gap: 28px;
+
+  align-items: stretch;
+}
+@media (max-width: 1200px) {
+  .servicesGrid {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 30px 50px;
+  }
+}
+@media (max-width: 900px) {
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 25px 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .servicesGrid {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 20px;
+  }
 }
 
 /* =========================

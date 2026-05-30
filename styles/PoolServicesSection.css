@@ -373,10 +373,12 @@
     .mainTitle {
         font-size: 34px !important;
         line-height: 1.2 !important;
+        text-align: start;
     }
 
     .subText {
         font-size: 15px !important;
+        text-align: justify;
     }
 
     .sectionTitle {

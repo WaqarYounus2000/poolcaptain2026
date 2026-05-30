@@ -2,7 +2,6 @@
 
 import "@/styles/PoolServicesSection.css";
 
-import React from "react";
 
 
 
@@ -64,13 +63,13 @@ export default function PoolServicesSection() {
 
         <Box className="introSection">
 
-          <Typography className="miniTag">
+          <h6 className="miniTag">
             PREMIUM SWIMMING POOL SERVICES
-          </Typography>
+          </h6>
 
-          <Typography className="mainTitle">
+          <h2 className="mainTitle">
             Pool Captain Swimming Pool Services in Karachi
-          </Typography>
+          </h2>
 
           <Typography className="subText">
             Pool Captain provides complete
@@ -88,9 +87,9 @@ export default function PoolServicesSection() {
 
         <Box className="sectionHeader">
 
-          <Typography className="sectionTitle">
+          <h2 className="sectionTitle">
             Our Swimming Pool Services
-          </Typography>
+          </h2>
 
           <Typography className="sectionSubtitle">
             Luxury pool solutions with premium engineering & modern technology

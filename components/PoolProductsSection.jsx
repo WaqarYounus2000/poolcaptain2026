@@ -38,13 +38,13 @@ const products = [
     icon: <SettingsInputComponentIcon />,
   },
   {
-    title: "Pool Sand Filters",
+    title: "Swimming Pool Sand Filters",
     desc: "Premium quality pool filtration systems for crystal clear and hygienic swimming pool water.",
     img: "https://poolproducts.s3.ap-southeast-2.amazonaws.com/fivestar-filter-2.png",
     icon: <WaterIcon />,
   },
   {
-    title: "Pool Chemicals",
+    title: "Pool Cleaning Chemicals",
     desc: "Professional pool chemicals for water treatment, chlorine balancing and algae control.",
     img: "https://poolproducts.s3.ap-southeast-2.amazonaws.com/pool-chemicals/chemical-cover.png",
     icon: <OpacityIcon />,
@@ -62,7 +62,7 @@ const products = [
     icon: <HighlightIcon />,
   },
   {
-    title: "Pool Ladders & Accessories",
+    title: "Pool Equipment & Accessories",
     desc: "Stainless steel swimming pool ladders and premium accessories for safety and durability.",
     img: "https://poolproducts.s3.ap-southeast-2.amazonaws.com/pool-accessories/pool-accessories-cover.png",
     icon: <HighlightIcon />,
@@ -110,9 +110,9 @@ export default function PoolProductsSection() {
             className="heroChip"
           />
 
-          <Typography className="heroTitle">
+          <h2 className="heroTitle">
             Swimming Pool Equipment & Products in Karachi
-          </Typography>
+          </h2>
 
           <Typography className="heroSubtitle">
             Pool Captain provides premium swimming pool products in Karachi
@@ -170,9 +170,9 @@ export default function PoolProductsSection() {
 
         <Box className="sectionHeader">
 
-          <Typography className="sectionTitle">
+          <h3 className="sectionTitle">
             Our Swimming Pool Products
-          </Typography>
+          </h3>
 
           <Typography className="sectionSubtitle">
             Premium swimming pool equipment, accessories and filtration systems
@@ -238,17 +238,7 @@ export default function PoolProductsSection() {
                     {/* FEATURES */}
                     <Box className="productFeatures">
 
-                      <Box className="featureItem">
-                        ✔ Premium Quality
-                      </Box>
-
-                      <Box className="featureItem">
-                        ✔ Durable Material
-                      </Box>
-
-                      <Box className="featureItem">
-                        ✔ Energy Efficient
-                      </Box>
+                      
 
                     </Box>
 
@@ -288,9 +278,9 @@ export default function PoolProductsSection() {
 
         <Box className="seoSection">
 
-          <Typography className="seoHeading-title">
+          <h3 className="seoHeading-title">
             Trusted Swimming Pool Equipment Supplier in Karachi
-          </Typography>
+          </h3>
 
           <Typography className="seoText-paragraph">
             Pool Captain is a trusted swimming pool equipment supplier in Karachi Pakistan,

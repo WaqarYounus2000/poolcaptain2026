@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
   const seoMetaTags = category?.seoMetaTags || [];
 
   return {
-    title: `Best ${category?.name} ${category?.seo.title}, in Karachi || Swimming Pool Equipments & Cleaning Accessories - Pool Captain `, // ✅ ONLY THIS IS CHANGED
+    title: `Best ${category?.name} in Karachi - Pool Captain `,
     description:
       category?.description ||
       `Best ${categorySlug} products in Karachi, Pakistan`,

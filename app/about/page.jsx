@@ -6,11 +6,10 @@ export const metadata = {
   metadataBase: new URL("https://poolcaptain.pk"),
 
   title:
-    "About Pool Captain | Swimming Pool Company in Karachi Pakistan",
+    "About Pool Captain | Swimming Pool Company in Karachi, Pakistan",
 
   description:
-    "Pool Captain is a leading swimming pool company in Karachi Pakistan providing swimming pool construction, maintenance, renovation, jacuzzi, sauna, spa engineering, filtration systems and commercial pool solutions.",
-
+    "Pool Captain is a leading swimming pool company in Karachi providing swimming pool construction, pool maintenance, pool renovation & equipment supply",
   keywords: [
     "swimming pool company Karachi",
     "pool construction Pakistan",

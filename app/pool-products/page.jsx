@@ -1,11 +1,15 @@
 import ProductsClient from "./ProductsClient.jsx";
-
+import CategoryCard from "@/components/CategoryCard";
 import connectDB from "@/lib/mongodb";
 import Category from "@/models/Category";
 
+import FAQComponent from "@/components/FAQComponent";
+import { poolproductsfaqs } from "@/data/poolproductsfaqs";
+import CustomPoolSolutions from "@/components/CustomPoolSolutions";
+import styles from "./ProductsClient.module.css";
 export const metadata = {
   title:
-    "Swimming Pool Products in Karachi Pakistan | Pool Captain",
+    "Swimming Pool Products & Accessories in Karachi Pakistan | Pool Captain",
 
   description:
     "Premium swimming pool products in Karachi including pool pumps, filters, chemicals, underwater lights, ladders and pool cleaning accessories.",
@@ -71,20 +75,21 @@ export const metadata = {
   ],
 };
 
-// async function getCategories() {
-//   await connectDB();
-
-//   const categories = await Category.find({})
-//     .sort({ createdAt: -1 })
-//     .lean();
-
-//   return JSON.parse(JSON.stringify(categories));
-// }
 
 async function getCategories() {
   await connectDB();
 
-  const categories = await Category.find({}).lean();
+  const categories = await Category.find(
+    {},
+    {
+      _id: 1,
+      slug: 1,
+      name: 1,
+      image:1,
+      name:1,
+      shortDescription:1,
+    }
+  ).lean();
 
 
   return JSON.parse(JSON.stringify(categories));
@@ -96,7 +101,54 @@ async function getCategories() {
 export default async function PoolProductsPage() {
   const categories = await getCategories();
 
-  // console.log("to check",categories.seo)
 
-  return <ProductsClient categories={categories} />;
+
+  return (
+    <>
+      <ProductsClient categories={categories} />
+      {/* ================= CATEGORY PRODUCTS =================  */}
+
+      <section className={styles.categoriesSection}>
+
+        <div className={styles.categoriesContainer}>
+
+          <div className={styles.sectionHeading}>
+            <span>Premium Categories</span>
+
+            <h2>Explore Pool Product Categories</h2>
+
+            <p>
+              Browse our premium swimming pool
+              equipment collection in Pakistan.
+            </p>
+          </div>
+
+          <div className={styles.categoriesGrid}>
+
+            {categories.map((category) => (
+              <div
+                key={category._id}
+                id={category.slug}
+              >
+                <CategoryCard category={category} />
+              </div>
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      
+
+      <FAQComponent faqs={poolproductsfaqs} />
+
+      <CustomPoolSolutions />
+
+    </>
+
+
+  )
 }

@@ -532,6 +532,7 @@
 
 .seoHeading {
     color: #0a2540;
+    text-align: justify;
 
     font-size: 38px !important;
     font-weight: 900 !important;
@@ -540,7 +541,7 @@
 }
 .seoHeading-title{
      color: #0a2540;
-
+    
     font-size: 38px !important;
     font-weight: 900 !important;
 
@@ -557,11 +558,11 @@
 }
 .seoText-paragraph{
     margin-top: 20px !important;
-
+ 
     color: #64748b;
 
     font-size: 20px !important;
-
+text-align: justify !important;
     line-height: 2 !important;
 }
 /* ================= RESPONSIVE ================= */
@@ -592,10 +593,12 @@
 
     .heroTitle {
         font-size: 34px !important;
+        text-align: start;
     }
 
     .heroSubtitle {
         font-size: 15px !important;
+        text-align: justify;
     }
 
     .sectionTitle {
@@ -625,5 +628,10 @@
     .viewAllBtn {
         width: 100%;
         max-width: 320px;
+    }
+
+
+    .seoHeading-title{
+        text-align: start;
     }
 }

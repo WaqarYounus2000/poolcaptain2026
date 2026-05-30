@@ -9,7 +9,6 @@ import Product from "@/models/Product";
 
 import FAQComponent from "@/components/FAQComponent";
 import { poolchemicalsfaqs } from "@/data/poolchemicalsfaqs";
-import DetailsProducts from "@/components/DetailsProducts";
 
 // ================= SEO METADATA =================
 export async function generateMetadata({ params }) {
@@ -20,7 +19,7 @@ export async function generateMetadata({ params }) {
   const product = await Product.findOne({ slug }).lean();
 
   return {
-    title: `${product?.title || ""} ${product?.seoDesc || ""}`,
+    title: product?.seoTitle + " " + "- Pool Captain",
     description: product?.seoDesc || "",
     keywords: product?.keywords?.join(", ") || "",
   };
@@ -65,7 +64,7 @@ export default async function ProductDetail({ params }) {
             {product.category}
           </div>
 
-          <h1>{product.heroTitle || product.title}</h1>
+          <h1>{product.heroTitle}</h1>
 
           <p>{product.heroDesc || product.shortDesc}</p>
 
@@ -100,88 +99,153 @@ export default async function ProductDetail({ params }) {
         </div>
       </section>
 
-      {/* ================= CONTENT ================= */}
-      <section id="details" className="content">
+     {/* ================= CONTENT ================= */}
+<section id="details" className="content">
 
-        <div className="sectionHeader">
-          <h2>{product.title}</h2>
-          <p>{product.shortDesc}</p>
+  <div className="sectionHeader">
+    <h2>Technical Specification - {product.title}</h2>
+    <p>{product.shortDesc}</p>
+  </div>
+
+  {/* ================= TECHNICAL SPEC (NEW PREMIUM UI) ================= */}
+  {product?.technicalSpec && (
+    <div className="techSpec">
+
+      {/* MATERIAL CONSTRUCTION */}
+      {product.technicalSpec?.materialConstruction && (
+        <div className="techCard">
+          <h3>Material Construction</h3>
+          <p>{product.technicalSpec.materialConstruction.description}</p>
+
+          <ul>
+            {product.technicalSpec.materialConstruction.points?.map((item, i) => (
+              <li key={i}>✔ {item}</li>
+            ))}
+          </ul>
         </div>
+      )}
 
-        {/* FEATURES */}
-        {product.features?.length > 0 && (
-          <div className="cardBlock">
-            <h3>Key Features</h3>
-            <div className="grid">
-              {product.features.map((item, i) => (
-                <div key={i} className="item">
-                  <FaCheckCircle />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+      {/* DESIGN FEATURES */}
+      {product.technicalSpec?.designFeatures && (
+        <div className="techCard dark">
+          <h3>Design Features</h3>
+          <p>{product.technicalSpec.designFeatures.description}</p>
 
-        {/* SPECIFICATIONS */}
-        {product.specifications?.length > 0 && (
-          <div className="cardBlock dark">
-            <h3>Specifications</h3>
-            <div className="grid">
-              {product.specifications.map((item, i) => (
-                <div key={i} className="item">
-                  <FaCheckCircle />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* BENEFITS */}
-        {product.benefits?.length > 0 && (
-          <div className="cardBlock">
-            <h3>Benefits</h3>
-            <div className="grid">
-              {product.benefits.map((item, i) => (
-                <div key={i} className="item">
-                  <FaCheckCircle />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* GALLERY */}
-        {product.gallery?.length > 0 && (
-          <div className="gallerySection">
-            <h3>Product Gallery</h3>
-
-            <InstagramGallery images={product.gallery} />
-          </div>
-        )}
-
-
-
-        {/* OPTIONAL EXTRA DETAILS COMPONENT */} 
-        {/* <DetailsProducts data={product} /> */}
-
-
-
-
-
-        {/* CTA */}
-        <div className="cta">
-          <h2>Need Installation or Pricing?</h2>
-          <p>Get expert consultation and best price in Karachi.</p>
-
-          <Link href="/contact" className="ctaBtn">
-            Contact Now <FaArrowRight />
-          </Link>
+          <ul>
+            {product.technicalSpec.designFeatures.points?.map((item, i) => (
+              <li key={i}>✔ {item}</li>
+            ))}
+          </ul>
         </div>
+      )}
 
-      </section>
+      {/* PERFORMANCE */}
+      {product.technicalSpec?.performance && (
+        <div className="techCard">
+          <h3>Performance</h3>
+          <p>{product.technicalSpec.performance.description}</p>
+
+          <ul>
+            {product.technicalSpec.performance.points?.map((item, i) => (
+              <li key={i}>✔ {item}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {/* APPLICATION */}
+      {product.technicalSpec?.application && (
+        <div className="techCard dark">
+          <h3>Application</h3>
+          <p>{product.technicalSpec.application.description}</p>
+
+          <ul>
+            {product.technicalSpec.application.points?.map((item, i) => (
+              <li key={i}>✔ {item}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {/* DURABILITY */}
+      {product.technicalSpec?.durability && (
+        <div className="techCard">
+          <h3>Durability</h3>
+          <p>{product.technicalSpec.durability.description}</p>
+
+          <ul>
+            {product.technicalSpec.durability.points?.map((item, i) => (
+              <li key={i}>✔ {item}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+    </div>
+  )}
+
+  {/* ================= OLD SECTIONS (UNCHANGED) ================= */}
+
+  {product.features?.length > 0 && (
+    <div className="cardBlock">
+      <h3>Key Features</h3>
+      <div className="grid">
+        {product.features.map((item, i) => (
+          <div key={i} className="item">
+            <FaCheckCircle />
+            <span>{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+
+  {product.specifications?.length > 0 && (
+    <div className="cardBlock dark">
+      <h3>Specifications</h3>
+      <div className="grid">
+        {product.specifications.map((item, i) => (
+          <div key={i} className="item">
+            <FaCheckCircle />
+            <span>{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+
+  {product.benefits?.length > 0 && (
+    <div className="cardBlock">
+      <h3>Benefits</h3>
+      <div className="grid">
+        {product.benefits.map((item, i) => (
+          <div key={i} className="item">
+            <FaCheckCircle />
+            <span>{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+
+  {product.gallery?.length > 0 && (
+    <div className="gallerySection">
+      <h3>Product Gallery</h3>
+      <InstagramGallery images={product.gallery} />
+    </div>
+  )}
+
+  {/* CTA */}
+  <div className="cta">
+    <h2>Need Installation or Pricing?</h2>
+    <p>Get expert consultation and best price in Karachi.</p>
+
+    <Link href="/contact" className="ctaBtn">
+      Contact Now <FaArrowRight />
+    </Link>
+  </div>
+
+</section>
 
       {/* FAQ */}
       <FAQComponent faqs={poolchemicalsfaqs} />

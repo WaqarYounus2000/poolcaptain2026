@@ -3,7 +3,7 @@
 import "./aboutus.css";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import TimelineSection from "@/components/TimelineSection";
 import OurProcess from "@/components/OurProcess";
@@ -132,7 +132,7 @@ export default function AboutUsClient() {
                 >
                     <h1 className="aboutus_section1_h1">
                         <FaBuilding />
-                        About Us
+                        About Pool Captain
                     </h1>
                 </motion.div>
             </section>

@@ -14,6 +14,31 @@ const ProductSchema = new mongoose.Schema(
     features: [String],
     specifications: [String],
     benefits: [String],
+
+    // ✅ ADDED FIELD (technicalSpec)
+    technicalSpec: {
+      materialConstruction: {
+        description: String,
+        points: [String],
+      },
+      designFeatures: {
+        description: String,
+        points: [String],
+      },
+      performance: {
+        description: String,
+        points: [String],
+      },
+      application: {
+        description: String,
+        points: [String],
+      },
+      durability: {
+        description: String,
+        points: [String],
+      },
+    },
+
     seoTitle: String,
     seoDesc: String,
     keywords: [String],
