@@ -132,7 +132,7 @@ export default function AboutUsClient() {
                 >
                     <h1 className="aboutus_section1_h1">
                         <FaBuilding />
-                        About Pool Captain
+                        About Us
                     </h1>
                 </motion.div>
             </section>
