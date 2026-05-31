@@ -19,7 +19,7 @@ export default function ServicesClient({ services }) {
         <section className={styles.servicesHeroSection}>
           <div className={styles.servicesHeroImageWrapper}>
             <Image
-              src="https://poolservicesimages.s3.ap-southeast-2.amazonaws.com/pool-services-cover.png"
+              src="https://poolservicesimages.s3.ap-southeast-2.amazonaws.com/pool-services-cover.webp"
               alt="Swimming Pool Services Karachi Pakistan"
               fill
               priority

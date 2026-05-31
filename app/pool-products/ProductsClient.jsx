@@ -18,7 +18,7 @@ export default function ProductsClient({ categories = [] }) {
 
         <div className={styles.servicesHeroImageWrapper}>
           <Image
-            src="https://poolproducts.s3.ap-southeast-2.amazonaws.com/pool-products-cover-desktop.png"
+            src="https://poolproducts.s3.ap-southeast-2.amazonaws.com/pool-products-cover-desktop.webp"
             alt="Swimming Pool Products Karachi Pakistan"
             fill
             priority

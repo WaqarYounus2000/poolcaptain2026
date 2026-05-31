@@ -79,6 +79,7 @@ export default async function ServicesPage() {
       icon: 1,
     }
   ).lean();
+  const plainServices = JSON.parse(JSON.stringify(services));
 
   return (
     <section>
@@ -88,7 +89,7 @@ export default async function ServicesPage() {
 
 
       <div className={styles.servicesGrid}>
-        {services.map((service) => (
+        {plainServices.map((service) => (
           <CategoryCardServices
             key={service._id}
             category={service}
