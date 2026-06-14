@@ -11,13 +11,10 @@ export default function CategoryClient({ products = [], category, seo }) {
   return (
     <div className={styles.wrapper}>
 
-      {/* DEBUG (optional remove later) */}
-      {/* {console.log("products:", products[0].seoDesc, "category:", category)} */}
-
 
       {/* HERO TITLE */}
       <div className={styles.header}>
-        <h1 className={styles.title}>{title}</h1>
+        <h1 className={styles.title}>Best {title} In Karachi</h1>
         {/* <p className={styles.subtitle}>
           Premium Swimming Pool Equipment & Solutions
         </p> */}
@@ -59,6 +56,7 @@ export default function CategoryClient({ products = [], category, seo }) {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   loading="eager"
                   className={styles.image}
+                  unoptimized
                 />
               </div>
 

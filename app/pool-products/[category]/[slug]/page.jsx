@@ -54,6 +54,7 @@ export default async function ProductDetail({ params }) {
             alt={product.title}
             fill
             priority
+            unoptimized
           />
           <div className="heroOverlay" />
         </div>

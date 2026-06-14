@@ -1,6 +1,6 @@
 "use client";
+import Link from "next/link";
 
-import React from "react";
 import "@/styles/CommercialResidentialPoolSection.css";
 
 import {
@@ -82,10 +82,10 @@ export default function CommercialResidentialPoolSection() {
         <Grid
           container
           spacing={4}
-          
+
         >
           {services.map((item, i) => (
-            <Grid  xs={12} sm={6} md={4} key={i}>
+            <Grid xs={12} sm={6} md={4} key={i}>
 
               <Card className="maintenanceCard">
 
@@ -135,9 +135,12 @@ export default function CommercialResidentialPoolSection() {
             professional pool maintenance services across Karachi Pakistan.
           </Typography>
 
-          <Button className="maintenanceBtn">
-            Request Maintenance Service
-          </Button>
+
+
+            <Link className="maintenanceBtn" href='/pool-services/pool-maintenance'>
+              Request Maintenance Service
+            </Link>
+
 
         </Box>
 

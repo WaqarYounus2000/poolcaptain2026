@@ -24,6 +24,7 @@ export default function ProductsClient({ categories = [] }) {
             priority
             sizes="100vw"
             style={{ objectFit: "cover" }}
+            unoptimized
           />
         </div>
 
@@ -35,11 +36,11 @@ export default function ProductsClient({ categories = [] }) {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7 }}
         >
-          <h1>Swimming Pool Products & Equipment</h1>
+          <h1>Swimming Pool Products & Accessories In Karachi</h1>
 
           <p>
-            Premium Pumps • Filters • Chemicals •
-            Accessories • Heating Systems
+            Swimming Pool Pumps • Swimming Pool Filters • Swimming Pool Chemicals •
+            Pool Accessories • Pool Heating Systems
           </p>
         </motion.div>
       </section>

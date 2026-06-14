@@ -34,37 +34,37 @@ const products = [
   {
     title: "Swimming Pool Pumps",
     desc: "High-performance swimming pool pumps for efficient water circulation and energy saving.",
-    img: "https://poolproducts.s3.ap-southeast-2.amazonaws.com/lx-pump.png",
+    img: "https://poolproducts.s3.ap-southeast-2.amazonaws.com/lx-pump.webp",
     icon: <SettingsInputComponentIcon />,
   },
   {
     title: "Swimming Pool Sand Filters",
     desc: "Premium quality pool filtration systems for crystal clear and hygienic swimming pool water.",
-    img: "https://poolproducts.s3.ap-southeast-2.amazonaws.com/fivestar-filter-2.png",
+    img: "https://poolproducts.s3.ap-southeast-2.amazonaws.com/fivestar-filter-2.webp",
     icon: <WaterIcon />,
   },
   {
     title: "Pool Cleaning Chemicals",
     desc: "Professional pool chemicals for water treatment, chlorine balancing and algae control.",
-    img: "https://poolproducts.s3.ap-southeast-2.amazonaws.com/pool-chemicals/chemical-cover.png",
+    img: "https://poolproducts.s3.ap-southeast-2.amazonaws.com/pool-chemicals/chemical-cover.webp",
     icon: <OpacityIcon />,
   },
   {
     title: "Pool Underwater Lights",
     desc: "Modern LED underwater pool lights for luxury swimming pool lighting solutions.",
-    img: "https://poolproducts.s3.ap-southeast-2.amazonaws.com/lights/light-rgb.png",
+    img: "https://poolproducts.s3.ap-southeast-2.amazonaws.com/lights/light-rgb.webp",
     icon: <HighlightIcon />,
   },
   {
     title: "Pool Cleaning Equipment",
     desc: "Advanced pool cleaning accessories and maintenance tools for residential and commercial pools.",
-    img: "https://poolproducts.s3.ap-southeast-2.amazonaws.com/cleaning-products/pool-cleaning-cover.png",
+    img: "https://poolproducts.s3.ap-southeast-2.amazonaws.com/cleaning-products/pool-cleaning-cover.webp",
     icon: <HighlightIcon />,
   },
   {
     title: "Pool Equipment & Accessories",
     desc: "Stainless steel swimming pool ladders and premium accessories for safety and durability.",
-    img: "https://poolproducts.s3.ap-southeast-2.amazonaws.com/pool-accessories/pool-accessories-cover.png",
+    img: "https://poolproducts.s3.ap-southeast-2.amazonaws.com/pool-accessories/pool-accessories-cover.webp",
     icon: <HighlightIcon />,
   },
 ];

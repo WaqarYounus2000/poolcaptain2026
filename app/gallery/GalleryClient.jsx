@@ -200,6 +200,7 @@ export default function GalleryClient() {
                 fill
                 sizes="100vw"
                 className={styles.lightboxImg}
+                unoptimized
               />
             )}
 

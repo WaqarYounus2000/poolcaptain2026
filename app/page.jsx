@@ -12,15 +12,20 @@ import {homefaqs} from "@/data/homefaqs";
 // ✅ SEO Metadata (VERY IMPORTANT for Google ranking)
 export const metadata = {
   title:
-    "Pool Captain | Best Pool Services in - Karachi, Pakistan",
+    "Pool Captain - Pool Construction || Maintenance || Installation, Best Pool Services in Karachi, Pakistan",
   description:
-    "Professional swimming pool maintenance, pool cleaning, pool installation, pool repair and pool equipment services in Pakistan.",
+    "Professional swimming pool construction,pool cleaning and maintenance, pool installation, pool repair and pool equipment supply in karachi.",
   keywords: [
     "pool services karachi",
-    "pool vacuuming services near me",
+    "swimming pool cleaning service",
+    "best pool swimming cleaning company","swimming pool chemicals","best swimming pool products",
     "pool cleaning services phase 8",
     "pool services phase 2",
     "pool services phase 4",
+    "swimming pool maintenance company",
+    "best swimming pool cleaning company",
+    "best swimming pool cleaning service",
+    "top swimming pool maintenance service",
     "pool maintenance services phase 7",
     "swimming pool maintenance Karachi",
     "pool cleaning services karachi",
@@ -38,12 +43,19 @@ export const metadata = {
     "top pool construction company karachi",
     "best pool construction company karachi",
     "pool repair services company in karachi",
+    "pool construction service in karachi",
+    "pool construction service",
+    "swimming pool construction in dha",
+    "swimming pool construction service in karachi",
+    "swimming pool construction company",
+    "best swimming pool construction service",
+    "karachi top swimming pool construction company",
 
   ],
   openGraph: {
     title: "Pool Captain - A Name of Experts",
     description:
-      "Expert swimming pool maintenance and installation services across Pakistan.",
+      "Expert swimming pool Construction, maintenance & installation services across Karachi.",
     url: "https://poolcaptain.pk",
     siteName: "Pool Captain",
     type: "website",

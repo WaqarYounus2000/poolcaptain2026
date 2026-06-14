@@ -59,6 +59,7 @@ const resolvedParams = await params
           alt={service.title}
           fill
           priority
+          unoptimized
           className="serviceHeroImage"
         />
 

@@ -23,27 +23,27 @@ const services = [
   {
     title: "Pool Construction",
     desc: "Professional swimming pool construction in Karachi for homes, villas & commercial projects.",
-    img: "https://poolservicesimages.s3.ap-southeast-2.amazonaws.com/pool-construction.jpeg",
+    img: "https://poolservicesimages.s3.ap-southeast-2.amazonaws.com/pool-construction.webp",
   },
   {
-    title: "Pool Installation",
-    desc: "Complete swimming pool installation with modern engineering & waterproof systems.",
-    img: "https://poolservicesimages.s3.ap-southeast-2.amazonaws.com/pool-installation.jpeg",
+    title: "Filtration System",
+    desc: "Complete swimming pool FIltration sytem installation with modern engineering.",
+    img: "https://poolservicesimages.s3.ap-southeast-2.amazonaws.com/filtration-system-installation.webp",
   },
   {
-    title: "Pool Repair Services",
+    title: "Pool Repair & Renovation ",
     desc: "Leak fixing, crack repair & structural restoration for all pool types.",
-    img: "https://poolservicesimages.s3.ap-southeast-2.amazonaws.com/pool-repair.jpeg",
+    img: "https://poolservicesimages.s3.ap-southeast-2.amazonaws.com/pool-repair.webp",
   },
   {
     title: "Pool Maintenance",
-    desc: "Weekly & monthly pool cleaning, water balancing & maintenance services.",
-    img: "https://poolservicesimages.s3.ap-southeast-2.amazonaws.com/maintenance.jpeg",
+    desc: "Swimming pool Cleaning and maintenance, water testing, chemical treatment & cleaning service.",
+    img: "https://poolservicesimages.s3.ap-southeast-2.amazonaws.com/pool-maintenance-2.webp",
   },
   {
     title: "Pool Equipment Supply",
-    desc: "High-quality pumps, motors, ladders, lights & pool accessories supply.",
-    img: "https://poolservicesimages.s3.ap-southeast-2.amazonaws.com/poolequipmentsupply.png",
+    desc: "High-quality pool pumps, pool filters & pool cleaning accessories supply.",
+    img: "https://poolservicesimages.s3.ap-southeast-2.amazonaws.com/poolequipmentsupply.webp",
   },
 
  
@@ -67,14 +67,14 @@ export default function PoolServicesSection() {
             PREMIUM SWIMMING POOL SERVICES
           </h6>
 
-          <h2 className="mainTitle">
-            Pool Captain Swimming Pool Services in Karachi
-          </h2>
+          <h1 className="mainTitle">
+            Pool Captain Swimming Pool Construction || Maintenance || Installation Services in Karachi
+          </h1>
 
           <Typography className="subText">
             Pool Captain provides complete
             <b>
-              {" "}pool construction, installation, repair, maintenance,
+              {" "}pool construction, pool installation, pool repair,swimming pool maintenance,
               filtration systems, pumps, chemicals & equipment supply{" "}
             </b>
             with modern engineering and luxury finishing for residential
