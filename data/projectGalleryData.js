@@ -26,13 +26,13 @@ export const projectGalleryData = [
 
     images: [
       
-      "/images/projectsfolder/khoj2.jpg",
-      "/images/projectsfolder/khoj3.jpg",
-      "/images/projectsfolder/khoj4.jpg",
-      "/images/projectsfolder/khoj-4.jpg",
-      "/images/projectsfolder/khoj-5.jpg",
-      "/images/projectsfolder/khoj-6.jpg",
-      "/images/projectsfolder/khoj1.jpg",
+      "https://poolproducts.s3.ap-southeast-2.amazonaws.com/achievementsProjects/khoj1.webp",
+      "https://poolproducts.s3.ap-southeast-2.amazonaws.com/achievementsProjects/khoj2.webp",
+      "https://poolproducts.s3.ap-southeast-2.amazonaws.com/achievementsProjects/khoj3.webp",
+      "https://poolproducts.s3.ap-southeast-2.amazonaws.com/achievementsProjects/khoj4.webp",
+      "https://poolproducts.s3.ap-southeast-2.amazonaws.com/achievementsProjects/khoj5.webp",
+      "https://poolproducts.s3.ap-southeast-2.amazonaws.com/achievementsProjects/khoj6.webp",
+      
     ],
   },
 
@@ -60,9 +60,9 @@ export const projectGalleryData = [
     ],
 
     images: [
-      "/images/projectsfolder/suana-1.jpg",
-      "/images/projectsfolder/suana-2.jpg",
-      "/images/projectsfolder/suana-3.jpg",
+      "https://poolproducts.s3.ap-southeast-2.amazonaws.com/achievementsProjects/suana++(1).webp",
+      "https://poolproducts.s3.ap-southeast-2.amazonaws.com/achievementsProjects/suana-2.webp",
+      "https://poolproducts.s3.ap-southeast-2.amazonaws.com/achievementsProjects/suana++(3).webp",
     
     ],
   },
@@ -91,8 +91,8 @@ export const projectGalleryData = [
     ],
 
     images: [
-      "/images/projectsfolder/steam-1.jpg",
-      "/images/projectsfolder/steam-2.jpg",
+      "https://poolproducts.s3.ap-southeast-2.amazonaws.com/achievementsProjects/steam-1.webp",
+      "https://poolproducts.s3.ap-southeast-2.amazonaws.com/achievementsProjects/steam-2.webp",
     ],
   },
 
@@ -122,9 +122,9 @@ export const projectGalleryData = [
     ],
 
     images: [
-      "/images/projectsfolder/heatpump1.jpg",
-      "/images/projectsfolder/heatpump3.jpg",
-      "/images/projectsfolder/joyland2.jpg",
+      "https://poolproducts.s3.ap-southeast-2.amazonaws.com/achievementsProjects/joyland1.webp",
+      "https://poolproducts.s3.ap-southeast-2.amazonaws.com/achievementsProjects/joyland2.webp",
+      
     ],
   },
 ];
