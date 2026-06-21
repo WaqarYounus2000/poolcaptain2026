@@ -156,11 +156,13 @@ export default function GalleryClient() {
                         sizes="100vw"
                         className={styles.galleryImg}
                         loading="lazy"
+                        unoptimized
                       />
                     )}
 
                     <div className={styles.watermarkOverlay}>
-                      <img src="/images/logo.png" alt="logo" />
+                      <Image src={"https://poolproducts.s3.ap-southeast-2.amazonaws.com/logo/logo.webp"} unoptimized fill alt="Pool Captain"/>
+                                
                     </div>
 
                   </div>
@@ -205,7 +207,8 @@ export default function GalleryClient() {
             )}
 
             <div className={`${styles.watermarkOverlay} ${styles.lightboxWatermark}`}>
-              <img src="/images/logo.png" alt="logo" />
+              <Image src={"https://poolproducts.s3.ap-southeast-2.amazonaws.com/logo/logo.webp"} width={300} height={300} unoptimized alt="Pool Captain"  />
+                        
             </div>
 
             <div className={styles.mediaControls}>

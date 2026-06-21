@@ -20,6 +20,7 @@ export default function CategoryCard({ category }) {
             alt={category.name}
             fill
             className={styles.image}
+            unoptimized
           />
 
           <div className={styles.overlay} />

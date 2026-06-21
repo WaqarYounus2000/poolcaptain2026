@@ -97,6 +97,7 @@ export default function BeforeAfterGallery() {
                           alt={project.title}
                           fill
                           sizes="(max-width:768px) 100vw, 50vw"
+                          unoptimized
                           style={{
                             objectFit: "cover",
                           }}

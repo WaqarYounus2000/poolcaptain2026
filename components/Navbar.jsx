@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
+import Image from "next/image";
 
 import "@/styles/Navbar.css";
 
@@ -19,11 +20,8 @@ export default function Navbar() {
 
         {/* LOGO (IMAGE ONLY) */}
         <Link href="/" className="logo-section">
-          <img
-            src="/images/logo.png"
-            alt="Pool Captain"
-            className="logo-image"
-          />
+           <Image src={"https://poolproducts.s3.ap-southeast-2.amazonaws.com/logo/logo.webp"} unoptimized fill alt="Pool Captain" className="logo-image" />
+          
         </Link>
 
         {/* DESKTOP MENU */}

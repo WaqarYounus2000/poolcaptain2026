@@ -76,7 +76,7 @@ export default function Footer() {
           <div className="footer-column">
             <div className="footer-logo-box">
               <img
-                src="/images/logo.png"
+                src="https://poolproducts.s3.ap-southeast-2.amazonaws.com/logo/logo.webp"
                 alt="Pool Captain"
                 className="footer-logo"
               />

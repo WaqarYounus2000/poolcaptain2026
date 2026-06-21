@@ -335,3 +335,89 @@ text-align: start;
     line-height: 1.7;
   }
 }
+
+
+.seoHero {
+  position: relative;
+  padding: 90px 8%;
+  background: linear-gradient(135deg, #07131f, #05070d);
+  color: #fff;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: url("/noise.png");
+  opacity: 0.04;
+}
+
+.container {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 12px;
+  padding: 6px 12px;
+  margin-bottom: 14px;
+  border-radius: 999px;
+  background: rgba(0, 200, 255, 0.12);
+  border: 1px solid rgba(0, 200, 255, 0.25);
+  color: #8fe7ff;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 16px;
+  opacity: 0.85;
+  max-width: 750px;
+  margin-bottom: 12px;
+}
+
+.subDescription {
+  font-size: 14px;
+  opacity: 0.65;
+  max-width: 720px;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.keyword {
+  font-size: 11px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  opacity: 0.8;
+  text-transform: lowercase;
+}
+
+.keyword:hover {
+  border-color: rgba(0, 200, 255, 0.4);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+}

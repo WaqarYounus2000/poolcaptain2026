@@ -23,34 +23,33 @@ import {
 } from "react-icons/fa";
 
 /* HERO */
-import back1 from "@/public/images/aboutUSpic/back1.jpg";
-import pose1 from "@/public/images/aboutUSpic/pose1.jpg";
+
 
 /* PROJECTS */
-import joyland1 from "@/public/images/projectsfolder/joyland1.jpg";
-import joyland2 from "@/public/images/projectsfolder/joyland2.jpg";
+const joyland1 =  "https://poolproducts.s3.ap-southeast-2.amazonaws.com/achievementsProjects/joyland2.webp"
+const  joyland2 = "https://poolproducts.s3.ap-southeast-2.amazonaws.com/achievementsProjects/joyland1.webp"
 
-import khoj1 from "@/public/images/projectsfolder/khoj1.jpg";
-import khoj2 from "@/public/images/projectsfolder/khoj2.jpg";
-import khoj3 from "@/public/images/projectsfolder/khoj3.jpg";
-import khoj4 from "@/public/images/projectsfolder/khoj4.jpg";
-import khoj5 from "@/public/images/projectsfolder/khoj5.jpg";
-import khoj6 from "@/public/images/projectsfolder/khoj6.jpg";
+const  khoj1 = "https://poolproducts.s3.ap-southeast-2.amazonaws.com/achievementsProjects/khoj1.webp"
+const khoj2 = "https://poolproducts.s3.ap-southeast-2.amazonaws.com/achievementsProjects/khoj2.webp"
+const khoj3 = "https://poolproducts.s3.ap-southeast-2.amazonaws.com/achievementsProjects/khoj3.webp"
+const khoj4 = "https://poolproducts.s3.ap-southeast-2.amazonaws.com/achievementsProjects/khoj4.webp"
+const khoj5 = "https://poolproducts.s3.ap-southeast-2.amazonaws.com/achievementsProjects/khoj5.webp"
+const khoj6 = "https://poolproducts.s3.ap-southeast-2.amazonaws.com/achievementsProjects/khoj6.webp"
 
 /* CLIENTS */
-const karachigymkhana = "/images/clients/karachigymkhana.png";
-const abdullahmall = "/images/clients/abdullahmall.jpeg";
-const asimjofa = "/images/clients/asimjofa.jpg";
-const darululoom = "/images/clients/darululoom.png";
-const dhacollege = "/images/clients/dhacollege.png";
-const faujifoundation = "/images/clients/faujifoundation.jpeg";
-const iqrauniversity = "/images/clients/iqrauniversity.jpg";
-const joyland = "/images/clients/joyland.png";
-const rufifarm = "/images/clients/rufifarm.jpeg";
-const landscape__logo = "/images/clients/landscape__logo.jpeg";
-const mandviwalla = "/images/clients/mandviwalla.jpeg";
-const principal = "/images/clients/principal.png";
-const khojresorts = "/images/clients/khojresorts.png";
+const karachigymkhana = "https://poolproducts.s3.ap-southeast-2.amazonaws.com/ourClients/karachigymkhana.webp"
+const abdullahmall ="https://poolproducts.s3.ap-southeast-2.amazonaws.com/ourClients/abdullahmall.webp"
+const asimjofa = "https://poolproducts.s3.ap-southeast-2.amazonaws.com/ourClients/asimjofa.webp"
+const darululoom = "https://poolproducts.s3.ap-southeast-2.amazonaws.com/ourClients/darululoom.webp"
+const dhacollege = "https://poolproducts.s3.ap-southeast-2.amazonaws.com/ourClients/dhacollege.webp"
+const faujifoundation = "https://poolproducts.s3.ap-southeast-2.amazonaws.com/ourClients/faujifoundation.webp"
+const iqrauniversity = "https://poolproducts.s3.ap-southeast-2.amazonaws.com/ourClients/iqrauniversity.webp"
+const joyland = "https://poolproducts.s3.ap-southeast-2.amazonaws.com/ourClients/joyland-amusement-park.webp"
+const rufifarm = "https://poolproducts.s3.ap-southeast-2.amazonaws.com/ourClients/rufi-farm-house.webp"
+const landscape__logo = "https://poolproducts.s3.ap-southeast-2.amazonaws.com/ourClients/landscape-construction.webp"
+const mandviwalla = "https://poolproducts.s3.ap-southeast-2.amazonaws.com/ourClients/mandviwala.webp"
+const principal = "https://poolproducts.s3.ap-southeast-2.amazonaws.com/ourClients/principle-builders.webp"
+const khojresorts = "https://poolproducts.s3.ap-southeast-2.amazonaws.com/ourClients/khoj-allana-hub-resorts.webp"
 
 const servingData = [
     { imgSrc: karachigymkhana, title: "Karachi Gym Khana" },
@@ -110,11 +109,12 @@ export default function AboutUsClient() {
 
                 <div className="heroImageWrapper">
                     <Image
-                        src={back1}
+                        src={"https://poolproducts.s3.ap-southeast-2.amazonaws.com/aboutandprojectsPirctures/aboutus-cover-poolcaptain.webp"}
                         alt="Pool Captain Swimming Pool Company Karachi Pakistan"
                         fill
                         priority
                         sizes="100vw"
+                        unoptimized
                         style={{
                             objectFit: "cover",
                             objectPosition: "center",
@@ -151,11 +151,12 @@ export default function AboutUsClient() {
                     >
                         <motion.div animate="animate" variants={floatImage}>
                             <Image
-                                src={pose1}
+                                src={"https://poolproducts.s3.ap-southeast-2.amazonaws.com/aboutandprojectsPirctures/pose1.webp"}
                                 alt="Pool Captain Team Karachi Pakistan"
                                 width={650}
                                 height={750}
                                 quality={95}
+                                unoptimized
                                 sizes="(max-width:768px) 100vw, 50vw"
                                 style={{
                                     width: "100%",
@@ -361,12 +362,14 @@ export default function AboutUsClient() {
                                 width={500} height={300}
                                 style={{ width: "100%", height: "220px", objectFit: "cover" }}
                                 onClick={() => setPreviewImg(joyland1)}
+                                unoptimized
                             />
 
                             <Image src={joyland2} alt="Joyland"
                                 width={500} height={300}
                                 style={{ width: "100%", height: "220px", objectFit: "cover" }}
                                 onClick={() => setPreviewImg(joyland2)}
+                                unoptimized
                             />
 
                         </div>
@@ -391,6 +394,7 @@ export default function AboutUsClient() {
                                     height={300}
                                     style={{ width: "100%", height: "220px", objectFit: "cover" }}
                                     onClick={() => setPreviewImg(img)}
+                                    unoptimized
                                 />
                             ))}
 
@@ -441,6 +445,7 @@ export default function AboutUsClient() {
                                 alt={data.title}
                                 width={170}
                                 height={120}
+                                unoptimized
                                 style={{
                                     width: "100%",
                                     height: "120px",

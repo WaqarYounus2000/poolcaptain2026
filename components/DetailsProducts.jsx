@@ -73,6 +73,7 @@ export default function DetailsProducts({ data }) {
             alt={data.title}
             fill
             priority
+            unoptimized
           />
         </div>
 

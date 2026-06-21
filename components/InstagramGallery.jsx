@@ -47,6 +47,7 @@ export default function InstagramGallery({
               src={img}
               alt={`gallery-${i}`}
               fill
+              unoptimized
               className="igImage"
             />
           </div>
@@ -71,6 +72,7 @@ export default function InstagramGallery({
               alt="preview"
               fill
               className="igFullImage"
+              unoptimized
             />
           </div>
 

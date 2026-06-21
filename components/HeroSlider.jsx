@@ -3,6 +3,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Link from "next/link";
+import Image from "next/image";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -11,34 +12,46 @@ import "@/styles/HeroSlider.css";
 
 const sliderImages = [
   {
-    image: "/images/slider/pic1.jpg",
-    title: "Professional Pool Construction",
+    image: "https://poolservicesimages.s3.ap-southeast-2.amazonaws.com/slider/pool+jacuzi+construction.webp",
+    title: "Swimming Pool & Jacuzzi Construction",
     description:
-      "swimming pool construction, spa/jacuzzi construction services in Karachi, Pakistan",
+      "Swimming pool construction, spa/jacuzzi construction services.",
   },
   {
-    image: "/images/slider/pic2.jpg",
+    image: "https://poolservicesimages.s3.ap-southeast-2.amazonaws.com/slider/pool+maintenance+service.webp",
     title: "Pool Maintenance Services",
     description:
-      "Complete cleaning and maintenance services for residential pools across Karachi.",
+      "Complete cleaning and maintenance services for residential & commercial pools across Karachi.",
   },
   {
-    image: "/images/slider/pic3.jpg",
+    image: "https://poolservicesimages.s3.ap-southeast-2.amazonaws.com/slider/pool+equipment+installation.webp",
     title: "Pool Equipment Supply & Installation",
     description:
       "Pool pumps, pool filters & pool cleaning accessories with installation.",
   },
   {
-    image: "/images/slider/pic4.jpg",
+    image: "https://poolservicesimages.s3.ap-southeast-2.amazonaws.com/slider/pool+maintenance+service-2.webp",
     title: "Luxury Pool Design",
     description:
       "Beautiful and modern swimming pool designs for homes.",
   },
   {
-    image: "/images/slider/pic5.jpg",
+    image: "https://poolservicesimages.s3.ap-southeast-2.amazonaws.com/slider/pool-repair-service.webp",
     title: "Pool Repair Solutions",
     description:
       "Pool Leak detection service karachi, motor repair & filtration solutions.",
+  },
+  {
+    image: "https://poolservicesimages.s3.ap-southeast-2.amazonaws.com/slider/pool+tiling+and+repairs+service.webp",
+    title: "Pool Tiling & Finishing",
+    description:
+      "New branded tiles supply and experts placement and instalaltion services"
+  },
+  {
+    image: "https://poolservicesimages.s3.ap-southeast-2.amazonaws.com/slider/sauna+construction.webp",
+    title: "Sauna & Steam Room Construction",
+    description:
+      "Sauna & steam room construction with modern design, premium equipment installation, and complete wellness solutions."
   },
 ];
 
@@ -61,7 +74,7 @@ export default function HeroSlider() {
         {sliderImages.map((slide, index) => (
           <SwiperSlide key={index}>
             <div className="slide-wrapper">
-              <img src={slide.image} alt={slide.title} />
+              <Image src={slide.image} alt={slide.title} fill unoptimized />
               <div className="overlay"></div>
 
               <div className="slide-content">

@@ -22,16 +22,15 @@
 /* LOGO */
 
 .logo-section {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  text-decoration: none;
-}
-
-/* ✅ FIX: keep image only, no text break */
-.logo-image {
+  position: relative;
   width: 92px;
   height: 92px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.logo-image {
   object-fit: contain;
   transition: transform 0.3s ease;
 }
