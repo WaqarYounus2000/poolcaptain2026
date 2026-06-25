@@ -2,7 +2,7 @@ import ProductsClient from "./ProductsClient.jsx";
 import CategoryCard from "@/components/CategoryCard";
 import connectDB from "@/lib/mongodb";
 import Category from "@/models/Category";
-
+import BrandSlider from "@/components/BrandSlider";
 import FAQComponent from "@/components/FAQComponent";
 import { poolproductsfaqs } from "@/data/poolproductsfaqs";
 import CustomPoolSolutions from "@/components/CustomPoolSolutions";
@@ -118,6 +118,8 @@ export default async function PoolProductsPage() {
           </div>
 
         </div>
+
+        <BrandSlider />
 
       </section>
 
