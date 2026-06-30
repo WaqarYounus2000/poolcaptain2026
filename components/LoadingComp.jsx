@@ -2,7 +2,7 @@
 
 import styles from "../styles/Loading.module.css";
 
-export default function Loading({ variant = "blog" }) {
+export default function LoadingComp({ variant = "blog" }) {
   if (variant === "blog") {
     return (
       <div className={styles.wrapper}>
