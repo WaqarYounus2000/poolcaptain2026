@@ -20,7 +20,7 @@ export default function Navbar() {
 
         {/* LOGO (IMAGE ONLY) */}
         <Link href="/" className="logo-section">
-           <Image src={"https://poolproducts.s3.ap-southeast-2.amazonaws.com/logo/logo.webp"} unoptimized fill alt="Pool Captain" className="logo-image" />
+           <Image src={"https://poolproducts.s3.ap-southeast-2.amazonaws.com/logo/logo.webp"} unoptimized fill alt="Pool Captain" className="logo-image" loading="eager" />
           
         </Link>
 

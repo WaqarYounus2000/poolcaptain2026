@@ -1,16 +1,21 @@
-"use client";
+
 
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/CategoryCardServices.module.css"
 import * as Icons from "react-icons/fa";
 
-export default function CategoryCardServices({ category, href }) {
+export default function CategoryCardServices({ category=[] }) {
+  if(!category){
+    return <div>no service available</div>
+  }
+
+  // console.log(category)
   const Icon = Icons[category?.icon];
 
   return (
     
-    <Link href={href} className={styles.cardLink}>
+    <Link href={`/pool-services/${category?.slug}`} className={styles.cardLink}>
       <div className={styles.card}>
 
         <div className={styles.imageWrapper}>

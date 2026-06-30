@@ -68,27 +68,7 @@ export default function ServicesClient({ services }) {
 
 
 
-        {/* SERVICES GRID */}
-
-        {/* <div className={styles.servicesGrid}>
-          {services?.map((item, index) => {
-            return (
-              <motion.div
-                key={item._id || index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                whileHover={{ y: -8 }}
-              >
-                <CategoryCardServices
-                  category={item}
-                  href={`/pool-services/${item.slug}`}
-                />
-              </motion.div>
-            );
-          })} */}
-        {/* </div> */}
+       
 
         </section>
     </>

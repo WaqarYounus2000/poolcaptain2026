@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
 import InstagramGallery from "@/components/InstagramGallery";
 import "./page.css";
-
+export const dynamic = "force-dynamic";
 import connectDB from "@/lib/mongodb";
 import Product from "@/models/Product";
 

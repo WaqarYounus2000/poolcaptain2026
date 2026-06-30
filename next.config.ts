@@ -16,6 +16,10 @@ const nextConfig: NextConfig = {
         hostname: "poolservicesimages.s3.ap-southeast-2.amazonaws.com",
         
       },
+      {
+        protocol: "https",
+        hostname: "blockimages.s3.ap-southeast-2.amazonaws.com",
+      },
     ],
   },
 };

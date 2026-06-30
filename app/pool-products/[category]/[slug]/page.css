@@ -24,7 +24,7 @@
 }
 
 .heroBg img {
-  object-fit: cover;
+  object-fit: cover !important;
   object-position: center;
   filter: brightness(0.7) saturate(1.1);
   transform: scale(1.03);
@@ -471,7 +471,7 @@
 
 /* ================= HERO FIX (BETTER VIEW) ================= */
 .heroBg img {
-  object-fit: cover !important;
+  object-fit: contain !important;
   object-position: center;
   transform: scale(1.05);
 }

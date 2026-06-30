@@ -79,8 +79,16 @@ export default async function ServicesPage() {
       icon: 1,
     }
   ).lean();
-  const plainServices = JSON.parse(JSON.stringify(services));
 
+  const data = services.map((service) => ({
+    _id: service._id.toString(),
+    slug: service.slug,
+    title: service.title,
+    image: service.image,
+    imageAlt: service.image?.alt || service.title,
+    shortDesc: service.shortDesc || "",
+    icon: service.icon || "",
+  }));
   return (
     <section>
 
@@ -89,11 +97,11 @@ export default async function ServicesPage() {
 
 
       <div className={styles.servicesGrid}>
-        {plainServices.map((service) => (
+        {data.map((service) => (
           <CategoryCardServices
             key={service._id}
             category={service}
-            href={`/pool-services/${service.slug}`}
+            
           />
         ))}
       </div>

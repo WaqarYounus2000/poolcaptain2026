@@ -1,3 +1,4 @@
+import ScrollToTop from "@/components/ScrollToTop";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 import { Analytics } from '@vercel/analytics/next';
@@ -42,7 +43,7 @@ export default function RootLayout({ children }) {
 
           {/* NAVBAR */}
           <Navbar />
-
+          <ScrollToTop />
           {/* PAGE CONTENT */}
           {children}
 

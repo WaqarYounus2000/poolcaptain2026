@@ -1,0 +1,527 @@
+/* ===========================
+   GLOBAL ARTICLE WRAPPER
+=========================== */
+
+.article {
+  width: 100%;
+  background: #f8fafc;
+  color: #1f2937;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+/* ===========================
+   HERO SECTION
+=========================== */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: #111;
+}
+
+.heroImage {
+  object-fit: cover;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.2)
+  );
+  z-index: 2;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 3;
+  padding: 40px;
+  max-width: 900px;
+  color: #fff;
+}
+
+.category {
+  display: inline-block;
+  background: #0ea5e9;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.heroContent h1 {
+  font-size: 42px;
+  line-height: 1.2;
+  margin: 10px 0;
+}
+
+.heroContent p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* ===========================
+   META INFO
+=========================== */
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.authorBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.authorAvatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #0ea5e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.metaInfo {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* ===========================
+   MAIN LAYOUT
+=========================== */
+
+.wrapper {
+  max-width: 1400px;
+  margin: auto;
+  padding: 60px 20px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 50px;
+}
+
+/* ===========================
+   SIDEBAR
+=========================== */
+
+.sidebar {
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+.toc {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.toc h3 {
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc li {
+  margin-bottom: 8px;
+}
+
+.toc a {
+  text-decoration: none;
+  color: #374151;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.toc a:hover {
+  color: #0ea5e9;
+}
+
+/* ===========================
+   CONTENT AREA
+=========================== */
+
+.content {
+  min-width: 0;
+}
+
+.summaryCard {
+  background: #ffffff;
+  padding: 20px;
+  border-left: 4px solid #0ea5e9;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ===========================
+   SECTIONS
+=========================== */
+
+.section {
+  margin-bottom: 50px;
+}
+
+.section h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.section h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #374151;
+}
+
+.section p {
+  line-height: 1.8;
+  margin-bottom: 12px;
+  color: #4b5563;
+}
+
+/* ===========================
+   IMAGES
+=========================== */
+
+.figure {
+  margin: 20px 0;
+}
+
+.sectionImage {
+  width: 100%;
+  border-radius: 12px;
+  height: auto;
+}
+
+.figure figcaption {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+/* ===========================
+   LISTS
+=========================== */
+
+.list,
+.numberList {
+  padding-left: 20px;
+  margin: 15px 0;
+}
+
+.list li,
+.numberList li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+/* ===========================
+   TABLE
+=========================== */
+
+.tableCard {
+  margin: 25px 0;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.tableCard h3 {
+  padding: 15px;
+  margin: 0;
+  background: #f1f5f9;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  font-size: 14px;
+}
+
+.table th {
+  background: #f8fafc;
+  font-weight: 600;
+}
+
+/* ===========================
+   QUOTE
+=========================== */
+
+.quote {
+  margin: 25px 0;
+  padding: 20px;
+  border-left: 4px solid #0ea5e9;
+  background: #f1f5f9;
+  font-style: italic;
+  border-radius: 8px;
+}
+
+/* ===========================
+   FAQ
+=========================== */
+
+.faqSection {
+  margin-top: 60px;
+}
+
+.sectionTitle {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+/* ===========================
+   CTA
+=========================== */
+
+.cta {
+  margin-top: 60px;
+  background: linear-gradient(135deg, #0ea5e9, #0284c7);
+  color: #fff;
+  padding: 30px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cta h2 {
+  margin-bottom: 10px;
+}
+
+.ctaButton {
+  background: #fff;
+  color: #0ea5e9;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   TAGS
+=========================== */
+
+.tagSection {
+  margin-top: 50px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  background: #e2e8f0;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+=========================== */
+
+@media (max-width: 1024px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: relative;
+    top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 380px;
+  }
+
+  .heroContent {
+    padding: 20px;
+  }
+
+  .heroContent h1 {
+    font-size: 28px;
+  }
+
+  .meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .section h2 {
+    font-size: 22px;
+  }
+
+  .cta {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 320px;
+  }
+
+  .heroContent h1 {
+    font-size: 22px;
+  }
+
+  .wrapper {
+    padding: 40px 15px;
+  }
+
+  .toc {
+    padding: 15px;
+  }
+}
+
+
+
+
+
+/* ===========================
+   BREADCRUMBS
+=========================== */
+
+.breadcrumbs {
+    max-width: 1400px;
+    margin: 30px auto 0;
+    padding: 0 30px;
+}
+
+.breadcrumbs ol {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumbs li {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumbs li:not(:last-child)::after {
+    content: "›";
+    margin-left: 10px;
+    color: #94a3b8;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.breadcrumbs a {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: rgba(255,255,255,.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(226,232,240,.9);
+    border-radius: 999px;
+    color: #334155;
+    font-size: .9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: .3s ease;
+    box-shadow:
+        0 4px 14px rgba(15,23,42,.05);
+}
+
+.breadcrumbs a:hover {
+    background: #0ea5e9;
+    color: #fff;
+    border-color: #0ea5e9;
+    transform: translateY(-2px);
+    box-shadow:
+        0 10px 24px rgba(14,165,233,.25);
+}
+
+.breadcrumbs li:last-child a {
+    background: linear-gradient(
+        135deg,
+        #0ea5e9,
+        #0284c7
+    );
+    color: #fff;
+    border-color: transparent;
+    cursor: default;
+    pointer-events: none;
+    box-shadow:
+        0 8px 20px rgba(14,165,233,.3);
+}
+
+/* Mobile */
+
+@media (max-width:768px) {
+
+    .breadcrumbs {
+        padding: 0 18px;
+        margin-top: 20px;
+    }
+
+    .breadcrumbs ol {
+        gap: 8px;
+    }
+
+    .breadcrumbs a {
+        font-size: .8rem;
+        padding: 7px 12px;
+    }
+
+    .breadcrumbs li:not(:last-child)::after {
+        margin-left: 8px;
+        font-size: .9rem;
+    }
+}

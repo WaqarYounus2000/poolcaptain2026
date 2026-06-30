@@ -7,12 +7,11 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 import * as Icons from "react-icons/fa";
-
+export const dynamic = "force-dynamic";
 import Service from "@/models/Service";
 import FAQComponent from "@/components/FAQComponent";
 
 import "./page.css";
-
 /* =========================
    SEO (FIXED)
 ========================= */
@@ -35,14 +34,14 @@ export async function generateMetadata({ params }) {
    PAGE
 ========================= */
 export default async function ServiceDetail({ params }) {
-const resolvedParams = await params
+  const { slug } = await params
   await connectDB();
 
   const service = await Service.findOne({
-    slug: resolvedParams.slug,
-  });
+    slug
+  }).lean();
 
-  const faqsData = service.faqs
+
 
   if (!service) {
     return <h1>Service Not Found</h1>;
@@ -58,6 +57,7 @@ const resolvedParams = await params
           src={service.image}
           alt={service.title}
           fill
+          loading="eager"
           priority
           unoptimized
           className="serviceHeroImage"
@@ -99,13 +99,13 @@ const resolvedParams = await params
 
           <div>
 
-           
+
 
             <h2 className="serviceMainHeading">
               {service.heroTitle}
             </h2>
 
-             <span className="serviceMiniTitle">
+            <span className="serviceMiniTitle">
               {service.shortDesc}
             </span>
 
@@ -202,7 +202,7 @@ const resolvedParams = await params
         </div>
 
         {/* FAQ */}
-        <FAQComponent faqs={JSON.parse(JSON.stringify(service?.faqs || []))} />
+        <FAQComponent faqs={service?.faqs} />
 
         {/* CTA */}
         <div className="serviceCTA">
