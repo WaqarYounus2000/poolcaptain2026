@@ -1,5 +1,5 @@
 "use client";
-import styles from "../styles/Loading.module.css";
+import styles from "../styles/LoadingComp.module.css";
 
 export default function LoadingComp({ variant = "blog" }) {
   if (variant === "blog") {
