@@ -112,7 +112,10 @@ export default async function BlogDetails({ params }) {
       slug,
       isPublished: true,
     }).lean();
+ 
 
+
+    //  console.log(blog)
     if (!blog) {
       notFound();
     }

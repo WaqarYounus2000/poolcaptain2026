@@ -320,13 +320,14 @@ export default function BlogContent({ blog }) {
                             <h2>Related Articles</h2>
 
                             <div className={styles.relatedGrid}>
+                                {console.log("related:",relatedBlogs)}
                                 {relatedBlogs.map((blog) => (
                                     <Link
-                                        key={blog.slug}
-                                        href={`/blogs/${blog.slug}`}
+                                        key={blog}
+                                        href={`/blogs/${blog}`}
                                         className={styles.relatedCard}
                                     >
-                                        {blog.title}
+                                        {"• " + blog + " "}
                                     </Link>
                                 ))}
                             </div>
