@@ -33,6 +33,7 @@ export default function Navbar() {
           <Link href="/gallery" onClick={closeMenu}>Gallery</Link>
           <Link href="/blogs" onClick={closeMenu}>Blogs</Link>
           <Link href="/download" onClick={closeMenu}>Downloads</Link>
+          <Link href="/projects" onClick={closeMenu}>Projects</Link>
           <Link href="/pool-volume-calculator" onClick={closeMenu}>Pool Calculator</Link>
           <Link href="/contact" onClick={closeMenu}>Contact</Link>
         </div>

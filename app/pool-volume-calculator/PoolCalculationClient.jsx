@@ -94,7 +94,7 @@ export default function PoolCalculationClient() {
 
     pageStyle: `
       @page {
-        size: A4 portrait;
+        size: Letter landscape;
         margin: 8mm;
       }
 
@@ -212,10 +212,11 @@ Tiles Area: ${tilesM} sq m
             <div className={styles.reportLogo}>
 
               <Image
-                src="/images/logo.png"
+                src={"https://poolproducts.s3.ap-southeast-2.amazonaws.com/logo/logo.webp"}
                 alt="Pool Captain"
                 width={90}
                 height={90}
+                unoptimized
                 priority
               />
 
@@ -405,7 +406,7 @@ Tiles Area: ${tilesM} sq m
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="glassCard resultCard"
+              className={`${styles.glassCard} ${styles.resultCard}`}
             >
 
               <h3>Engineering Report</h3>

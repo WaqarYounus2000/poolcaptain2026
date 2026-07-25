@@ -1,162 +1,315 @@
+import connectDB from "@/lib/mongodb";
+
+import Service from "@/models/Service";
+import Product from "@/models/Product";
+import Category from "@/models/Category";
+import Blog from "@/models/Blog";
+import Project from "@/models/Project";
+
+
+// refresh sitemap every hour
+export const revalidate = 3600;
+
+
+
 export default async function sitemap() {
-  const baseUrl = "https://poolcaptain.pk";
 
-  // ---------------------------
-  // STATIC PAGES
-  // ---------------------------
-  const staticPages = [
-    "",
-    "/about",
-    "/pool-services",
-    "/pool-products",
-    "/contact",
-    "/gallery",
-    "/blogs",
-    "/pool-volume-calculator",
-  ];
+  try {
 
-  const staticUrls = staticPages.map((path) => ({
-    url: `${baseUrl}${path}`,
-    lastModified: new Date(),
-  }));
 
-  // ---------------------------
-  // SERVICE PAGES
-  // ---------------------------
-  const servicePages = [
-    "pool-construction",
-    "pool-maintenance",
-    "pool-repair",
-    "pool-chemicals",
-    "filtration-systems",
-    "equipment-supply",
-  ];
+    const baseUrl = "https://poolcaptain.pk";
 
-  const serviceUrls = servicePages.map((slug) => ({
-    url: `${baseUrl}/pool-services/${slug}`,
-    lastModified: new Date(),
-  }));
 
-  // ---------------------------
-  // BLOG PAGES
-  // ---------------------------
-  const blogPages = [
-    "how-to-maintain-swimming-pool",
-    "pool-cleaning-tips-karachi",
-    "best-pool-design-ideas-2026",
-  ];
+    await connectDB();
 
-  const blogUrls = blogPages.map((slug) => ({
-    url: `${baseUrl}/blogs/${slug}`,
-    lastModified: new Date(),
-  }));
 
-  // ---------------------------
-  // PRODUCT CATEGORY PAGES
-  // ---------------------------
-  const categoryPages = [
-    "pool-pumps",
-    "pool-cleaning-accessories",
-    "pool-filters",
-    "pool-heating-systems",
-    "pool-lights",
-    "pool-chemicals",
-    "pool-accessories",
-    "sauna-steam-generators-accessories",
-    "pool-fountains",
-    "cold-plunge",
-  ];
 
-  const categoryUrls = categoryPages.map((slug) => ({
-    url: `${baseUrl}/pool-products/${slug}`,
-    lastModified: new Date(),
-  }));
+    // ---------------------------------
+    // STATIC PAGES
+    // ---------------------------------
 
-  // ---------------------------
-  // PRODUCT PAGES (NESTED)
-  // ---------------------------
-  const products = {
-    "pool-pumps": [
-      "laswim-pumps",
-      "minder-pool-pumps",
-      "lx-pool-pumps",
-      "fivestar-pool-pumps",
-    ],
+    const staticPages = [
 
-    "pool-filters": [
-      "minder-pool-filter",
-      "aquant-pool-filter",
-      "laswim-pool-filter",
-      "fivestar-pool-filter",
-    ],
+      "",
+      "/about",
+      "/pool-services",
+      "/pool-products",
+      "/contact",
+      "/gallery",
+      "/blogs",
+      "/downloads",
+      "/projects",
+      "/pool-volume-calculator",
 
-    "pool-cleaning-accessories": [
-      "deep-net",
-      "hose-pipe",
-      "nylon-brush",
-      "telescopic-pole",
-      "test-kit",
-      "vacuum-head",
-    ],
+    ];
 
-    "pool-heating-systems": [
-      "inverex-alsavo-heat-pump",
-      "coates-pool-heat-pump",
-      "power-world-heat-pump",
-      "fivestar-heat-pump",
-    ],
 
-    "pool-lights": [
-      "rgb-pool-light",
-      "warm-white-pool-light",
-      "cool-white-pool-light",
-    ],
 
-    "pool-chemicals": [
-      "pool-algaecide",
-      "pool-chlorine",
-      "pool-ph-balancer",
-      "potassium-sulphate",
-    ],
+    const staticUrls = staticPages.map((path)=>({
 
-    "pool-accessories": [
-      "pool-ladder",
-      "skimmer",
-      "pool-vacuum-point",
-      "pool-inlet-point",
-    ],
+      url:`${baseUrl}${path}`,
 
-    "sauna-steam-generators-accessories": [
-      "sauna-steam-generator",
-      "sauna-heater",
-    ],
+      lastModified:new Date(),
 
-    "pool-fountains": [
-      "acrylic-pool-fountain",
-      "cobra-stainless-steel-pool-fountain",
-    ],
+      changeFrequency:"monthly",
 
-    "cold-plunge": [
-      "cold-plunge",
-    ],
-  };
+      priority:path === "" ? 1 : 0.7
 
-  const productUrls = Object.entries(products).flatMap(
-    ([category, slugs]) =>
-      slugs.map((slug) => ({
-        url: `${baseUrl}/pool-products/${category}/${slug}`,
-        lastModified: new Date(),
-      }))
-  );
+    }));
 
-  // ---------------------------
-  // FINAL RETURN
-  // ---------------------------
-  return [
-    ...staticUrls,
-    ...serviceUrls,
-    ...blogUrls,
-    ...categoryUrls,
-    ...productUrls,
-  ];
+
+
+
+
+
+
+    // ---------------------------------
+    // SERVICES
+    // ---------------------------------
+
+    const services = await Service.find(
+      {},
+      {
+        slug:1,
+        updatedAt:1
+      }
+    ).lean();
+
+
+
+    const serviceUrls = services.map((service)=>({
+
+      url:
+      `${baseUrl}/pool-services/${service.slug}`,
+
+      lastModified:
+      service.updatedAt || new Date(),
+
+      changeFrequency:"monthly",
+
+      priority:0.9
+
+    }));
+
+
+
+
+
+
+
+
+
+    // ---------------------------------
+    // PROJECTS
+    // ---------------------------------
+
+    const projects = await Project.find(
+      {},
+      {
+        slug:1,
+        updatedAt:1
+      }
+    ).lean();
+
+
+
+    const projectUrls = projects.map((project)=>({
+
+      url:
+      `${baseUrl}/projects/${project.slug}`,
+
+      lastModified:
+      project.updatedAt || new Date(),
+
+      changeFrequency:"monthly",
+
+      priority:0.8
+
+    }));
+
+
+
+
+
+
+
+
+
+
+    // ---------------------------------
+    // BLOGS
+    // ---------------------------------
+
+    const blogs = await Blog.find(
+      {},
+      {
+        slug:1,
+        updatedAt:1
+      }
+    ).lean();
+
+
+
+    const blogUrls = blogs.map((blog)=>({
+
+      url:
+      `${baseUrl}/blogs/${blog.slug}`,
+
+      lastModified:
+      blog.updatedAt || new Date(),
+
+      changeFrequency:"weekly",
+
+      priority:0.8
+
+    }));
+
+
+
+
+
+
+
+
+
+    // ---------------------------------
+    // PRODUCT CATEGORIES
+    // ---------------------------------
+
+    const categories = await Category.find(
+      {},
+      {
+        slug:1,
+        updatedAt:1
+      }
+    ).lean();
+
+
+
+    const categoryUrls = categories.map((category)=>({
+
+      url:
+      `${baseUrl}/pool-products/${category.slug}`,
+
+      lastModified:
+      category.updatedAt || new Date(),
+
+      changeFrequency:"monthly",
+
+      priority:0.7
+
+    }));
+
+
+
+
+
+
+
+
+
+
+    // ---------------------------------
+    // PRODUCTS
+    // ---------------------------------
+
+    const products = await Product.find(
+      {},
+      {
+        slug:1,
+        category:1,
+        updatedAt:1
+      }
+    ).lean();
+
+
+
+
+
+    const productUrls = products.map((product)=>{
+
+
+      let categorySlug = product.category;
+
+
+
+      // if category is object
+      if(
+        typeof product.category === "object" &&
+        product.category !== null
+      ){
+
+        categorySlug =
+        product.category.slug;
+
+      }
+
+
+
+
+      return {
+
+        url:
+        `${baseUrl}/pool-products/${categorySlug}/${product.slug}`,
+
+        lastModified:
+        product.updatedAt || new Date(),
+
+        changeFrequency:"monthly",
+
+        priority:0.7
+
+      };
+
+
+    });
+
+
+
+
+
+
+
+
+
+
+    // ---------------------------------
+    // FINAL SITEMAP
+    // ---------------------------------
+
+    return [
+
+      ...staticUrls,
+
+      ...serviceUrls,
+
+      ...projectUrls,
+
+      ...blogUrls,
+
+      ...categoryUrls,
+
+      ...productUrls,
+
+    ];
+
+
+
+  }
+
+  catch(error){
+
+
+    console.error(
+      "SITEMAP ERROR:",
+      error
+    );
+
+
+    return [];
+
+
+  }
+
+
 }

@@ -156,26 +156,6 @@ body {
 
 /* ================= SMALL REPEATING WATERMARK ================= */
 
-.bgWatermark {
-  position: absolute;
-  inset: 0;
-
-  background-image: url("/images/logo.png");
-
-  background-repeat: repeat;
-
-  background-size: 105px;
-
-  background-position: center;
-
-  opacity: 0.08;
-
-  transform: rotate(-22deg) scale(1.1);
-
-  pointer-events: none;
-
-  z-index: 0;
-}
 
 /* ================= BIG TEXT WATERMARK ================= */
 
@@ -246,46 +226,43 @@ body {
 
 /* ================= GLASS CARD ================= */
 
-.glassCard {
-  position: relative;
 
-  background:
-    rgba(255,255,255,0.68);
 
-  backdrop-filter: blur(18px);
+/* Watermark overlay */
+.glassCard::before{
+    content:"";
+    position:absolute;
+    inset:0;
 
-  border-radius: 30px;
+    background-image:url("https://poolproducts.s3.ap-southeast-2.amazonaws.com/logo/logo.webp");
+    background-repeat:repeat;
+    background-size:65px;
 
-  padding: 35px;
+    opacity:0.035;          /* Lower opacity */
 
-  border:
-    1px solid rgba(255,255,255,0.8);
+    transform:rotate(-28deg) scale(1.15); /* Slight tilt */
 
-  overflow: hidden;
+    transform-origin:center;
 
-  box-shadow:
-    0 15px 40px rgba(0,0,0,0.06);
+    pointer-events:none;
+
+    z-index:0;
+}
+
+/* Keep content above watermark */
+.glassCard>*{
+    position:relative;
+    z-index:1;
 }
 
 /* ================= CARD WATERMARK ================= */
 
-.glassCard::before {
-  content: "";
+/* ================= CARD WATERMARK ================= */
 
-  position: absolute;
-  inset: 0;
 
-  background-image: url("/images/logo.png");
-
-  background-repeat: repeat;
-
-  background-size: 72px;
-
-  opacity: 0.09;
-
-  transform: rotate(-25deg);
-
-  pointer-events: none;
+.glassCard > * {
+  position: relative;
+  z-index: 2;
 }
 
 /* ================= CARD GLOW ================= */
@@ -636,6 +613,9 @@ body {
 
 @media print {
 
+
+  
+
   .calculatorGrid {
     grid-template-columns: 1fr 1fr !important;
   }
@@ -826,8 +806,8 @@ body {
   }
 
   .glassCard::before {
-    opacity: 0.11;
-    background-size: 58px;
+    /* opacity: 0.11; */
+    /* background-size: 58px; */
   }
 
   .reportFooter {

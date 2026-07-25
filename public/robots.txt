@@ -1,0 +1,9 @@
+
+
+User-agent: *
+
+Allow: /
+
+Sitemap: https://poolcaptain.pk/sitemap.xml
+
+Host: https://poolcaptain.pk
