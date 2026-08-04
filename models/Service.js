@@ -134,6 +134,33 @@ const serviceSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
+
+
+    projectsGallery: [
+      {
+        image: String,
+        alt: String,
+        title:String,
+        link: String
+      }
+    ],
+
+    googleSnippet: String,
+
+    internalLinks: [
+      {
+        title: String,
+        link: String
+      }
+    ],
+
+    projectLink: String,
+
+
+
+
+
+
   },
   {
     timestamps: true,

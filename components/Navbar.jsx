@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Image from "next/image";
@@ -9,6 +9,19 @@ import "@/styles/Navbar.css";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Lock page scroll when menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
 
   const closeMenu = () => {
     setMenuOpen(false);
@@ -20,8 +33,14 @@ export default function Navbar() {
 
         {/* LOGO (IMAGE ONLY) */}
         <Link href="/" className="logo-section">
-           <Image src={"https://poolproducts.s3.ap-southeast-2.amazonaws.com/logo/logo.webp"} unoptimized fill alt="Pool Captain" className="logo-image" loading="eager" />
-          
+          <Image
+            src={"https://poolproducts.s3.ap-southeast-2.amazonaws.com/logo/logo.webp"}
+            unoptimized
+            fill
+            alt="Pool Captain"
+            className="logo-image"
+            loading="eager"
+          />
         </Link>
 
         {/* DESKTOP MENU */}
@@ -34,7 +53,9 @@ export default function Navbar() {
           <Link href="/blogs" onClick={closeMenu}>Blogs</Link>
           <Link href="/download" onClick={closeMenu}>Downloads</Link>
           <Link href="/projects" onClick={closeMenu}>Projects</Link>
-          <Link href="/pool-volume-calculator" onClick={closeMenu}>Pool Calculator</Link>
+          <Link href="/pool-volume-calculator" onClick={closeMenu}>
+            Pool Calculator
+          </Link>
           <Link href="/contact" onClick={closeMenu}>Contact</Link>
         </div>
 

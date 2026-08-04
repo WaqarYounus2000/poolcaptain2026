@@ -1,0 +1,55 @@
+.readMoreBtn{
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+
+    margin-left:8px;
+
+    padding:6px 14px;
+
+    border:none;
+    border-radius:30px;
+
+    background:linear-gradient(135deg,#0ea5e9,#2563eb);
+
+    color:#fff;
+
+    font-size:13px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:all .3s ease;
+
+    box-shadow:0 4px 12px rgba(37,99,235,.18);
+}
+
+.readMoreBtn:hover{
+    transform:translateY(-2px);
+
+    background:linear-gradient(135deg,#0284c7,#1d4ed8);
+
+    box-shadow:0 8px 18px rgba(37,99,235,.25);
+}
+
+.readMoreBtn:active{
+    transform:translateY(0);
+}
+
+.readMoreBtn svg{
+    font-size:11px;
+    transition:.3s;
+}
+
+.readMoreBtn:hover svg{
+    transform:translateX(3px);
+}
+
+@media(max-width:768px){
+
+.readMoreBtn{
+    padding:5px 12px;
+    font-size:12px;
+}
+
+}

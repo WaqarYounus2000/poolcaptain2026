@@ -2,6 +2,7 @@
 import Link from "next/link";
 
 import "@/styles/CommercialResidentialPoolSection.css";
+import ReadMore from "@/components/ReadMore";
 
 import {
   Box,
@@ -118,9 +119,13 @@ export default function CommercialResidentialPoolSection() {
             Trusted Swimming Pool Maintenance Company in Karachi
           </h3>
 
+
+
+
           <Typography className="seoText">
-            Pool Captain is one of the leading swimming pool maintenance companies in Karachi,
-            offering premium commercial and residential swimming pool maintenance services with
+            <ReadMore
+              text="Pool Captain is one of the leading swimming pool maintenance companies in Karachi,
+                offering premium commercial and residential swimming pool maintenance services with
             35+ years of experience. Our expert swimming pool technicians provide complete pool
             cleaning, water treatment, filtration system servicing, pool pump maintenance,
             underwater lighting inspection, leak detection and chemical balancing solutions.
@@ -132,14 +137,17 @@ export default function CommercialResidentialPoolSection() {
 
             Whether you need weekly pool cleaning, monthly maintenance contracts or complete
             swimming pool equipment servicing, Pool Captain delivers reliable, affordable and
-            professional pool maintenance services across Karachi Pakistan.
+            professional pool maintenance services across Karachi Pakistan."
+            maxLength={550}
+            />
+
           </Typography>
 
 
 
-            <Link className="maintenanceBtn" href='/pool-services/pool-maintenance'>
-              Request Maintenance Service
-            </Link>
+          <Link className="maintenanceBtn" href='/pool-services/pool-maintenance'>
+            Request Maintenance Service
+          </Link>
 
 
         </Box>

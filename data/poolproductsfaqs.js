@@ -1,97 +1,37 @@
 export const poolproductsfaqs = [
   {
-    question: "What swimming pool products do you supply in Karachi?",
+    question: "What swimming pool products does Pool Captain supply in Karachi?",
     answer:
-      "We supply a complete range of swimming pool products in Karachi including pumps, filters, motors, chlorine, algaecide, pH chemicals, underwater lights, ladders, skimmers, and full pool equipment systems.",
+      "Pool Captain supplies a complete range of swimming pool products in Karachi including swimming pool pumps, sand filters, cartridge filters, pool chemicals, underwater LED lights, ladders, skimmers, heat pumps, chlorinators, cleaning accessories, filtration systems, and premium pool equipment for residential and commercial swimming pools.",
   },
 
   {
-    question: "Do you sell swimming pool pumps in Pakistan?",
+    question: "Do you supply and install swimming pool equipment in Pakistan?",
     answer:
-      "Yes, we provide high-quality swimming pool pumps suitable for residential, commercial, and industrial pool systems across Pakistan.",
+      "Yes. We supply and professionally install swimming pool equipment across Karachi and Pakistan, including pool pumps, filtration systems, heat pumps, underwater lighting, chemical dosing systems, pool automation, and complete swimming pool equipment solutions for homes, hotels, clubs, and commercial projects.",
   },
 
   {
-    question: "What is the best filter system for swimming pools?",
+    question: "Which swimming pool pump and filter are best for my pool?",
     answer:
-      "Sand filters are the most commonly used and reliable filtration systems for swimming pools, offering strong cleaning performance and low maintenance.",
+      "The right swimming pool pump and filter depend on your pool size, water volume, and usage. Our experts help you select the most efficient pump, sand filter, or cartridge filter to ensure excellent water circulation, energy efficiency, and crystal-clear pool water.",
   },
 
   {
-    question: "Do you provide pool chemicals in Karachi?",
+    question: "Do you provide genuine swimming pool chemicals and accessories?",
     answer:
-      "Yes, we supply all essential swimming pool chemicals including chlorine, algaecide, pH plus, pH minus, and shock treatment chemicals.",
+      "Yes. We supply high-quality swimming pool chemicals including chlorine, algaecide, pH Plus, pH Minus, shock treatment, water testing kits, and premium pool accessories to maintain clean, safe, and hygienic swimming pool water.",
   },
 
   {
-    question: "How do I choose the right pool pump size?",
+    question: "Do you offer complete swimming pool equipment solutions?",
     answer:
-      "Pool pump size depends on pool volume, circulation needs, and filtration system capacity. A proper pump ensures efficient water flow and cleaning.",
+      "Yes. Pool Captain provides complete swimming pool equipment solutions including product supply, installation, testing, maintenance, equipment upgrades, replacement parts, and after-sales support for residential, commercial, hotel, and luxury swimming pools throughout Pakistan.",
   },
 
   {
-    question: "Are your swimming pool products original and high quality?",
+    question: "Why choose Pool Captain as your swimming pool equipment supplier?",
     answer:
-      "Yes, we provide high-quality and durable swimming pool products sourced from trusted manufacturers to ensure long-term performance.",
-  },
-
-  {
-    question: "Do you deliver pool equipment across Pakistan?",
-    answer:
-      "Yes, we provide delivery of swimming pool equipment and chemicals across Karachi and other major cities in Pakistan.",
-  },
-
-  {
-    question: "What chemicals are needed for pool maintenance?",
-    answer:
-      "Basic pool chemicals include chlorine for disinfection, algaecide for algae control, and pH chemicals to maintain water balance.",
-  },
-
-  {
-    question: "How often should pool chemicals be added?",
-    answer:
-      "Pool chemicals should be tested regularly and added every few days depending on weather conditions, usage, and water quality.",
-  },
-
-  {
-    question: "Do you sell complete swimming pool kits?",
-    answer:
-      "Yes, we offer complete swimming pool kits including pumps, filters, plumbing accessories, and essential maintenance chemicals.",
-  },
-
-  {
-    question: "What is the price of swimming pool equipment in Pakistan?",
-    answer:
-      "Prices vary depending on equipment type, brand, and pool size. We provide customized quotations based on project requirements.",
-  },
-
-  {
-    question: "Do you provide underwater pool lights?",
-    answer:
-      "Yes, we supply and install underwater LED pool lights for residential and commercial swimming pools.",
-  },
-
-  {
-    question: "What is the lifespan of pool equipment?",
-    answer:
-      "With proper maintenance, pool equipment like pumps and filters can last several years depending on usage and water conditions.",
-  },
-
-  {
-    question: "Can I upgrade my existing pool equipment?",
-    answer:
-      "Yes, we provide upgrade solutions for old pool systems including pumps, filters, plumbing, and automation systems.",
-  },
-
-  {
-    question: "Why is pool equipment maintenance important?",
-    answer:
-      "Proper maintenance ensures efficient water circulation, reduces breakdowns, and extends the lifespan of swimming pool systems.",
-  },
-
-  {
-    question: "Do you provide installation services for pool products?",
-    answer:
-      "Yes, we provide full installation services for all swimming pool equipment including pumps, filters, and chemical dosing systems.",
+      "With over 30 years of experience, Pool Captain is a trusted swimming pool equipment supplier in Karachi, offering genuine products, expert installation, competitive pricing, technical support, and reliable after-sales service for all types of swimming pool projects across Pakistan.",
   },
 ];

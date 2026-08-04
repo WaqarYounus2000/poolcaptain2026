@@ -9,6 +9,7 @@ import ServiceCoverageSection from "@/components/ServiceCoverageSection.jsx";
 import FAQComponent from "@/components/FAQComponent";
 import {homefaqs} from "@/data/homefaqs";
 
+
 // ✅ SEO Metadata (VERY IMPORTANT for Google ranking)
 export const metadata = {
   title:

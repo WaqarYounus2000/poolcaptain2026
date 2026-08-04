@@ -27,6 +27,7 @@ import OpacityIcon from "@mui/icons-material/Opacity";
 import HighlightIcon from "@mui/icons-material/Highlight";
 
 import { motion } from "framer-motion";
+import ReadMore from "./ReadMore";
 
 /* ================= PRODUCTS ================= */
 
@@ -238,7 +239,7 @@ export default function PoolProductsSection() {
                     {/* FEATURES */}
                     <Box className="productFeatures">
 
-                      
+
 
                     </Box>
 
@@ -283,20 +284,21 @@ export default function PoolProductsSection() {
           </h3>
 
           <Typography className="seoText-paragraph">
-            Pool Captain is a trusted swimming pool equipment supplier in Karachi Pakistan,
+            <ReadMore text="Pool Captain is a trusted swimming pool equipment supplier in Karachi Pakistan,
             providing premium swimming pool products and accessories for residential,
             commercial and luxury swimming pools. We supply swimming pool pumps,
             sand filters, pool chemicals, underwater LED lights, ladders,
             filtration systems, cleaning accessories and complete swimming pool equipment
             solutions with professional installation and maintenance support.
 
-            <br /><br />
+       
 
             Our swimming pool products are designed for high performance,
             durability, energy efficiency and long-lasting pool operation.
             Whether you need pool maintenance equipment, advanced filtration systems,
             water treatment chemicals or modern swimming pool accessories,
-            Pool Captain delivers reliable and affordable pool equipment solutions across Karachi.
+            Pool Captain delivers reliable and affordable pool equipment solutions across Karachi." maxLength={400} />
+
           </Typography>
 
         </Box>
