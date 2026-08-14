@@ -12,19 +12,24 @@ import { poolchemicalsfaqs } from "@/data/poolchemicalsfaqs";
 
 // ================= SEO METADATA =================
 export async function generateMetadata({ params }) {
-  const { slug } = await params;
+  const { category, slug } = await params;
 
   await connectDB();
 
   const product = await Product.findOne({ slug }).lean();
 
   return {
+    metadataBase: new URL("https://poolcaptain.pk"),
+
     title: product?.seoTitle + " " + "- Pool Captain",
     description: product?.seoDesc || "",
     keywords: product?.keywords?.join(", ") || "",
+
+    alternates: {
+      canonical: `/pool-products/${category}/${slug}`,
+    },
   };
 }
-
 // ================= PAGE =================
 export default async function ProductDetail({ params }) {
   const { slug } = await params;

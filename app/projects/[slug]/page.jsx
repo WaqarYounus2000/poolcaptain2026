@@ -17,6 +17,8 @@ export async function generateMetadata({ params }) {
 
   if (!project) {
     return {
+      metadataBase: new URL("https://poolcaptain.pk"),
+
       title: "Project Not Found | Pool Captain",
       description: "The requested project could not be found.",
     };
@@ -33,6 +35,8 @@ export async function generateMetadata({ params }) {
     project.title;
 
   return {
+    metadataBase: new URL("https://poolcaptain.pk"),
+
     title:
       project.seoTitle ||
       `${project.title} | Pool Captain`,
@@ -56,7 +60,7 @@ export async function generateMetadata({ params }) {
     publisher: "Pool Captain",
 
     alternates: {
-      canonical: `https://poolcaptain.pk/projects/${project.slug}`,
+      canonical: `/projects/${project.slug}`,
     },
 
     robots: {
@@ -100,6 +104,8 @@ export async function generateMetadata({ params }) {
     },
   };
 }
+
+
 
 export default async function ProjectDetails({ params }) {
   const { slug } = await params;

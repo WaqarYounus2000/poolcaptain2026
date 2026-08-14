@@ -19,7 +19,7 @@ import styles from "./page.module.css";
    SEO (FIXED)
 ========================= */
 export async function generateMetadata({ params }) {
-  const Tem = await params
+  const Tem = await params;
   await connectDB();
 
   const service = await Service.findOne({
@@ -27,9 +27,15 @@ export async function generateMetadata({ params }) {
   });
 
   return {
+    metadataBase: new URL("https://poolcaptain.pk"),
+
     title: service?.seoTitle,
     description: service?.seoDescription,
     keywords: service?.seoKeywords?.join(", "),
+
+    alternates: {
+      canonical: `/pool-services/${Tem.slug}`,
+    },
   };
 }
 

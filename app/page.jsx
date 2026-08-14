@@ -12,14 +12,23 @@ import {homefaqs} from "@/data/homefaqs";
 
 // ✅ SEO Metadata (VERY IMPORTANT for Google ranking)
 export const metadata = {
+  metadataBase: new URL("https://poolcaptain.pk"),
+
   title:
     "Pool Captain - Pool Construction || Maintenance || Installation, Best Pool Services in Karachi, Pakistan",
   description:
     "Professional swimming pool construction,pool cleaning and maintenance, pool installation, pool repair and pool equipment supply in karachi.",
+
+  alternates: {
+    canonical: "/",
+  },
+
   keywords: [
     "pool services karachi",
     "swimming pool cleaning service",
-    "best pool swimming cleaning company","swimming pool chemicals","best swimming pool products",
+    "best pool swimming cleaning company",
+    "swimming pool chemicals",
+    "best swimming pool products",
     "pool cleaning services phase 8",
     "pool services phase 2",
     "pool services phase 4",
@@ -51,8 +60,8 @@ export const metadata = {
     "swimming pool construction company",
     "best swimming pool construction service",
     "karachi top swimming pool construction company",
-
   ],
+
   openGraph: {
     title: "Pool Captain - A Name of Experts",
     description:
@@ -62,7 +71,6 @@ export const metadata = {
     type: "website",
   },
 };
-
 export default function Home() {
   return (
     <>

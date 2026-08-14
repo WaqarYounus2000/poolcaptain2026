@@ -7,12 +7,20 @@ import FAQComponent from "@/components/FAQComponent";
 import { poolproductsfaqs } from "@/data/poolproductsfaqs";
 import CustomPoolSolutions from "@/components/CustomPoolSolutions";
 import styles from "./ProductsClient.module.css";
+
+
 export const metadata = {
+  metadataBase: new URL("https://poolcaptain.pk"),
+
   title:
     "Swimming Pool Products & Accessories in Karachi Pakistan | Pool Captain",
 
   description:
     "Premium swimming pool products in Karachi including pool pumps, filters, chemicals, underwater lights, ladders and pool cleaning accessories.",
+
+  alternates: {
+    canonical: "/pool-products",
+  },
 
   keywords: [
     "pool cleaning chemicals karachi",
@@ -34,7 +42,6 @@ export const metadata = {
     "chlorine tablets for pool cleaning karachi",
     "granular chlorine pool cleaning karachi",
 
-
     "pool cleaning service chemicals karachi",
     "professional pool cleaning chemicals karachi",
     "pool maintenance chemicals karachi pakistan",
@@ -55,7 +62,6 @@ export const metadata = {
     "best swimming pool filter pumps system in karachi",
   ],
 };
-
 
 async function getCategories() {
   await connectDB();

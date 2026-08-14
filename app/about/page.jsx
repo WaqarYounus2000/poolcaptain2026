@@ -10,6 +10,11 @@ export const metadata = {
 
   description:
     "Pool Captain is a leading swimming pool company in Karachi providing swimming pool construction, pool maintenance, pool renovation & equipment supply",
+
+  alternates: {
+    canonical: "/about",
+  },
+
   keywords: [
     "swimming pool company Karachi",
     "pool construction Pakistan",
@@ -35,7 +40,6 @@ export const metadata = {
     "pool maintenance service near me",
     "pool cleaning service near me",
   ],
-
 
   openGraph: {
     title:

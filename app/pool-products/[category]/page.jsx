@@ -17,12 +17,19 @@ export async function generateMetadata({ params }) {
   const seoMetaTags = category?.seoMetaTags || [];
 
   return {
+    metadataBase: new URL("https://poolcaptain.pk"),
+
     title: `Best ${category?.name} in Karachi - Pool Captain `,
+
     description:
       category?.description ||
       `Best ${categorySlug} products in Karachi, Pakistan`,
 
     keywords: seoMetaTags.join(", "),
+
+    alternates: {
+      canonical: `/pool-products/${categorySlug}`,
+    },
   };
 }
 

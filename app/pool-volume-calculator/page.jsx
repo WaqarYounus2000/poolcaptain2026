@@ -1,10 +1,18 @@
 import PoolCalculationClient from "./PoolCalculationClient";
 
 export const metadata = {
+  metadataBase: new URL("https://poolcaptain.pk"),
+
   title:
     "Swimming Pool Calculator Karachi | Pool Volume, Tiles & Water Estimation Tool Pakistan",
+
   description:
     "Free swimming pool calculator in Karachi Pakistan. Calculate pool volume, water liters, gallons, and tile area for construction and maintenance planning.",
+
+  alternates: {
+    canonical: "/pool-volume-calculator",
+  },
+
   keywords: [
     "swimming pool calculator",
     "pool volume calculator karachi",
@@ -16,6 +24,7 @@ export const metadata = {
     "swimming pool tiles volume calculation",
     "swimming pool tiles area calculation"
   ],
+
   openGraph: {
     title: "Swimming Pool Calculator Karachi",
     description:

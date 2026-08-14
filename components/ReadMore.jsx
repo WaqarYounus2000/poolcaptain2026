@@ -1,7 +1,8 @@
 "use client";
+
 import { FaArrowRight, FaArrowUp } from "react-icons/fa";
 import { useState } from "react";
-import "@/styles/readmore.css"
+import "@/styles/readmore.css";
 
 export default function ReadMore({
     text,
@@ -9,7 +10,9 @@ export default function ReadMore({
 }) {
     const [expanded, setExpanded] = useState(false);
 
-    if (!text) return null;
+    if (!text) {
+        return null;
+    }
 
     const shouldTrim = text.length > maxLength;
 
@@ -19,7 +22,7 @@ export default function ReadMore({
             : text.slice(0, maxLength) + "...";
 
     return (
-        <p className="serviceContentText">
+        <span className="serviceContentText">
             {displayText}
 
             {shouldTrim && (
@@ -42,6 +45,6 @@ export default function ReadMore({
                     </button>
                 </>
             )}
-        </p>
+        </span>
     );
 }

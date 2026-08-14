@@ -32,7 +32,7 @@ export const metadata = {
   metadataBase: new URL("https://poolcaptain.pk"),
 
   alternates: {
-    canonical: "https://poolcaptain.pk/projects",
+    canonical: "/projects",
   },
 
   authors: [

@@ -8,15 +8,24 @@ export const dynamic = "force-dynamic";
 
 
 export async function generateMetadata({ params }) {
-  const blog =  await params
+  const blog = await params;
 
   if (!blog) {
     return {
+      metadataBase: new URL("https://poolcaptain.pk"),
+
       title: "Blog Not Found | Pool Captain",
       description: "The requested blog could not be found.",
+
+      alternates: {
+        canonical: "/blogs",
+      },
     };
   }
+
   return {
+    metadataBase: new URL("https://poolcaptain.pk"),
+
     title:
       blog.seo?.metaTitle ||
       `${blog.slug} | Pool Captain`,
@@ -42,7 +51,7 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical:
         blog.seo?.canonicalUrl ||
-        `https://poolcaptain.pk/blog/${blog.slug}`,
+        `/blogs/${blog.slug}`,
     },
 
     robots:
@@ -59,7 +68,7 @@ export async function generateMetadata({ params }) {
 
       url:
         blog.seo?.canonicalUrl ||
-        `https://poolcaptain.pk/blog/${blog.slug}`,
+        `https://poolcaptain.pk/blogs/${blog.slug}`,
 
       siteName: "Pool Captain",
 
@@ -101,6 +110,9 @@ export async function generateMetadata({ params }) {
     },
   };
 }
+
+
+
 
 export default async function BlogDetails({ params }) {
   const { slug } = await params;

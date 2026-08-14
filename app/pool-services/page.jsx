@@ -8,12 +8,19 @@ import CategoryCardServices from "@/components/CategoryCardServices";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 import CustomPoolSolutions from "@/components/CustomPoolSolutions";
 import { poolservicesfaqs } from "@/data/poolservicesfaqs";
+
 export const metadata = {
+  metadataBase: new URL("https://poolcaptain.pk"),
+
   title:
     "Swimming Pool Services in Karachi | Pool Construction, Pool Maintenance & Chemicals",
 
   description:
     "Professional swimming pool services in Karachi including pool construction, maintenance, repair, renovation, leak detection, waterproofing, filtration systems, pool cleaning chemicals.",
+
+  alternates: {
+    canonical: "/pool-services",
+  },
 
   keywords: [
     "swimming pool services Karachi",
@@ -66,6 +73,9 @@ export const metadata = {
     ],
   },
 };
+
+
+
 export default async function ServicesPage() {
   await connectDB();
 

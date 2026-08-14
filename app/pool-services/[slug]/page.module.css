@@ -1033,3 +1033,39 @@
 
 
 }
+
+
+.serviceHeroImag {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Desktop */
+.serviceHeroImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .serviceHeroImageWrapper {
+    height: 420px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .serviceHeroImageWrapper {
+    height: 320px;
+    
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .serviceHeroImageWrapper {
+    height: 260px;
+  }
+}
