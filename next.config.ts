@@ -1,13 +1,12 @@
-
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-   allowedDevOrigins: [
+  allowedDevOrigins: [
     "localhost",
     "127.0.0.1",
     "*.localhost",
   ],
-  
+
   images: {
     remotePatterns: [
       {
@@ -52,8 +51,12 @@ const nextConfig: NextConfig = {
       ["/contact-us", "/contact"],
       ["/Contact Us", "/contact"],
 
-      
-  
+      // =================================
+      // GALLERY
+      // =================================
+
+      // No gallery redirects currently.
+      // Keep the new /gallery route working directly.
 
       // =================================
       // CALCULATOR
@@ -211,7 +214,6 @@ const nextConfig: NextConfig = {
         "/pool-products/pool-cleaning-accessories/nylon-brush",
       ],
 
-
       [
         "/productspecification/equipment/NylonBrush",
         "/pool-products/pool-cleaning-accessories/nylon-brush",
@@ -355,19 +357,14 @@ const nextConfig: NextConfig = {
         "/swimming-pool-products/saunaheaters/FanlanSauna8KW",
         "/pool-products/sauna-steam-generators-accessories/sauna-heater",
       ],
+    ];
 
-];
-
-      
     return permanentRedirects.map(([source, destination]) => ({
       source,
       destination,
       permanent: true,
     }));
   },
-
-  
-
-}
+};
 
 export default nextConfig;
