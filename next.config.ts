@@ -52,10 +52,7 @@ const nextConfig: NextConfig = {
       ["/contact-us", "/contact"],
       ["/Contact Us", "/contact"],
 
-      // =================================
-      // GALLERY
-      // =================================
-
+      
   
 
       // =================================
@@ -358,6 +355,8 @@ const nextConfig: NextConfig = {
         "/swimming-pool-products/saunaheaters/FanlanSauna8KW",
         "/pool-products/sauna-steam-generators-accessories/sauna-heater",
       ],
+
+];
 
       
     return permanentRedirects.map(([source, destination]) => ({
