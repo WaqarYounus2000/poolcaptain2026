@@ -56,9 +56,7 @@ const nextConfig: NextConfig = {
       // GALLERY
       // =================================
 
-      ["/Gallery", "/gallery"],
-      ["/Gallery/residentialpools", "/gallery"],
-      ["/Gallery/commercialpools", "/gallery"],
+  
 
       // =================================
       // CALCULATOR
@@ -216,10 +214,6 @@ const nextConfig: NextConfig = {
         "/pool-products/pool-cleaning-accessories/nylon-brush",
       ],
 
-      [
-        "/swimming-pool-products/pool-equipment/NylonBrush",
-        "/pool-products/pool-cleaning-accessories/nylon-brush",
-      ],
 
       [
         "/productspecification/equipment/NylonBrush",
@@ -365,14 +359,7 @@ const nextConfig: NextConfig = {
         "/pool-products/sauna-steam-generators-accessories/sauna-heater",
       ],
 
-      // =================================
-      // SPECIAL CHARACTERS / INVALID URLS
-      // =================================
-
-      ["/$", "/"],
-      ["/&", "/"],
-    ];
-
+      
     return permanentRedirects.map(([source, destination]) => ({
       source,
       destination,
